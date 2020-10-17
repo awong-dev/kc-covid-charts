@@ -1,0 +1,15 @@
+{
+  "name": "kc-covid-by-zip",
+  "version": "1.0.0",
+  "description": "King County Covid infections by zip code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "covid",
+    "zip"
+  ],
+  "author": "Albert J. Wong <awong.dev@gmail.com>",
+  "license": "BSD-2-Clause"
+}
