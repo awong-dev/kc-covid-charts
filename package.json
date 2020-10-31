@@ -14,6 +14,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "eslint": "^7.12.1",
     "exceljs": "^4.2.0",
     "node-fetch": "^2.6.1"
   },
