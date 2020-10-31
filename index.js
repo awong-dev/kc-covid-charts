@@ -1,8 +1,11 @@
+const admin = require('firebase-admin');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const https = require('https');
 const cheerio = require('cheerio');
 const ExcelJS = require('exceljs');
+
+admin.initializeApp();
 
 const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
@@ -27,8 +30,8 @@ async function parseExcel(excelBlob) {
       });
 
 
-      // Excel is 1 indexed, so the cleanvalues element 0 is empty.
-
+      // Excel is 1 indexed, so the cleanvalues element 0 is empty and
+      // can be overwritten.
       if (rowNumber === 1) {
         cleanvalues[0] = 'row';
       } else {
@@ -44,9 +47,40 @@ async function parseExcel(excelBlob) {
 
 // Downloads an excel file and returns it as a plain data object.
 // Also uploads the file into cloud storage and the data into the realtime db.
-async function getExcelFile(path) {
-  const result = await fetch(`${ROOT_URL}/${path}`, {agent: httpsAgent});
+async function scrapeDataFile(path) {
+  const response = await fetch(`${ROOT_URL}/${path}`, {agent: httpsAgent});
+
+  if (!response.ok) {
+    throw response.statusText;
+  }
+
+  const dataFileDate = new Date(response.headers.get('Last-Modified'));
+  const filenameBase = `kc-daily-covid-data-${dataFileDate.toISOString()}`;
+
+  const excelBlob = response.text();
+  const excelFileRef = admin.storage().bucket().file(filenameBase + '.xslx');
+  const excelUploadPromise = excelFileRef.save(JSON.stringify(excelBlob), {
+    gzip: true,
+    metadata: {
+      contentType: response.get('Content-Type')
+    },
+    predefinedAcl: "publicRead"
+  });
+
+  // Push to json.
   const data = parseExcel(result.text());
+
+  const jsonFileRef = admin.storage().bucket().file(filenameBase + '.json');
+  const jsonUploadPromise = jsonFileRef.save(JSON.stringify(data), {
+    gzip: true,
+    metadata: {
+      cacheControl: "public, max-age=20",
+      contentType: "application/json",
+    },
+    predefinedAcl: "publicRead"
+  });
+
+  await Promise.all([excelUploadPromise, jsonUploadPromise]);
   return data;
 }
 
@@ -58,14 +92,15 @@ function downloadLatestData() {
       const $ = cheerio.load(body);
       const anchor = $('ul li strong a', '#EXTRAScollapse1');
       const datafile = anchor.attr('href');
-      const data = await getDataFile(datafile);
+      const data = await scrapeDataFile(datafile);
     })
     .catch(err => console.error(err));
 }
 
 async function test() {
-const data = fs.readFileSync('2020-jul-13.xls');
-fs.writeFileSync('out.json', JSON.stringify(await parseExcel(data)));
+  const data = fs.readFileSync('2020-jul-13.xls');
+  fs.writeFileSync('out.json', JSON.stringify(await parseExcel(data)));
 }
 
-test();
+//test();
+downloadLatestData();
