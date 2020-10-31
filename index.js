@@ -5,7 +5,10 @@ const https = require('https');
 const cheerio = require('cheerio');
 const ExcelJS = require('exceljs');
 
-admin.initializeApp();
+admin.initializeApp({
+  databaseURL: "https://kc-covid-chart.firebaseio.com",
+  storageBucket: "kc-covid-chart.appspot.com"
+});
 
 const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
@@ -28,7 +31,6 @@ async function parseExcel(excelBlob) {
           return Number(v);
         }
       });
-
 
       // Excel is 1 indexed, so the cleanvalues element 0 is empty and
       // can be overwritten.
@@ -57,18 +59,18 @@ async function scrapeDataFile(path) {
   const dataFileDate = new Date(response.headers.get('Last-Modified'));
   const filenameBase = `kc-daily-covid-data-${dataFileDate.toISOString()}`;
 
-  const excelBlob = response.text();
+  const excelBlob = await response.arrayBuffer();
   const excelFileRef = admin.storage().bucket().file(filenameBase + '.xslx');
-  const excelUploadPromise = excelFileRef.save(JSON.stringify(excelBlob), {
+  const excelUploadPromise = excelFileRef.save(Buffer.from(excelBlob), {
     gzip: true,
     metadata: {
-      contentType: response.get('Content-Type')
+      contentType: response.headers.get('Content-Type')
     },
     predefinedAcl: "publicRead"
   });
 
   // Push to json.
-  const data = parseExcel(result.text());
+  const data = await parseExcel(excelBlob);
 
   const jsonFileRef = admin.storage().bucket().file(filenameBase + '.json');
   const jsonUploadPromise = jsonFileRef.save(JSON.stringify(data), {
