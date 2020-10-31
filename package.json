@@ -1,15 +1,24 @@
 {
-  "name": "kc-covid-by-zip",
+  "name": "kc-covid-charts",
   "version": "1.0.0",
-  "description": "King County Covid infections by zip code",
+  "description": "Custom charts of King County Covid daily data",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "covid",
-    "zip"
+    "king county"
   ],
   "author": "Albert J. Wong <awong.dev@gmail.com>",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "exceljs": "^4.2.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "firebase": "^8.0.0",
+    "firebase-tools": "^8.14.1"
+  }
 }
