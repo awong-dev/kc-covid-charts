@@ -1,8 +1,17 @@
-const { parseExcel } = require('./excel');
+// Bootstrap script to build the initial JSON file.
+
+const admin = require('firebase-admin');
+const { parseExcel } = require('./functions/excel');
+const mergeData = require('./functions/mergedata');
 const { idToHra, hraToId } = require('./hra');
 
 const fs = require('fs');
 const glob = require('glob');
+
+admin.initializeApp({
+  databaseURL: "https://kc-covid-chart.firebaseio.com",
+  storageBucket: "kc-covid-chart.appspot.com"
+});
 
 function globmise(pattern, options) {
   return new Promise((resolve, reject) => {
@@ -14,83 +23,6 @@ function globmise(pattern, options) {
       }
     });
   });
-}
-
-function accumulateCount(counts, delta, accumulate) {
-  if (accumulate && counts.length) {
-    counts.push(counts[counts.length - 1] + delta);
-  } else {
-    counts.push(delta);
-  }
-}
-
-// If dailyDate is set, indicates inputData is a daily file. This means
-// 'Location_Name' is set correctly. Otherwise, for HRA, the Location_Name
-// must be mapped from the index and the date is extrated from 'Week_End'.
-function mergeData(combinedData, inputData, dailyDate) {
-  // Dataset is City, ZIP, HRA, and Census.
-  for (datasetName of Object.keys(inputData)) {
-    const dataset = inputData[datasetName];
-    const header = dataset[0];
-    const rows = dataset.slice(1);
-
-    // -1 if dailyDate is set.
-    const dateIndex = header.indexOf('Week_End');
-    const locationNameIndex = header.indexOf('Location_Name');
-
-    const peopleTestedIndex = header.indexOf('People_Tested');
-    const allTestResultsIndex = header.indexOf('All_Test_Results');
-    const positivesIndex = header.indexOf('Positives');
-    const hospitalizationsIndex = header.indexOf('Hospitalizations');
-    const deathsIndex = header.indexOf('Deaths');
-
-    const populationIndex = header.indexOf('Population');
-
-    const data = combinedData[datasetName] = combinedData[datasetName] || {};
-    for (row of rows) {
-      let locationName = null;
-      if (locationNameIndex !== -1) {
-        locationName = row[locationNameIndex];
-      } else {
-        // If it's the biweekly data file, then the second column is the
-        // the locaion. But if it is the HRA, it needs to be mapped.
-        locationName = row[1];
-        if (datasetName === 'HRA') {
-          locationName = idToHra[datasetName];
-        }
-      }
-
-      const entry = data[locationName] = data[locationName] || {
-        date: [],
-        peopleTested: [],
-        allTestResults: [],
-        positives: [],
-        hospitalizations: [],
-        deaths: [],
-      };
-
-      if (datasetName === 'HRA') {
-        entry.hraId = hraToId[locationName];
-      }
-
-      if (dailyDate) {
-        entry.date.push(dailyDate.getTime());
-      } else {
-        entry.date.push(row[dateIndex]);
-      }
-
-      accumulateCount(entry.peopleTested, row[peopleTestedIndex], !dailyDate);
-      accumulateCount(entry.allTestResults, row[allTestResultsIndex], !dailyDate);
-      accumulateCount(entry.positives, row[positivesIndex], !dailyDate);
-      accumulateCount(entry.hospitalizations, row[hospitalizationsIndex], !dailyDate);
-      accumulateCount(entry.deaths, row[deathsIndex], !dailyDate);
-
-      if (populationIndex !== -1) {
-        // This doesn't seem to get updated frequently so treat it as a constant.
-        entry.population = row[populationIndex];
-      }
-    }
-  }
 }
 
 async function readFiles() {
@@ -112,7 +44,35 @@ async function readFiles() {
     mergeData(combinedData, data, date);
   }
   console.log(JSON.stringify(combinedData, null, 2));
+  return combinedData;
 }
 
+async function processOutput(dataPromise) {
+  const combinedData = await dataPromise;
 
-readFiles();
+  const fileRef = admin.storage().bucket().file('processed/data.json');
+
+  await fileRef.save(JSON.stringify(combinedData), {
+    gzip: true,
+    metadata: {
+      contentType: "application/json",
+    },
+    predefinedAcl: "publicRead"
+  });
+}
+
+//processOutput(readFiles());
+
+async function test() {
+  const fileRef = admin.storage().bucket().file('processed/combined.json');
+  const ref =admin.storage().bucket().file('processed/combined.json');
+  const existResult = await ref.exists();
+  console.log(existResult);
+  if (existResult[0]) {
+    console.log('exists');
+  } else {
+    console.log('not exists');
+  }
+}
+
+test();

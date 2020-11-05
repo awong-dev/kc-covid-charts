@@ -4,7 +4,8 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const https = require('https');
 const cheerio = require('cheerio');
-const { parseExcel } = require('../excel');
+const { parseExcel } = require('./excel');
+const mergeData = require('./mergedata');
 
 const logger = functions.logger;
 
@@ -35,21 +36,18 @@ async function scrapeDataFile(path, force) {
 
   // Early out if already downloadd.
   const xlsFileName = filenameBase + '.xlsx';
-  /*
-  For some reason, this always return true.
+  const excelFileRef = admin.storage().bucket().file(xlsFileName);
   if (!force) {
-    const existResult = await admin.storage().bucket().exists(xlsFileName);
-    if (existsResult[0]) {
+    const existResult = await excelFileRef.exists();
+    if (existResult[0]) {
       logger.info(`Already downloaded ${xlsFileName}`);
-      return { last_update: dataFileDate,  data: null };
+      return { last_update: dataFileDate, data: null };
     }
   }
- */
 
   // Download and process the actual file.
-  const downloadResponse = await fetch(dataFileUrl, {agent: httpsAgent});
+  const downloadResponse = await fetch(dataFileUrl, {agent: httpsAgen});
   const excelBlob = await downloadResponse.arrayBuffer();
-  const excelFileRef = admin.storage().bucket().file(xlsFileName);
 
   const excelUploadPromise = excelFileRef.save(Buffer.from(excelBlob), {
     gzip: true,
@@ -91,6 +89,26 @@ exports.snapshotData = functions.https.onRequest(async (request, response) => {
   try {
     const { last_update, data } = await downloadLatestData(request.query.force === '1');
     if (data !== null) {
+      // Update the data.json.
+      const dataFileRef = admin.storage().bucket().file('processed/data.json');
+      const combinedDataPromise = new Promise((resolve, reject) => {
+        const chunks = [];
+        dataFileRef.createReadStream()
+          .on('error', (err) => reject(err))
+          .on('data', d => chunks.push(d))
+          .on('end', () => resolve(JSON.parse(chunks.join(''))));
+      });
+
+      const combinedData = await combinedDataPromise;
+      mergeData(combinedData, data);
+      await dataFileRef.save(JSON.stringify(combinedData), {
+        gzip: true,
+        metadata: {
+          contentType: "application/json",
+        },
+        predefinedAcl: "publicRead"
+      });
+
       response.send(`found new data: ${last_update}`);
     } else {
       response.send(`no updates since: ${last_update}`);
