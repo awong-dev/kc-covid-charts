@@ -4,7 +4,7 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const https = require('https');
 const cheerio = require('cheerio');
-const ExcelJS = require('exceljs');
+const { parseExcel } = require('../excel');
 
 const logger = functions.logger;
 
@@ -18,37 +18,6 @@ const httpsAgent = new https.Agent({
 });
 
 const ROOT_URL='https://www.kingcounty.gov/depts/health/covid-19/data'
-
-// Takes an excep file and turns the data into a plain data object.
-async function parseExcel(excelBlob) {
-  const workbook = new ExcelJS.Workbook();
-  await workbook.xlsx.load(excelBlob);
-  const data = {};
-  workbook.eachSheet((worksheet, sheetId) => {
-    const sheetData =  [];
-    worksheet.eachRow((row, rowNumber) => {
-      const cleanvalues = row.values.map(v => {
-        if (isNaN(v)) {
-          return v.trim()
-        } else {
-          return Number(v);
-        }
-      });
-
-      // Excel is 1 indexed, so the cleanvalues element 0 is empty and
-      // can be overwritten.
-      if (rowNumber === 1) {
-        cleanvalues[0] = 'row';
-      } else {
-        cleanvalues[0] = rowNumber;
-      }
-
-      sheetData.push(cleanvalues);
-    });
-    data[worksheet.name] = sheetData;
-  });
-  return data;
-}
 
 // Downloads an excel file and returns it as a plain data object.
 // Also uploads the file into cloud storage and the data into the realtime db.
@@ -65,13 +34,17 @@ async function scrapeDataFile(path, force) {
   const filenameBase = `kc-daily-covid-data-${dataFileDate.toISOString()}`;
 
   // Early out if already downloadd.
-  const xlsFileName = filenameBase + '.xslx';
+  const xlsFileName = filenameBase + '.xlsx';
+  /*
+  For some reason, this always return true.
   if (!force) {
-    if (await admin.storage().bucket().exists(xlsFileName)) {
+    const existResult = await admin.storage().bucket().exists(xlsFileName);
+    if (existsResult[0]) {
       logger.info(`Already downloaded ${xlsFileName}`);
       return { last_update: dataFileDate,  data: null };
     }
   }
+ */
 
   // Download and process the actual file.
   const downloadResponse = await fetch(dataFileUrl, {agent: httpsAgent});
@@ -107,7 +80,9 @@ async function downloadLatestData(force) {
   const result = await fetch(`${ROOT_URL}/daily-summary.aspx`, {agent: httpsAgent})
   const body = await result.text();
   const $ = cheerio.load(body);
-  const anchor = $('ul li strong a', '#EXTRAScollapse1');
+  const itemText = $('strong:contains("Overall counts and rates by city, health reporting area, and zip code")');
+  logger.log(itemText.html());
+  const anchor = itemText.parent();
   const datafile = anchor.attr('href');
   return await scrapeDataFile(datafile, force);
 }

@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "firebase": "^8.0.0",
-    "firebase-tools": "^8.14.1"
+    "firebase-tools": "^8.14.1",
+    "glob": "^7.1.6"
   }
 }
