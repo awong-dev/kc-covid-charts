@@ -17,11 +17,15 @@
     "eslint": "^7.12.1",
     "exceljs": "^4.2.0",
     "firebase-admin": "^9.3.0",
+    "firebase-functions": "^3.11.0",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "firebase": "^8.0.0",
     "firebase-tools": "^8.14.1",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "next": "10.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   }
 }
