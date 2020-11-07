@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import DataTable from './data-table'
+import DataTable from '../components/data-table'
 import styles from '../styles/Home.module.css'
 
 export default function Home({covidData}) {
@@ -21,7 +21,7 @@ export default function Home({covidData}) {
         </p>
 
         <div className={styles.grid}>
-          <DataTable locationType="HRA" covidData={covidData['HRA']} />
+          <DataTable locationType="HRA" locationData={covidData['HRA']} />
         </div>
       </main>
 
