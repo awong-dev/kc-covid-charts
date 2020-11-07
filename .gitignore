@@ -79,4 +79,6 @@ functions/service_key.json
 
 *.sw[op]
 
+# Next.js build stuff
 out
+.next
