@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "firebase": "^8.0.0",
-    "firebase-tools": "^8.14.1",
+    "firebase-tools": "^8.15.1",
     "glob": "^7.1.6",
     "next": "10.0.1",
     "react": "17.0.1",
