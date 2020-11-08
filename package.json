@@ -4,6 +4,7 @@
   "description": "Custom charts of King County Covid daily data",
   "main": "index.js",
   "scripts": {
+    "build": "next build && next export",
     "deploy": "next build && next export && firebase deploy --only hosting"
   },
   "keywords": [
