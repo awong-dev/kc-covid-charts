@@ -23,7 +23,6 @@
     "@visx/shape": "^1.1.0",
     "cheerio": "^1.0.0-rc.3",
     "d3-array": "^2.8.0",
-    "eslint": "^7.12.1",
     "exceljs": "^4.2.0",
     "firebase-admin": "^9.3.0",
     "firebase-functions": "^3.11.0",
@@ -31,6 +30,13 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "firebase": "^8.0.0",
     "firebase-tools": "^8.15.1",
     "glob": "^7.1.6",
