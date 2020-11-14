@@ -21,7 +21,7 @@ async function createDriver() {
   return driver;
 }
 
-async function scrape() {
+async function setupPage() {
   console.log(JSON.stringify(data, null, 2));
   const driver = await createDriver();
   await driver.wait(driver.get("https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx"));
@@ -34,18 +34,22 @@ async function scrape() {
   await driver.wait(driver.findElement(By.xpath('//span[@value="Geography"]')).then( el => el.click()));
   await sleep(LONG_ACTION_MS);
 
-  // Click geography. This causes lots of calulations.
+  // Click the measurement type.
   await driver.wait(driver.findElement(By.xpath('//a[contains(concat(" ", normalize-space(@class), " "), " FIText ") and @title="Test Positivity"]')).then(
     el => el.findElement(By.xpath('./../input')).then( input => input.click())));
   await sleep(LONG_ACTION_MS);
 
   // Move the map in to view.
   await driver.wait(driver.executeScript('document.querySelectorAll(\'canvas.tabCanvas\')[0].scrollIntoView()'));
+  return driver;
+}
 
+async function scrape() {
+  const driver = await setupPage();
   // Now walk through the map.
   //for (let x = 300; onePixelIsInBounds && x < VP_WIDTH; x += 10) {
   let onePixelIsInBounds = true;
-  for (let x = 300; onePixelIsInBounds && x < 600; x += 10) {
+  for (let x = 350; onePixelIsInBounds && x < 400; x += 20) {
     onePixelIsInBounds = false;
     for (let y = 0; y < VP_HEIGHT; y += 10) {
       try {
@@ -58,10 +62,11 @@ async function scrape() {
           // 3 = measurement "Measure: xxxx"
           // 5 = Results "xxxx test results: nnn"
           const tooltip = await driver.findElement(By.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " tab-ubertipTooltip ")]'));
-          const locationName = await (await tooltip.findElement(By.xpath('./span/div[posiiton() = 0]/span'))).getText();
-          const measurement = await (await tooltip.findElement(By.xpath('./span/div[posiiton() = 3]/span'))).getText();
-          const result = await (await tooltip.findElement(By.xpath('./span/div[posiiton() = 5]/span'))).getText();
-          data[locationName] = {measurement, result};
+          const locationName = await (await tooltip.findElement(By.xpath('./span/div[position() = 1]'))).getText();
+          const measurement = await (await tooltip.findElement(By.xpath('./span/div[position() = 3]'))).getText();
+          const positives = await (await tooltip.findElement(By.xpath('./span/div[position() = 5]'))).getText();
+          const totalTests = await (await tooltip.findElement(By.xpath('./span/div[position() = 6]'))).getText();
+          data[locationName] = {measurement, result, positives, totalTests};
         } catch (err) {
           // Ignore. A lot of the times the tooltip is not here.
         }
@@ -76,4 +81,7 @@ async function scrape() {
   console.log(JSON.stringify(data, null, 2));
 }
 
-scrape();
+module.exports = { setupPage, scrape };
+
+if(require.main == module)
+    scrape();
