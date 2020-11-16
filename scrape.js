@@ -28,8 +28,6 @@ async function createDriver() {
     .forBrowser('chrome')
     .build();
   driver.manage().window().setRect({width: VP_WIDTH, height: VP_HEIGHT, x:0, y:0});
-  const session = await driver.getSession();
-  console.log(session.getId());
   return driver;
 }
 
@@ -64,6 +62,10 @@ async function selectLocationType(driver, locationType) {
 
 async function selectMeasurement(driver, measurement) {
   // Click the measurement type.
+  //
+  // Do it twice. For great glory and robustness.
+  await driver.findElement(By.css(`a.FIText[title="${measurement}"]`)).then(
+    el => el.findElement(By.xpath('./../input')).then( input => input.click()));
   await driver.findElement(By.css(`a.FIText[title="${measurement}"]`)).then(
     el => el.findElement(By.xpath('./../input')).then( input => input.click()));
   await sleep(LONG_ACTION_MS);
@@ -81,9 +83,9 @@ async function extractTestPositivity(tooltip) {
   // 1 = location name
   // 5 = positives "xxxx test results: nnn"
   // 6 = total tests "xxxx test results: nnn"
-  const locationName = await (await tooltip.findElement(By.xpath('./span/div[position() = 1]'))).getText();
-  const positives = toNumber((await (await tooltip.findElement(By.xpath('./span/div[position() = 5]'))).getText()).match(/Positive test results: (.*)/)[1]);
-  const totalTests = toNumber((await (await tooltip.findElement(By.xpath('./span/div[position() = 6]'))).getText()).match(/All test results: (.*)/)[1]);
+  const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
+  const positives = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/Positive test results: (.*)/)[1]);
+  const totalTests = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(6)'))).getText()).match(/All test results: (.*)/)[1]);
   return [locationName, {positives, totalTests}];
 }
 
@@ -91,8 +93,8 @@ async function extractDeaths(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = deaths "Deaths: nnn"
-  const locationName = await (await tooltip.findElement(By.xpath('./span/div[position() = 1]'))).getText();
-  const deaths = toNumber((await (await tooltip.findElement(By.xpath('./span/div[position() = 5]'))).getText()).match(/Deaths: (.*)/)[1]);
+  const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
+  const deaths = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/Deaths: (.*)/)[1]);
   return [locationName, {deaths}];
 }
 
@@ -100,8 +102,8 @@ async function extractHospitalizations(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = "Hospitalizations: nnn"
-  const locationName = await (await tooltip.findElement(By.xpath('./span/div[position() = 1]'))).getText();
-  const hospitalizations = toNumber((await (await tooltip.findElement(By.xpath('./span/div[position() = 5]'))).getText()).match(/Hospitalizations: (.*)/)[1]);
+  const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
+  const hospitalizations = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/Hospitalizations: (.*)/)[1]);
   return [locationName, {hospitalizations}];
 }
 
@@ -109,20 +111,17 @@ async function extractPeopleTested(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = "People tested: nnn"
-  const locationName = await (await tooltip.findElement(By.xpath('./span/div[position() = 1]'))).getText();
-  const peopleTested = toNumber((await (await tooltip.findElement(By.xpath('./span/div[position() = 5]'))).getText()).match(/People tested: (.*)/)[1]);
+  const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
+  const peopleTested = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/People tested: (.*)/)[1]);
   return [locationName, {peopleTested}];
 }
 
-
+let pixelCount = 0;
 // Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for city, zips, and census.
 //const DEFAULT_SCRAPE_OPTIONS = {startx: 350, starty: 30, endx: 570, endy: 350, xinc: 10, yinc: 10};
-//const DEFAULT_SCRAPE_OPTIONS = {startx: 320, starty: 40, endx: 800, endy: 450, xinc: 10, yinc: 10};
 
 // Fine granularity.
 const DEFAULT_SCRAPE_OPTIONS = {startx: 380, starty: 30, endx: 560, endy: 350, xinc: 2, yinc: 2};
-
-let pixelCount = 0;
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
 async function scrapeRegion(driver, extractFunc, options = DEFAULT_SCRAPE_OPTIONS) {
