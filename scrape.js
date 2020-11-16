@@ -65,14 +65,13 @@ async function selectLocationType(driver, locationType) {
 
 async function selectMeasurement(driver, measurement) {
   // Click the measurement type.
-  //
+  const measurementText = await driver.findElement(By.css(`a.FIText[title="${measurement}"]`));
+  const measurementButton = await measurementText.findElement(By.xpath('./../input'));
+
   // Do it twice. For great glory and robustness.
-  await driver.findElement(By.css(`a.FIText[title="${measurement}"]`)).then(
-    (el) => el.findElement(By.xpath('./../input')).then((input) => input.click()),
-  );
-  await driver.findElement(By.css(`a.FIText[title="${measurement}"]`)).then(
-    (el) => el.findElement(By.xpath('./../input')).then((input) => input.click()),
-  );
+  await measurementButton.click();
+  await measurementButton.click();
+
   await sleep(LONG_ACTION_MS);
 
   // Move the map in to view.
@@ -122,12 +121,10 @@ async function extractPeopleTested(tooltip) {
 }
 
 let pixelCount = 0;
-// Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for city, zips, and census.
-// const DEFAULT_SCRAPE_OPTIONS = {startx: 350, starty: 30, endx: 570, endy: 350, xinc: 10, yinc: 10};
-
-// Fine granularity.
+// Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for
+// city, zips, and census.
 const DEFAULT_SCRAPE_OPTIONS = {
-  startx: 380, starty: 30, endx: 560, endy: 350, xinc: 2, yinc: 2,
+  startx: 350, starty: 30, endx: 570, endy: 350, xinc: 10, yinc: 10,
 };
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
@@ -182,7 +179,7 @@ async function scrapeLocation(driver, x, y, extractFunc) {
   }
 
   if (tooltip) {
-    return await extractFunc(tooltip);
+    return extractFunc(tooltip);
   }
 
   return null;
@@ -202,6 +199,7 @@ async function scrapePoints(driver, locationName, points, extractFunc, maxRetry 
     }
     console.error(`Mismatch ${locationName} and ${result}: ${i}@${points[i]}`);
   }
+  return null;
 }
 
 // This generates a list of coordinates for each location. Used to create a
@@ -300,7 +298,7 @@ async function scrape() {
   return data;
 }
 
-if (require.main == module) scrape();
+if (require.main === module) scrape();
 
 module.exports = {
   createDriver,

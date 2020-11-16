@@ -35,7 +35,7 @@ async function readFiles() {
   mergeData(combinedData, biweekly);
 
   const jsonFiles = await globmise(`${jsonDir}/kc-daily-covid-data-*.json`);
-  const dateExtract = /kc-daily-covid-data-(.*)\.\json/;
+  const dateExtract = /kc-daily-covid-data-(.*)\.json/;
   for (const f of jsonFiles) {
     console.log(`Processing ${f}`);
     const date = new Date(f.match(dateExtract)[1]);
