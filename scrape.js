@@ -1,7 +1,8 @@
 require('chromedriver');
 const _ = require('lodash');
 const webdriver = require('selenium-webdriver');
-const By = webdriver.By;
+
+const { By } = webdriver;
 
 // This is a list of location to coordinates mapping.
 const MapSamplePoints = require('./data/map-sample-points.json');
@@ -21,41 +22,43 @@ const LONG_ACTION_MS = 7000;
 const VP_WIDTH = 1280;
 const VP_HEIGHT = 850;
 
-const sleep = ms => new Promise( res => setTimeout(res, ms));
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 async function createDriver() {
   const driver = new webdriver.Builder()
     .forBrowser('chrome')
     .build();
-  driver.manage().window().setRect({width: VP_WIDTH, height: VP_HEIGHT, x:0, y:0});
+  driver.manage().window().setRect({
+    width: VP_WIDTH, height: VP_HEIGHT, x: 0, y: 0,
+  });
   return driver;
 }
 
 async function setupPage() {
   const driver = await createDriver();
-  await driver.get("https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx");
+  await driver.get('https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx');
   await sleep(LONG_ACTION_MS);
   await driver.executeScript('document.querySelector(\'iframe[title="Data Visualization"]\').scrollIntoView()');
 
   await driver.switchTo().frame(1); // We know the data visualization frame is frame #1.
 
   // Click geography. This causes lots of calulations.
-  await driver.findElement(By.css('span[value="Geography"]')).then( el => el.click());
+  await driver.findElement(By.css('span[value="Geography"]')).then((el) => el.click());
   await sleep(LONG_ACTION_MS);
 
   return driver;
 }
 
 async function selectLocationType(driver, locationType) {
-  await driver.executeScript(`document.querySelectorAll('div[tb-test-id="Map chooser"')[0].scrollIntoView()`);
+  await driver.executeScript('document.querySelectorAll(\'div[tb-test-id="Map chooser"\')[0].scrollIntoView()');
   if (locationType === L_CITY) {
-    await driver.actions().move({x:200, y:50}).click().perform();
+    await driver.actions().move({ x: 200, y: 50 }).click().perform();
   } else if (locationType === L_HRA) {
-    await driver.actions().move({x:400, y:50}).click().perform();
+    await driver.actions().move({ x: 400, y: 50 }).click().perform();
   } else if (locationType === L_ZIP) {
-    await driver.actions().move({x:600, y:50}).click().perform();
+    await driver.actions().move({ x: 600, y: 50 }).click().perform();
   } else if (locationType === L_CENSUS) {
-    await driver.actions().move({x:850, y:50}).click().perform();
+    await driver.actions().move({ x: 850, y: 50 }).click().perform();
   }
   await sleep(LONG_ACTION_MS);
 }
@@ -65,9 +68,11 @@ async function selectMeasurement(driver, measurement) {
   //
   // Do it twice. For great glory and robustness.
   await driver.findElement(By.css(`a.FIText[title="${measurement}"]`)).then(
-    el => el.findElement(By.xpath('./../input')).then( input => input.click()));
+    (el) => el.findElement(By.xpath('./../input')).then((input) => input.click()),
+  );
   await driver.findElement(By.css(`a.FIText[title="${measurement}"]`)).then(
-    el => el.findElement(By.xpath('./../input')).then( input => input.click()));
+    (el) => el.findElement(By.xpath('./../input')).then((input) => input.click()),
+  );
   await sleep(LONG_ACTION_MS);
 
   // Move the map in to view.
@@ -75,7 +80,7 @@ async function selectMeasurement(driver, measurement) {
 }
 
 function toNumber(s) {
-  return Number(s.replace(/,/,''));
+  return Number(s.replace(/,/, ''));
 }
 
 async function extractTestPositivity(tooltip) {
@@ -86,7 +91,7 @@ async function extractTestPositivity(tooltip) {
   const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
   const positives = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/Positive test results: (.*)/)[1]);
   const totalTests = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(6)'))).getText()).match(/All test results: (.*)/)[1]);
-  return [locationName, {positives, totalTests}];
+  return [locationName, { positives, totalTests }];
 }
 
 async function extractDeaths(tooltip) {
@@ -95,7 +100,7 @@ async function extractDeaths(tooltip) {
   // 5 = deaths "Deaths: nnn"
   const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
   const deaths = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/Deaths: (.*)/)[1]);
-  return [locationName, {deaths}];
+  return [locationName, { deaths }];
 }
 
 async function extractHospitalizations(tooltip) {
@@ -104,7 +109,7 @@ async function extractHospitalizations(tooltip) {
   // 5 = "Hospitalizations: nnn"
   const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
   const hospitalizations = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/Hospitalizations: (.*)/)[1]);
-  return [locationName, {hospitalizations}];
+  return [locationName, { hospitalizations }];
 }
 
 async function extractPeopleTested(tooltip) {
@@ -113,21 +118,23 @@ async function extractPeopleTested(tooltip) {
   // 5 = "People tested: nnn"
   const locationName = await (await tooltip.findElement(By.css('span > div:nth-child(1)'))).getText();
   const peopleTested = toNumber((await (await tooltip.findElement(By.css('span > div:nth-child(5)'))).getText()).match(/People tested: (.*)/)[1]);
-  return [locationName, {peopleTested}];
+  return [locationName, { peopleTested }];
 }
 
 let pixelCount = 0;
 // Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for city, zips, and census.
-//const DEFAULT_SCRAPE_OPTIONS = {startx: 350, starty: 30, endx: 570, endy: 350, xinc: 10, yinc: 10};
+// const DEFAULT_SCRAPE_OPTIONS = {startx: 350, starty: 30, endx: 570, endy: 350, xinc: 10, yinc: 10};
 
 // Fine granularity.
-const DEFAULT_SCRAPE_OPTIONS = {startx: 380, starty: 30, endx: 560, endy: 350, xinc: 2, yinc: 2};
+const DEFAULT_SCRAPE_OPTIONS = {
+  startx: 380, starty: 30, endx: 560, endy: 350, xinc: 2, yinc: 2,
+};
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
 async function scrapeRegion(driver, extractFunc, options = DEFAULT_SCRAPE_OPTIONS) {
   const data = {};
   let onePixelIsInBounds = true;
-  console.log(`Starting region scrape`);
+  console.log('Starting region scrape');
   for (let x = options.startx; onePixelIsInBounds && x < options.endx; x += options.xinc) {
     if ((pixelCount++ % 1000) === 0) {
       console.error(`Made it to (${x},${y}):`);
@@ -135,7 +142,7 @@ async function scrapeRegion(driver, extractFunc, options = DEFAULT_SCRAPE_OPTION
     onePixelIsInBounds = false;
     for (let y = options.starty; y < options.endy; y += options.yinc) {
       try {
-        await driver.actions().move({x, y}).perform();
+        await driver.actions().move({ x, y }).perform();
         onePixelIsInBounds = true;
 
         let tooltip = null;
@@ -146,7 +153,7 @@ async function scrapeRegion(driver, extractFunc, options = DEFAULT_SCRAPE_OPTION
         }
 
         if (tooltip) {
-          const [ locationName, values ] = await extractFunc(tooltip);
+          const [locationName, values] = await extractFunc(tooltip);
           data[locationName] = data[locationName] || {};
           Object.assign(data[locationName], values);
         }
@@ -165,7 +172,7 @@ async function scrapeRegion(driver, extractFunc, options = DEFAULT_SCRAPE_OPTION
 // Throws if the tooltip format is not what is expected. This allows for
 // noticing formating changes that break the scraper.
 async function scrapeLocation(driver, x, y, extractFunc) {
-  await driver.actions().move({x, y}).perform();
+  await driver.actions().move({ x, y }).perform();
 
   let tooltip = null;
   try {
@@ -187,14 +194,13 @@ async function scrapeLocation(driver, x, y, extractFunc) {
 //
 // Returns the scraped measurement data.
 async function scrapePoints(driver, locationName, points, extractFunc, maxRetry = 10) {
-  for (let i=0; i < maxRetry; i++) {
-    const [x,y] = points[i];
+  for (let i = 0; i < maxRetry; i++) {
+    const [x, y] = points[i];
     const result = await scrapeLocation(driver, x, y, extractFunc);
     if (result && result[0] === locationName) {
       return result[1];
-    } else {
-      console.error(`Mismatch ${locationName} and ${result}: ${i}@${points[i]}`);
     }
+    console.error(`Mismatch ${locationName} and ${result}: ${i}@${points[i]}`);
   }
 }
 
@@ -210,23 +216,23 @@ async function scrapeMapPoints(driver, options = DEFAULT_SCRAPE_OPTIONS) {
       if ((pixelCount++ % 1000) === 0) {
         console.error(`Made it to (${x},${y}):`);
       }
-      const movePromise = driver.actions().move({x, y}).perform()
+      const movePromise = driver.actions().move({ x, y }).perform()
         .then(() => onePixelIsInBounds = true)
-        .catch(err => console.error(`Failed on (${x},${y}): ${err}`));
+        .catch((err) => console.error(`Failed on (${x},${y}): ${err}`));
 
       let tooltip = null;
       let locationName = null;
       const tooltipPromise = driver.findElement(By.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " tab-ubertipTooltip ")]'))
-        .then(el => {tooltip = el; return tooltip; })
-        .then(tooltip => tooltip.findElement(By.xpath('./span/div[position() = 1]')))
-        .then(el => el.getText())
-        .then(text => locationName = text)
-        .catch (err => {}) // Ignore if we can't find the tooltip or locationName.
+        .then((el) => { tooltip = el; return tooltip; })
+        .then((tooltip) => tooltip.findElement(By.xpath('./span/div[position() = 1]')))
+        .then((el) => el.getText())
+        .then((text) => locationName = text)
+        .catch((err) => {}); // Ignore if we can't find the tooltip or locationName.
       await Promise.all([tooltipPromise, movePromise]);
 
       if (tooltip) {
-        data[locationName] = data[locationName] || { points: []};
-        data[locationName].points.push([x,y]);
+        data[locationName] = data[locationName] || { points: [] };
+        data[locationName].points.push([x, y]);
       }
     }
   }
@@ -238,7 +244,7 @@ async function scrapeMapPoints(driver, options = DEFAULT_SCRAPE_OPTIONS) {
 // the points in a scrambled order. The scrambling is to allow retries to hit different parts
 // of the location polygon which should hopefully make it more robust to rendering differences.
 function mergeMapPoints(points1, points2) {
-  const unionArray = (objValue, srcValue)  => {
+  const unionArray = (objValue, srcValue) => {
     if (_.isArray(objValue) && _.isArray(srcValue)) {
       return _.unionWith(objValue, srcValue, _.isEqual);
     }
@@ -249,8 +255,9 @@ function mergeMapPoints(points1, points2) {
   // Return values shuffled. Makes sampling later a bit succeptible to systemic failure.
   return _.mapValues(
     merged,
-    location => _.mapValues(location,
-                            points => _.mapValues(points, ar => _.shuffle(ar))));
+    (location) => _.mapValues(location,
+      (points) => _.mapValues(points, (ar) => _.shuffle(ar))),
+  );
 }
 
 // Main entry point to scraping.
@@ -262,16 +269,16 @@ async function scrape() {
   const measurementConfig = [
     {
       measurement: M_TEST_POS,
-      extractFunc: extractTestPositivity
-    },{
+      extractFunc: extractTestPositivity,
+    }, {
       measurement: M_DEATHS,
-      extractFunc: extractDeaths
-    },{
+      extractFunc: extractDeaths,
+    }, {
       measurement: M_HOSP,
-      extractFunc: extractHospitalizations
-    },{
+      extractFunc: extractHospitalizations,
+    }, {
       measurement: M_PEOPLE_TESTED,
-      extractFunc: extractPeopleTested
+      extractFunc: extractPeopleTested,
     },
   ];
 
@@ -293,8 +300,7 @@ async function scrape() {
   return data;
 }
 
-if(require.main == module)
-    scrape();
+if (require.main == module) scrape();
 
 module.exports = {
   createDriver,
