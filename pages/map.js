@@ -5,6 +5,7 @@ import {
   chain, keyBy, mapValues, value,
 } from 'lodash';
 import geojson from '../data/HRA_2010Block_Clip_simplified_wgs84.json';
+import mapStyle from '../data/mapStyle.json';
 
 // Construct a map from geography name to an array of polygons (AKA a
 // multipolygon in geojson terminology):
@@ -17,13 +18,17 @@ const hraMultiPolygons = chain(geojson.features)
 
 const HRAMap = withScriptjs(withGoogleMap((props) => (
   <GoogleMap
-    defaultZoom={8}
+    defaultZoom={9}
     defaultCenter={{ lat: 47.5480, lng: -121.9836 }}
+    defaultOptions={{
+      styles: mapStyle,
+    }}
   >
     {Object.entries(hraMultiPolygons).map(([hra, multiPolygon]) => (
       multiPolygon.map((polygon) => (
         <Polygon
           paths={polygon.map((path) => path.map(([lng, lat]) => ({ lng, lat })))}
+          options={{fillColor: 'red', strokeWeight: 1}}
         />
       ))
     ))}
