@@ -24,7 +24,7 @@ const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 async function launchBrowser() {
   return await puppeteer.launch({
     headless: true,
-    userDataDir: './data',
+    userDataDir: '/tmp/puppeteer-userdata',
     args: ['--disable-features=site-per-process'],
   });
 }
@@ -140,7 +140,7 @@ let pixelCount = 0;
 // Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for
 // city, zips, and census.
 const DEFAULT_SCRAPE_OPTIONS = {
-  startx: 340, starty: 0, endx: 900, endy: 500, xinc: 5, yinc: 5,
+  startx: 340, starty: 0, endx: 900, endy: 500, xinc: 2, yinc: 2,
 };
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
@@ -323,7 +323,7 @@ async function scrapeAllMapPoints() {
 
   for (const locationType of [L_ZIP, L_HRA, L_CITY, L_CENSUS]) {
     await selectLocationType(page, tableauFrame, locationType);
-    await selectMeasurement(tableauFrame, M_TEST_POS);
+//    await selectMeasurement(tableauFrame, M_TEST_POS);
     data[locationType] = await scrapeMapPoints(page, tableauFrame);
   }
 
