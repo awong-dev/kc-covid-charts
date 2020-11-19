@@ -14,12 +14,35 @@ const L_HRA = 'hra';
 const L_ZIP = 'zip';
 const L_CENSUS = 'census';
 
-const LONG_ACTION_MS = 4000;
+const LONG_ACTION_MS = 10000;
 
 const VP_WIDTH = 1280;
 const VP_HEIGHT = 850;
 
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+
+// Used in place of sleep to try actions like scrollIntoView and retrieving text content
+async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
+  const waitMs = 10;
+  let retryCount = ~~(timeoutMs/waitMs);
+  while(retryCount--) {
+    try {
+      const result = await func();
+      if (!expectTruthy || (result && result !== 'null')) {
+        return result;
+      }
+    } catch (err) {
+      if (retryCount <= 0) {
+        throw err;
+      }
+    } 
+    await sleep(waitMs);
+  }
+
+  if (expectTruthy) {
+    throw "Failed after many retries";
+  }
+}
 
 async function launchBrowser() {
   return await puppeteer.launch({
@@ -44,25 +67,24 @@ async function setupPage(browser) {
 
   // Get the content scrolled in.
   await page.goto('https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx');
-  await page.evaluate(() => document.querySelector('iframe[title="Data Visualization"]').scrollIntoView());
-  await sleep(LONG_ACTION_MS);  // Wait for loads to finish.
+  await retry(() => page.evaluate(() => document.querySelector('iframe[title="Data Visualization"]').scrollIntoView()), false);
 
   return page;
 }
 
 async function setupTableauFrame(page) {
-  const iframeHandle = await page.$('iframe[title="Data Visualization"]');
+  const iframeHandle = await retry(() => page.$('iframe[title="Data Visualization"]'));
   const tableauFrame = await iframeHandle.contentFrame();
 
   // Click geography. This causes lots of calulations.
-  (await tableauFrame.$('span[value="Geography"]')).click();
-  await sleep(LONG_ACTION_MS);
+  (await retry(()=>tableauFrame.$('span[value="Geography"]'))).click();
 
   return tableauFrame;
 }
 
 async function selectLocationType(page, tableauFrame, locationType) {
-  await tableauFrame.evaluate(() => document.querySelector('div[tb-test-id="Map chooser"]').scrollIntoView());
+  await retry(() => tableauFrame.evaluate(() => document.querySelector('div[tb-test-id="Map chooser"]').scrollIntoView()), false);
+
   if (locationType === L_CITY) {
     await page.mouse.click(200, 50);
   } else if (locationType === L_HRA) {
@@ -72,30 +94,28 @@ async function selectLocationType(page, tableauFrame, locationType) {
   } else if (locationType === L_CENSUS) {
     await page.mouse.click(850, 50);
   }
-  await sleep(LONG_ACTION_MS);
 }
 
 async function selectMeasurement(tableauFrame, measurement) {
   // Click the measurement type.
-  const measurementText = await tableauFrame.$(`a.FIText[title="${measurement}"]`);
-  const measurementButton = (await measurementText.$x('./../input'))[0];
-
-  // Do it twice. For great glory and robustness.
-  await measurementButton.click();
-  await measurementButton.click();
+  await retry(() => tableauFrame.evaluate((m) => document.querySelector(`a.FIText[title="${m}"]`).parentElement.querySelector('input').click(), measurement), false);
 
   await sleep(LONG_ACTION_MS);
 
   // Move the map in to view.
-  await tableauFrame.evaluate(() => document.querySelector('canvas.tabCanvas').scrollIntoView());
+  await retry(() => tableauFrame.evaluate(() => document.querySelector('canvas.tabCanvas').scrollIntoView()), false);
 }
 
 function toNumber(s) {
   return Number(s.replace(/,/, ''));
 }
 
+async function getMeasurement(tooltip, index) {
+  return await retry(() => tooltip.$eval(`span div:nth-child(${index})`, el => el.textContent), true, 100);
+}
+
 async function extractLocationName(tooltip) {
-  return await tooltip.$eval('span > div:nth-child(1)', el => el.textContent);
+  return await getMeasurement(tooltip, 1);
 }
 
 async function extractTestPositivity(tooltip) {
@@ -103,44 +123,40 @@ async function extractTestPositivity(tooltip) {
   // 1 = location name
   // 5 = positives "xxxx test results: nnn"
   // 6 = total tests "xxxx test results: nnn"
-  const locationName = await extractLocationName(tooltip);
-  const positives = toNumber((await tooltip.$eval('span > div:nth-child(5)', el => el.textContent)).match(/Positive test results: (.*)/)[1]);
-  const totalTests = toNumber((await tooltip.$eval('span > div:nth-child(6)', el => el.textContent)).match(/All test results: (.*)/)[1]);
-  return [locationName, { positives, totalTests }];
+  const positives = toNumber((await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1]);
+  const totalTests = toNumber((await getMeasurement(tooltip, 6)).match(/All test results: (.*)/)[1]);
+  return { positives, totalTests };
 }
 
 async function extractDeaths(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = deaths "Deaths: nnn"
-  const locationName = await extractLocationName(tooltip);
-  const deaths = toNumber((await tooltip.$eval('span > div:nth-child(5)', el => el.textContent)).match(/Deaths: (.*)/)[1]);
-  return [locationName, { deaths }];
+  const deaths = toNumber((await getMeasurement(tooltip, 5)).match(/Deaths: (.*)/)[1]);
+  return { deaths };
 }
 
 async function extractHospitalizations(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = "Hospitalizations: nnn"
-  const locationName = await extractLocationName(tooltip);
-  const hospitalizations = toNumber((await tooltip.$eval('span > div:nth-child(5)', el => el.textContent)).match(/Hospitalizations: (.*)/)[1]);
-  return [locationName, { hospitalizations }];
+  const hospitalizations = toNumber((await getMeasurement(tooltip, 5)).match(/Hospitalizations: (.*)/)[1]);
+  return { hospitalizations };
 }
 
 async function extractPeopleTested(tooltip) {
   // For Test Positivity...
-  // 1 = location name
   // 5 = "People tested: nnn"
-  const locationName = await extractLocationName(tooltip);
-  const peopleTested = toNumber((await tooltip.$eval('span > div:nth-child(5)', el => el.textContent)).match(/People tested: (.*)/)[1]);
-  return [locationName, { peopleTested }];
+  const peopleTested = toNumber((await getMeasurement(tooltip, 5)).match(/People tested: (.*)/)[1]);
+  return { peopleTested };
 }
 
 let pixelCount = 0;
 // Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for
 // city, zips, and census.
 const DEFAULT_SCRAPE_OPTIONS = {
-  startx: 340, starty: 0, endx: 900, endy: 500, xinc: 2, yinc: 2,
+  startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2,
+//  startx: 400, starty: 50, endx: 410, endy: 70, xinc: 2, yinc: 2,
 };
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
@@ -188,17 +204,20 @@ async function scrapeLocation(page, frame, x, y, extractFunc) {
   await page.mouse.move(x, y);
 
   let tooltip = null;
+  let locationName = null;
   try {
+    // Wait for the locationName.
     tooltip = await frame.$('div.tab-ubertipTooltip');
+    locationName = await extractLocationName(tooltip);
   } catch (err) {
     // Ignore if we can't find the tooltip.
   }
 
-  if (tooltip) {
-    return extractFunc(tooltip);
+  if (tooltip && locationName) {
+    return [locationName, await extractFunc(tooltip)];
   }
 
-  return null;
+  return [null, null];
 }
 
 // Given a locationName like "Zip code: 98070" and an array of coordiantes,
@@ -210,10 +229,10 @@ async function scrapePoints(page, frame, locationName, points, extractFunc, maxR
   for (let i = 0; i < maxRetry; i++) {
     const [x, y] = points[i];
     const result = await scrapeLocation(page, frame, x, y, extractFunc);
-    if (result && result[0] === locationName) {
+    if (result[0] === locationName) {
       return result[1];
     }
-    console.error(`Mismatch ${locationName} and ${result}: ${i}@${points[i]}`);
+    console.error(`Mismatch ${locationName} and ${result[0]} value ${result[1]}: ${i}@${points[i]}`);
   }
   return null;
 }
@@ -302,9 +321,14 @@ async function scrape() {
     const typeData = data[locationType] = data[locationType] || {};
     for (const config of measurementConfig) {
       await selectMeasurement(tableauFrame, config.measurement);
-      for (const [locationName, locationInfo] of Object.entries(MapSamplePoints[locationType])) {
-        const locationData = typeData[locationName] = typeData[locationName] || {};
-        _.merge(locationData, await scrapePoints(page, tableauFrame, locationName, locationInfo.points, config.extractFunc));
+      if (locationType in MapSamplePoints) {
+        for (const [locationName, locationInfo] of Object.entries(MapSamplePoints[locationType])) {
+          const locationData = typeData[locationName] = typeData[locationName] || {};
+          const result = await scrapePoints(page, tableauFrame, locationName, locationInfo.points, config.extractFunc);
+          if (result) {
+            _.merge(locationData, result);
+          }
+        }
       }
     }
   }
@@ -321,9 +345,9 @@ async function scrapeAllMapPoints() {
 
   const data = {};
 
-  for (const locationType of [L_ZIP, L_HRA, L_CITY, L_CENSUS]) {
+  for (const locationType of [L_ZIP]) { //, L_HRA, L_CITY, L_CENSUS]) {
     await selectLocationType(page, tableauFrame, locationType);
-//    await selectMeasurement(tableauFrame, M_TEST_POS);
+    await selectMeasurement(tableauFrame, M_TEST_POS);
     data[locationType] = await scrapeMapPoints(page, tableauFrame);
   }
 
@@ -333,8 +357,11 @@ async function scrapeAllMapPoints() {
 }
 
 if (require.main === module) {
-//  scrape();
-  scrapeAllMapPoints();
+  if (process.argv[2] == "samplemap") {
+    scrapeAllMapPoints();
+  } else {
+    scrape();
+  }
 }
 
 module.exports = {
@@ -350,4 +377,5 @@ module.exports = {
   selectLocationType,
   selectMeasurement,
   setupPage,
+  setupTableauFrame,
 };
