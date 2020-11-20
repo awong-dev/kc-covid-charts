@@ -46,16 +46,16 @@ async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
 
 async function launchBrowser() {
   return await puppeteer.launch({
-    headless: true,
+//   headless: false,
     userDataDir: '/tmp/puppeteer-userdata',
-    args: ['--disable-features=site-per-process'],
+    args: ['--disable-features=site-per-process', '--font-render-hinting=none'],
   });
 }
 
 async function setupPage(browser) {
   const page = (await browser.pages())[0];
   // Make everything consistent and ignore youtube.
-  await page.setViewport({width: VP_WIDTH, height: VP_HEIGHT});
+  await page.setViewport({width: VP_WIDTH, height: VP_HEIGHT, deviceScaleFactor: 2});
   await page.setRequestInterception(true);
   page.on('request', (request) => {
     if (request.url().includes('youtube')) {
@@ -76,8 +76,12 @@ async function setupTableauFrame(page) {
   const iframeHandle = await retry(() => page.$('iframe[title="Data Visualization"]'));
   const tableauFrame = await iframeHandle.contentFrame();
 
+  // Got to wait until the covering spinner goes away otherwise the click is eaten.
+  await sleep(LONG_ACTION_MS);
+
   // Click geography. This causes lots of calulations.
-  (await retry(()=>tableauFrame.$('span[value="Geography"]'))).click();
+  await (await retry(()=>tableauFrame.$('span[value="Geography"]'))).click();
+  await sleep(LONG_ACTION_MS);
 
   return tableauFrame;
 }
@@ -94,6 +98,7 @@ async function selectLocationType(page, tableauFrame, locationType) {
   } else if (locationType === L_CENSUS) {
     await page.mouse.click(850, 50);
   }
+  await sleep(LONG_ACTION_MS);
 }
 
 async function selectMeasurement(tableauFrame, measurement) {
@@ -101,7 +106,9 @@ async function selectMeasurement(tableauFrame, measurement) {
   await retry(() => tableauFrame.evaluate((m) => document.querySelector(`a.FIText[title="${m}"]`).parentElement.querySelector('input').click(), measurement), false);
 
   await sleep(LONG_ACTION_MS);
+}
 
+async function scrollToMap(tableauFrame) {
   // Move the map in to view.
   await retry(() => tableauFrame.evaluate(() => document.querySelector('canvas.tabCanvas').scrollIntoView()), false);
 }
@@ -111,7 +118,7 @@ function toNumber(s) {
 }
 
 async function getMeasurement(tooltip, index) {
-  return await retry(() => tooltip.$eval(`span div:nth-child(${index})`, el => el.textContent), true, 100);
+  return await retry(() => tooltip.$eval(`span div:nth-child(${index})`, el => el.textContent), true, 10);
 }
 
 async function extractLocationName(tooltip) {
@@ -156,7 +163,7 @@ let pixelCount = 0;
 // city, zips, and census.
 const DEFAULT_SCRAPE_OPTIONS = {
   startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2,
-//  startx: 400, starty: 50, endx: 410, endy: 70, xinc: 2, yinc: 2,
+//  startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10,
 };
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
@@ -173,6 +180,7 @@ async function scrapeRegion(page, tableauFrame, extractFunc, options = DEFAULT_S
       try {
         await page.mouse.move(x, y);
         onePixelIsInBounds = true;
+        await sleep(10); // give a bit for hover to raect.
 
         let tooltip = null;
         try {
@@ -226,13 +234,19 @@ async function scrapeLocation(page, frame, x, y, extractFunc) {
 //
 // Returns the scraped measurement data.
 async function scrapePoints(page, frame, locationName, points, extractFunc, maxRetry = 10) {
-  for (let i = 0; i < maxRetry; i++) {
-    const [x, y] = points[i];
-    const result = await scrapeLocation(page, frame, x, y, extractFunc);
-    if (result[0] === locationName) {
-      return result[1];
+  try {
+    for (let i = 0; i < maxRetry; i++) {
+      const [x, y] = points[i];
+      const result = await scrapeLocation(page, frame, x, y, extractFunc);
+      if (result[0] === locationName) {
+        return result[1];
+      }
+      console.error(`Mismatch ${locationName} and ${result[0]} value ${JSON.stringify(result[1])}: ${i}@${points[i]}`);
+      await page.screenshot({path: 'mismatch.png'});
     }
-    console.error(`Mismatch ${locationName} and ${result[0]} value ${result[1]}: ${i}@${points[i]}`);
+  } catch (err) {
+    console.error(`Faoilled: ${locationName}: ${err}`);
+    return null;
   }
   return null;
 }
@@ -318,12 +332,17 @@ async function scrape() {
 
   for (const locationType of [L_ZIP, L_HRA, L_CITY, L_CENSUS]) {
     await selectLocationType(page, tableauFrame, locationType);
+    await scrollToMap(tableauFrame);
     const typeData = data[locationType] = data[locationType] || {};
     for (const config of measurementConfig) {
       await selectMeasurement(tableauFrame, config.measurement);
       if (locationType in MapSamplePoints) {
         for (const [locationName, locationInfo] of Object.entries(MapSamplePoints[locationType])) {
           const locationData = typeData[locationName] = typeData[locationName] || {};
+          if (!locationInfo.points) {
+            console.error(`${locationType}, ${locationName}: ${JSON.stringify(locationInfo)}`);
+            continue;
+          }
           const result = await scrapePoints(page, tableauFrame, locationName, locationInfo.points, config.extractFunc);
           if (result) {
             _.merge(locationData, result);
@@ -345,15 +364,34 @@ async function scrapeAllMapPoints() {
 
   const data = {};
 
-  for (const locationType of [L_ZIP]) { //, L_HRA, L_CITY, L_CENSUS]) {
-    await selectLocationType(page, tableauFrame, locationType);
+  try {
     await selectMeasurement(tableauFrame, M_TEST_POS);
-    data[locationType] = await scrapeMapPoints(page, tableauFrame);
+    for (const locationType of [L_ZIP, L_HRA, L_CITY, L_CENSUS]) {
+//    for (const locationType of [L_CENSUS]) {
+      await selectLocationType(page, tableauFrame, locationType);
+      await scrollToMap(tableauFrame);
+      data[locationType] = await scrapeMapPoints(page, tableauFrame);
+    }
+  } catch (err) {
+    await page.screenshot({path: 'crashed.png'});
+    console.error("Crashed " + err);
   }
 
   await browser.close();
   console.log(JSON.stringify(data, null, 2));
   return data;
+}
+
+async function test() {
+  const browser = await launchBrowser();
+  const page = await setupPage(browser);
+  const tableauFrame = await setupTableauFrame(page);
+  /*
+  await selectLocationType(page, tableauFrame, L_ZIP);
+  await selectMeasurement(tableauFrame, M_TEST_POS);
+  await scrollToMap(tableauFrame);
+ */
+  return [ browser, page, tableauFrame ];
 }
 
 if (require.main === module) {
@@ -378,4 +416,5 @@ module.exports = {
   selectMeasurement,
   setupPage,
   setupTableauFrame,
+  test,
 };
