@@ -94,7 +94,7 @@ async function scrapeLatestData(type) {
   return {last_update, data};
 }
 
-exports.snapshotData = functions.runWith({timeoutSeconds: 300, memory: '1GB'})
+exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
   .https.onRequest(async (request, response) => {
   try {
     const type = request.query.type;
