@@ -19,6 +19,7 @@ const LONG_ACTION_MS = 10000;
 
 const VP_WIDTH = 1280;
 const VP_HEIGHT = 850;
+const is_gcp_environment = process.env.GCP_PROJECT !== undefined;
 
 const MEASUREMENT_CONFIG = [
   {
@@ -259,7 +260,9 @@ async function scrapePoints(page, frame, locationName, points, extractFunc, maxR
         return result[1];
       }
       console.error(`Mismatch ${locationName} and ${result[0]} value ${JSON.stringify(result[1])}: ${i}@${points[i]}`);
-      await page.screenshot({path: 'mismatch.png'});
+      if (!is_gcp_environment) {
+        await page.screenshot({path: 'mismatch.png'});
+      }
     }
   } catch (err) {
     console.error(`Faoilled: ${locationName}: ${err}`);
@@ -372,7 +375,9 @@ async function scrapeAllMapPoints() {
       data[locationType] = await scrapeMapPoints(page, tableauFrame);
     }
   } catch (err) {
-    await page.screenshot({path: 'crashed.png'});
+    if (!is_gcp_environment) {
+      await page.screenshot({path: 'crashed.png'});
+    }
     console.error("Crashed " + err);
   }
 
