@@ -6,6 +6,8 @@ const https = require('https');
 const cheerio = require('cheerio');
 const { parseExcel } = require('./excel');
 const mergeData = require('./mergedata');
+const scrape = require('./scrape');
+const _ = require('lodash');
 
 const logger = functions.logger;
 
@@ -85,12 +87,25 @@ async function downloadLatestData(force) {
   return await scrapeDataFile(datafile, force);
 }
 
-exports.snapshotData = functions.https.onRequest(async (request, response) => {
+async function scrapeLatestData(type) {
+  console.log(`scraping ${type}`);
+  const last_update = new Date();
+  const data = await scrape.scrape(type);
+  return {last_update, data};
+}
+
+exports.snapshotData = functions.runWith({timeoutSeconds: 300, memory: '1GB'})
+  .https.onRequest(async (request, response) => {
   try {
-    const { last_update, data } = await downloadLatestData(request.query.force === '1');
+    const type = request.query.type;
+    if (!scrape.LOCATION_TYPES.includes(type)) {
+      console.error(`Invalid type ${type}`);
+      return response.status(400).send(`invalid type: ${type}`);
+    }
+    const { last_update, data } = await scrapeLatestData(type);
     if (data !== null) {
       // Update the data.json.
-      const dataFileRef = admin.storage().bucket().file('processed/data.json');
+      const dataFileRef = admin.storage().bucket().file(`processed/data-${type}.json`);
       const combinedDataPromise = new Promise((resolve, reject) => {
         const chunks = [];
         dataFileRef.createReadStream()
@@ -100,7 +115,8 @@ exports.snapshotData = functions.https.onRequest(async (request, response) => {
       });
 
       const combinedData = await combinedDataPromise;
-      mergeData(combinedData, data);
+      //mergeData(combinedData, data);
+      _.merge(combinedData, data);
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {
