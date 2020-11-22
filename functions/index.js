@@ -91,7 +91,8 @@ async function scrapeLatestData(type) {
   console.log(`scraping ${type}`);
   const last_update = new Date();
   const data = await scrape.scrape(type);
-  return {last_update, data};
+  data.date = [ last_update ];
+  return data;
 }
 
 exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
@@ -102,7 +103,7 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       console.error(`Invalid type ${type}`);
       return response.status(400).send(`invalid type: ${type}`);
     }
-    const { last_update, data } = await scrapeLatestData(type);
+    const data = await scrapeLatestData(type);
     if (data !== null) {
       // Update the data.json.
       const dataFileRef = admin.storage().bucket().file(`processed/data-${type}.json`);
@@ -115,7 +116,7 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       });
 
       const combinedData = await combinedDataPromise;
-      mergeData(combinedData, data);
+      mergeData(combinedData[type], data);
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {
@@ -124,9 +125,9 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
         predefinedAcl: "publicRead"
       });
 
-      response.send(`found new data: ${last_update}`);
+      response.send(`found new data: ${data.date[0]}`);
     } else {
-      response.send(`no updates since: ${last_update}`);
+      response.send(`no updates`);
     }
   } catch (err) {
     logger.error(err);
