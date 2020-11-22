@@ -14,7 +14,7 @@ const L_HRA = 'hra';
 const L_ZIP = 'zip';
 const L_CENSUS = 'census';
 const LOCATION_TYPES = [ L_CENSUS, L_CITY, L_HRA, L_ZIP ];
-const NAME_FUNC ={
+const NAME_FUNC = {
  [L_CITY]: x => x,
  [L_HRA]: x => x,
  [L_CENSUS]: x => x.slice(20)/100,
@@ -70,7 +70,7 @@ async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
 
 async function launchBrowser() {
   return await puppeteer.launch({
-//   headless: false,
+//    headless: false,
     userDataDir: '/tmp/puppeteer-userdata',
     args: ['--disable-features=site-per-process', '--font-render-hinting=none', '--no-sandbox'],
   });
@@ -261,9 +261,12 @@ async function scrapePoints(page, frame, locationName, points, extractFunc, extr
   try {
     for (let i = 0; i < maxRetry; i++) {
       const [x, y] = points[i];
-      const result = await scrapeLocation(page, frame, x, y, extractFunc);
-      if (result[0] === locationName) {
-        return result[1];
+      for (let retry = 0; retry < 10; retry++) {
+        const result = await scrapeLocation(page, frame, x, y, extractFunc, extractNameFunc);
+        if (result[0] === locationName) {
+          return result[1];
+        }
+        await sleep(10);
       }
       console.error(`Mismatch ${locationName} and ${result[0]} value ${JSON.stringify(result[1])}: ${i}@${points[i]}`);
       if (!is_gcp_environment) {
