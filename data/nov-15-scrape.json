@@ -1,552 +1,552 @@
 {
   "zip": {
-    "Zip code: 98070": {
+    "98070": {
       "positives": 35,
       "totalTests": 3766,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 2619
     },
-    "Zip code: 98199": {
+    "98199": {
       "positives": 130,
       "totalTests": 11781,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 7158
     },
-    "Zip code: 98422": {
+    "98422": {
       "positives": 4,
       "totalTests": 32,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 12
     },
-    "Zip code: 98117": {
+    "98117": {
       "positives": 285,
       "totalTests": 21330,
       "deaths": 8,
       "hospitalizations": 27,
       "peopleTested": 12216
     },
-    "Zip code: 98107": {
+    "98107": {
       "positives": 205,
       "totalTests": 18081,
       "deaths": 5,
       "hospitalizations": 17,
       "peopleTested": 10265
     },
-    "Zip code: 98119": {
+    "98119": {
       "positives": 194,
       "totalTests": 14718,
       "deaths": 2,
       "hospitalizations": 8,
       "peopleTested": 8388
     },
-    "Zip code: 98116": {
+    "98116": {
       "positives": 313,
       "totalTests": 15766,
       "deaths": 8,
       "hospitalizations": 20,
       "peopleTested": 9227
     },
-    "Zip code: 98136": {
+    "98136": {
       "positives": 147,
       "totalTests": 10285,
       "deaths": 4,
       "hospitalizations": 10,
       "peopleTested": 5759
     },
-    "Zip code: 98146": {
+    "98146": {
       "positives": 716,
       "totalTests": 12089,
       "deaths": 19,
       "hospitalizations": 58,
       "peopleTested": 7554
     },
-    "Zip code: 98023": {
+    "98023": {
       "positives": 1269,
       "totalTests": 15999,
       "deaths": 11,
       "hospitalizations": 80,
       "peopleTested": 11297
     },
-    "Zip code: 98177": {
+    "98177": {
       "positives": 240,
       "totalTests": 10165,
       "deaths": 23,
       "hospitalizations": 35,
       "peopleTested": 6112
     },
-    "Zip code: 98133": {
+    "98133": {
       "positives": 674,
       "totalTests": 23487,
       "deaths": 31,
       "hospitalizations": 72,
       "peopleTested": 14231
     },
-    "Zip code: 98106": {
+    "98106": {
       "positives": 539,
       "totalTests": 13086,
       "deaths": 4,
       "hospitalizations": 45,
       "peopleTested": 7735
     },
-    "Zip code: 98166": {
+    "98166": {
       "positives": 361,
       "totalTests": 8945,
       "deaths": 5,
       "hospitalizations": 36,
       "peopleTested": 5799
     },
-    "Zip code: 98103": {
+    "98103": {
       "positives": 440,
       "totalTests": 34994,
       "deaths": 18,
       "hospitalizations": 34,
       "peopleTested": 19376
     },
-    "Zip code: 98109": {
+    "98109": {
       "positives": 398,
       "totalTests": 20236,
       "deaths": 20,
       "hospitalizations": 43,
       "peopleTested": 11105
     },
-    "Zip code: 98104": {
+    "98104": {
       "positives": 400,
       "totalTests": 12455,
       "deaths": 9,
       "hospitalizations": 51,
       "peopleTested": 5877
     },
-    "Zip code: 98134": {
+    "98134": {
       "positives": 28,
       "totalTests": 1158,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 606
     },
-    "Zip code: 98108": {
+    "98108": {
       "positives": 553,
       "totalTests": 14117,
       "deaths": 6,
       "hospitalizations": 35,
       "peopleTested": 7628
     },
-    "Zip code: 98168": {
+    "98168": {
       "positives": 1186,
       "totalTests": 14518,
       "deaths": 9,
       "hospitalizations": 67,
       "peopleTested": 9128
     },
-    "Zip code: 98148": {
+    "98148": {
       "positives": 224,
       "totalTests": 3897,
       "deaths": 4,
       "hospitalizations": 19,
       "peopleTested": 2540
     },
-    "Zip code: 98198": {
+    "98198": {
       "positives": 915,
       "totalTests": 14205,
       "deaths": 11,
       "hospitalizations": 66,
       "peopleTested": 8941
     },
-    "Zip code: 98003": {
+    "98003": {
       "positives": 1705,
       "totalTests": 16764,
       "deaths": 37,
       "hospitalizations": 142,
       "peopleTested": 11574
     },
-    "Zip code: 98354": {
+    "98354": {
       "positives": 20,
       "totalTests": 139,
       "deaths": 2,
       "hospitalizations": 1,
       "peopleTested": 90
     },
-    "Zip code: 98155": {
+    "98155": {
       "positives": 493,
       "totalTests": 15253,
       "deaths": 26,
       "hospitalizations": 55,
       "peopleTested": 9470
     },
-    "Zip code: 98125": {
+    "98125": {
       "positives": 491,
       "totalTests": 21292,
       "deaths": 9,
       "hospitalizations": 46,
       "peopleTested": 12830
     },
-    "Zip code: 98115": {
+    "98115": {
       "positives": 414,
       "totalTests": 31393,
       "deaths": 8,
       "hospitalizations": 26,
       "peopleTested": 18180
     },
-    "Zip code: 98105": {
+    "98105": {
       "positives": 740,
       "totalTests": 37794,
       "deaths": 1,
       "hospitalizations": 13,
       "peopleTested": 16558
     },
-    "Zip code: 98195": {
+    "98195": {
       "positives": 16,
       "totalTests": 611,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 231
     },
-    "Zip code: 98112": {
+    "98112": {
       "positives": 209,
       "totalTests": 18126,
       "deaths": 3,
       "hospitalizations": 15,
       "peopleTested": 9512
     },
-    "Zip code: 98122": {
+    "98122": {
       "positives": 425,
       "totalTests": 31554,
       "deaths": 7,
       "hospitalizations": 23,
       "peopleTested": 15948
     },
-    "Zip code: 98144": {
+    "98144": {
       "positives": 601,
       "totalTests": 22289,
       "deaths": 21,
       "hospitalizations": 63,
       "peopleTested": 11761
     },
-    "Zip code: 98158": {
+    "98158": {
       "positives": 0,
       "totalTests": 1,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1
     },
-    "Zip code: 98118": {
+    "98118": {
       "positives": 1060,
       "totalTests": 31836,
       "deaths": 14,
       "hospitalizations": 83,
       "peopleTested": 15722
     },
-    "Zip code: 98188": {
+    "98188": {
       "positives": 917,
       "totalTests": 13008,
       "deaths": 7,
       "hospitalizations": 69,
       "peopleTested": 6547
     },
-    "Zip code: 98032": {
+    "98032": {
       "positives": 1139,
       "totalTests": 13660,
       "deaths": 14,
       "hospitalizations": 68,
       "peopleTested": 9030
     },
-    "Zip code: 98001": {
+    "98001": {
       "positives": 917,
       "totalTests": 10913,
       "deaths": 14,
       "hospitalizations": 79,
       "peopleTested": 7903
     },
-    "Zip code: 98178": {
+    "98178": {
       "positives": 554,
       "totalTests": 11119,
       "deaths": 8,
       "hospitalizations": 37,
       "peopleTested": 6840
     },
-    "Zip code: 98047": {
+    "98047": {
       "positives": 174,
       "totalTests": 1947,
       "deaths": 3,
       "hospitalizations": 14,
       "peopleTested": 1453
     },
-    "Zip code: 98028": {
+    "98028": {
       "positives": 248,
       "totalTests": 7793,
       "deaths": 9,
       "hospitalizations": 35,
       "peopleTested": 5301
     },
-    "Zip code: 98034": {
+    "98034": {
       "positives": 585,
       "totalTests": 14178,
       "deaths": 55,
       "hospitalizations": 104,
       "peopleTested": 10061
     },
-    "Zip code: 98039": {
+    "98039": {
       "positives": 43,
       "totalTests": 1458,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 906
     },
-    "Zip code: 98057": {
+    "98057": {
       "positives": 315,
       "totalTests": 6811,
       "deaths": 10,
       "hospitalizations": 27,
       "peopleTested": 4434
     },
-    "Zip code: 98011": {
+    "98011": {
       "positives": 277,
       "totalTests": 8649,
       "deaths": 12,
       "hospitalizations": 27,
       "peopleTested": 5964
     },
-    "Zip code: 98004": {
+    "98004": {
       "positives": 373,
       "totalTests": 13684,
       "deaths": 10,
       "hospitalizations": 40,
       "peopleTested": 9134
     },
-    "Zip code: 98040": {
+    "98040": {
       "positives": 238,
       "totalTests": 12363,
       "deaths": 5,
       "hospitalizations": 18,
       "peopleTested": 7764
     },
-    "Zip code: 98055": {
+    "98055": {
       "positives": 441,
       "totalTests": 7940,
       "deaths": 18,
       "hospitalizations": 42,
       "peopleTested": 5391
     },
-    "Zip code: 98031": {
+    "98031": {
       "positives": 985,
       "totalTests": 13186,
       "deaths": 18,
       "hospitalizations": 84,
       "peopleTested": 9042
     },
-    "Zip code: 98030": {
+    "98030": {
       "positives": 1171,
       "totalTests": 11429,
       "deaths": 24,
       "hospitalizations": 93,
       "peopleTested": 8195
     },
-    "Zip code: 98002": {
+    "98002": {
       "positives": 1133,
       "totalTests": 12907,
       "deaths": 19,
       "hospitalizations": 95,
       "peopleTested": 8645
     },
-    "Zip code: 98092": {
+    "98092": {
       "positives": 953,
       "totalTests": 11550,
       "deaths": 9,
       "hospitalizations": 83,
       "peopleTested": 8481
     },
-    "Zip code: 98033": {
+    "98033": {
       "positives": 387,
       "totalTests": 13762,
       "deaths": 7,
       "hospitalizations": 24,
       "peopleTested": 9538
     },
-    "Zip code: 98006": {
+    "98006": {
       "positives": 304,
       "totalTests": 11395,
       "deaths": 4,
       "hospitalizations": 18,
       "peopleTested": 7886
     },
-    "Zip code: 98056": {
+    "98056": {
       "positives": 664,
       "totalTests": 12227,
       "deaths": 10,
       "hospitalizations": 50,
       "peopleTested": 8044
     },
-    "Zip code: 98058": {
+    "98058": {
       "positives": 679,
       "totalTests": 13975,
       "deaths": 18,
       "hospitalizations": 55,
       "peopleTested": 9600
     },
-    "Zip code: 98072": {
+    "98072": {
       "positives": 201,
       "totalTests": 6181,
       "deaths": 5,
       "hospitalizations": 21,
       "peopleTested": 4429
     },
-    "Zip code: 98052": {
+    "98052": {
       "positives": 546,
       "totalTests": 17902,
       "deaths": 50,
       "hospitalizations": 75,
       "peopleTested": 13080
     },
-    "Zip code: 98005": {
+    "98005": {
       "positives": 202,
       "totalTests": 6037,
       "deaths": 0,
       "hospitalizations": 22,
       "peopleTested": 4080
     },
-    "Zip code: 98059": {
+    "98059": {
       "positives": 477,
       "totalTests": 12001,
       "deaths": 7,
       "hospitalizations": 37,
       "peopleTested": 8306
     },
-    "Zip code: 98042": {
+    "98042": {
       "positives": 815,
       "totalTests": 14185,
       "deaths": 9,
       "hospitalizations": 53,
       "peopleTested": 9876
     },
-    "Zip code: 98007": {
+    "98007": {
       "positives": 342,
       "totalTests": 6800,
       "deaths": 13,
       "hospitalizations": 37,
       "peopleTested": 4878
     },
-    "Zip code: 98008": {
+    "98008": {
       "positives": 320,
       "totalTests": 7368,
       "deaths": 16,
       "hospitalizations": 47,
       "peopleTested": 5143
     },
-    "Zip code: 98053": {
+    "98053": {
       "positives": 111,
       "totalTests": 5183,
       "deaths": 6,
       "hospitalizations": 15,
       "peopleTested": 3658
     },
-    "Zip code: 98074": {
+    "98074": {
       "positives": 172,
       "totalTests": 7431,
       "deaths": 5,
       "hospitalizations": 7,
       "peopleTested": 5384
     },
-    "Zip code: 98027": {
+    "98027": {
       "positives": 327,
       "totalTests": 10329,
       "deaths": 25,
       "hospitalizations": 47,
       "peopleTested": 6955
     },
-    "Zip code: 98022": {
+    "98022": {
       "positives": 301,
       "totalTests": 5768,
       "deaths": 27,
       "hospitalizations": 38,
       "peopleTested": 4223
     },
-    "Zip code: 98077": {
+    "98077": {
       "positives": 96,
       "totalTests": 3406,
       "deaths": 2,
       "hospitalizations": 6,
       "peopleTested": 2468
     },
-    "Zip code: 98075": {
+    "98075": {
       "positives": 198,
       "totalTests": 6735,
       "deaths": 4,
       "hospitalizations": 10,
       "peopleTested": 4737
     },
-    "Zip code: 98038": {
+    "98038": {
       "positives": 409,
       "totalTests": 10004,
       "deaths": 3,
       "hospitalizations": 21,
       "peopleTested": 7360
     },
-    "Zip code: 98029": {
+    "98029": {
       "positives": 191,
       "totalTests": 10277,
       "deaths": 13,
       "hospitalizations": 14,
       "peopleTested": 5898
     },
-    "Zip code: 98010": {
+    "98010": {
       "positives": 70,
       "totalTests": 1603,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 1193
     },
-    "Zip code: 98051": {
+    "98051": {
       "positives": 66,
       "totalTests": 1081,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 816
     },
-    "Zip code: 98019": {
+    "98019": {
       "positives": 81,
       "totalTests": 3053,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 2248
     },
-    "Zip code: 98014": {
+    "98014": {
       "positives": 60,
       "totalTests": 2063,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 1472
     },
-    "Zip code: 98024": {
+    "98024": {
       "positives": 53,
       "totalTests": 1616,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1179
     },
-    "Zip code: 98065": {
+    "98065": {
       "positives": 170,
       "totalTests": 5061,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 3664
     },
-    "Zip code: 98045": {
+    "98045": {
       "positives": 159,
       "totalTests": 5613,
       "deaths": 3,
       "hospitalizations": 6,
       "peopleTested": 3832
     },
-    "Zip code: 98224": {
+    "98224": {
       "positives": 1,
       "totalTests": 60,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 30
     },
-    "Zip code: 98288": {
+    "98288": {
       "positives": 0,
       "totalTests": 91,
       "deaths": 0,
@@ -1245,2779 +1245,2779 @@
     }
   },
   "census": {
-    "Census tract: 277.01": {
+    "277.01": {
       "positives": 8,
       "totalTests": 2192,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1480
     },
-    "Census tract: 277.02": {
+    "277.02": {
       "positives": 18,
       "totalTests": 1569,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1133
     },
-    "Census tract: 56": {
+    "56": {
       "positives": 45,
       "totalTests": 3849,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 2361
     },
-    "Census tract: 31": {
+    "31": {
       "positives": 45,
       "totalTests": 3589,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 2159
     },
-    "Census tract: 47": {
+    "47": {
       "positives": 106,
       "totalTests": 6924,
       "deaths": 4,
       "hospitalizations": 11,
       "peopleTested": 3914
     },
-    "Census tract: 58.01": {
+    "58.01": {
       "positives": 36,
       "totalTests": 3289,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 2003
     },
-    "Census tract: 58.02": {
+    "58.02": {
       "positives": 48,
       "totalTests": 3377,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1930
     },
-    "Census tract: 98": {
+    "98": {
       "positives": 65,
       "totalTests": 4356,
       "deaths": 3,
       "hospitalizations": 6,
       "peopleTested": 2513
     },
-    "Census tract: 105": {
+    "105": {
       "positives": 110,
       "totalTests": 5923,
       "deaths": 8,
       "hospitalizations": 7,
       "peopleTested": 3320
     },
-    "Census tract: 116": {
+    "116": {
       "positives": 88,
       "totalTests": 4879,
       "deaths": 4,
       "hospitalizations": 5,
       "peopleTested": 2514
     },
-    "Census tract: 121": {
+    "121": {
       "positives": 28,
       "totalTests": 1574,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 975
     },
-    "Census tract: 303.06": {
+    "303.06": {
       "positives": 121,
       "totalTests": 1868,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1335
     },
-    "Census tract: 209": {
+    "209": {
       "positives": 33,
       "totalTests": 1685,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1044
     },
-    "Census tract: 4.02": {
+    "4.02": {
       "positives": 72,
       "totalTests": 2855,
       "deaths": 3,
       "hospitalizations": 9,
       "peopleTested": 1665
     },
-    "Census tract: 17.02": {
+    "17.02": {
       "positives": 94,
       "totalTests": 4086,
       "deaths": 5,
       "hospitalizations": 16,
       "peopleTested": 1942
     },
-    "Census tract: 29": {
+    "29": {
       "positives": 35,
       "totalTests": 2994,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1712
     },
-    "Census tract: 34": {
+    "34": {
       "positives": 21,
       "totalTests": 2340,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1347
     },
-    "Census tract: 48": {
+    "48": {
       "positives": 30,
       "totalTests": 3527,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1933
     },
-    "Census tract: 68": {
+    "68": {
       "positives": 17,
       "totalTests": 1957,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1154
     },
-    "Census tract: 71": {
+    "71": {
       "positives": 76,
       "totalTests": 2922,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1723
     },
-    "Census tract: 99": {
+    "99": {
       "positives": 57,
       "totalTests": 3426,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2062
     },
-    "Census tract: 108": {
+    "108": {
       "positives": 86,
       "totalTests": 2746,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1596
     },
-    "Census tract: 114.01": {
+    "114.01": {
       "positives": 83,
       "totalTests": 2234,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1344
     },
-    "Census tract: 114.02": {
+    "114.02": {
       "positives": 93,
       "totalTests": 2312,
       "deaths": 1,
       "hospitalizations": 11,
       "peopleTested": 1361
     },
-    "Census tract: 267": {
+    "267": {
       "positives": 115,
       "totalTests": 2393,
       "deaths": 1,
       "hospitalizations": 7,
       "peopleTested": 1536
     },
-    "Census tract: 276": {
+    "276": {
       "positives": 109,
       "totalTests": 1482,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 960
     },
-    "Census tract: 279": {
+    "279": {
       "positives": 142,
       "totalTests": 3466,
       "deaths": 3,
       "hospitalizations": 24,
       "peopleTested": 2164
     },
-    "Census tract: 278": {
+    "278": {
       "positives": 25,
       "totalTests": 1518,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 991
     },
-    "Census tract: 303.08": {
+    "303.08": {
       "positives": 174,
       "totalTests": 2460,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1670
     },
-    "Census tract: 303.10": {
+    "303.10": {
       "positives": 157,
       "totalTests": 2067,
       "deaths": 2,
       "hospitalizations": 13,
       "peopleTested": 1469
     },
-    "Census tract: 210": {
+    "210": {
       "positives": 73,
       "totalTests": 2661,
       "deaths": 2,
       "hospitalizations": 12,
       "peopleTested": 1693
     },
-    "Census tract: 6": {
+    "6": {
       "positives": 146,
       "totalTests": 4951,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 2898
     },
-    "Census tract: 19": {
+    "19": {
       "positives": 57,
       "totalTests": 2751,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1587
     },
-    "Census tract: 27": {
+    "27": {
       "positives": 47,
       "totalTests": 3781,
       "deaths": 2,
       "hospitalizations": 5,
       "peopleTested": 2104
     },
-    "Census tract: 46": {
+    "46": {
       "positives": 15,
       "totalTests": 2262,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1309
     },
-    "Census tract: 51": {
+    "51": {
       "positives": 26,
       "totalTests": 2760,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 1536
     },
-    "Census tract: 66": {
+    "66": {
       "positives": 50,
       "totalTests": 3085,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1610
     },
-    "Census tract: 73": {
+    "73": {
       "positives": 145,
       "totalTests": 5887,
       "deaths": 3,
       "hospitalizations": 17,
       "peopleTested": 3318
     },
-    "Census tract: 81": {
+    "81": {
       "positives": 108,
       "totalTests": 12939,
       "deaths": 4,
       "hospitalizations": 14,
       "peopleTested": 6976
     },
-    "Census tract: 93": {
+    "93": {
       "positives": 78,
       "totalTests": 3211,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 1751
     },
-    "Census tract: 109": {
+    "109": {
       "positives": 23,
       "totalTests": 2122,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 790
     },
-    "Census tract: 112": {
+    "112": {
       "positives": 94,
       "totalTests": 1724,
       "deaths": 2,
       "hospitalizations": 7,
       "peopleTested": 1034
     },
-    "Census tract: 265": {
+    "265": {
       "positives": 167,
       "totalTests": 1930,
       "deaths": 3,
       "hospitalizations": 13,
       "peopleTested": 1186
     },
-    "Census tract: 274": {
+    "274": {
       "positives": 164,
       "totalTests": 2181,
       "deaths": 0,
       "hospitalizations": 11,
       "peopleTested": 1404
     },
-    "Census tract: 280": {
+    "280": {
       "positives": 102,
       "totalTests": 1204,
       "deaths": 1,
       "hospitalizations": 7,
       "peopleTested": 799
     },
-    "Census tract: 285": {
+    "285": {
       "positives": 87,
       "totalTests": 1636,
       "deaths": 1,
       "hospitalizations": 12,
       "peopleTested": 1076
     },
-    "Census tract: 287": {
+    "287": {
       "positives": 69,
       "totalTests": 1969,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1282
     },
-    "Census tract: 302.02": {
+    "302.02": {
       "positives": 335,
       "totalTests": 2527,
       "deaths": 9,
       "hospitalizations": 27,
       "peopleTested": 1742
     },
-    "Census tract: 303.14": {
+    "303.14": {
       "positives": 92,
       "totalTests": 1396,
       "deaths": 3,
       "hospitalizations": 11,
       "peopleTested": 946
     },
-    "Census tract: 303.04": {
+    "303.04": {
       "positives": 114,
       "totalTests": 1217,
       "deaths": 0,
       "hospitalizations": 9,
       "peopleTested": 840
     },
-    "Census tract: 211": {
+    "211": {
       "positives": 114,
       "totalTests": 2540,
       "deaths": 16,
       "hospitalizations": 23,
       "peopleTested": 1370
     },
-    "Census tract: 7": {
+    "7": {
       "positives": 58,
       "totalTests": 2401,
       "deaths": 2,
       "hospitalizations": 5,
       "peopleTested": 1498
     },
-    "Census tract: 11": {
+    "11": {
       "positives": 17,
       "totalTests": 1460,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 856
     },
-    "Census tract: 26": {
+    "26": {
       "positives": 39,
       "totalTests": 3197,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1869
     },
-    "Census tract: 44": {
+    "44": {
       "positives": 101,
       "totalTests": 6978,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2961
     },
-    "Census tract: 53.02": {
+    "53.02": {
       "positives": 34,
       "totalTests": 2541,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1089
     },
-    "Census tract: 62": {
+    "62": {
       "positives": 44,
       "totalTests": 2938,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1670
     },
-    "Census tract: 76": {
+    "76": {
       "positives": 36,
       "totalTests": 3492,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1783
     },
-    "Census tract: 87": {
+    "87": {
       "positives": 58,
       "totalTests": 4733,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 1874
     },
-    "Census tract: 94": {
+    "94": {
       "positives": 113,
       "totalTests": 4222,
       "deaths": 2,
       "hospitalizations": 10,
       "peopleTested": 2281
     },
-    "Census tract: 100.01": {
+    "100.01": {
       "positives": 95,
       "totalTests": 2467,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1388
     },
-    "Census tract: 104.02": {
+    "104.02": {
       "positives": 81,
       "totalTests": 2785,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 1517
     },
-    "Census tract: 264": {
+    "264": {
       "positives": 157,
       "totalTests": 2700,
       "deaths": 1,
       "hospitalizations": 10,
       "peopleTested": 1502
     },
-    "Census tract: 273": {
+    "273": {
       "positives": 206,
       "totalTests": 2247,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1524
     },
-    "Census tract: 281": {
+    "281": {
       "positives": 149,
       "totalTests": 1009,
       "deaths": 3,
       "hospitalizations": 10,
       "peopleTested": 673
     },
-    "Census tract: 284.02": {
+    "284.02": {
       "positives": 201,
       "totalTests": 1815,
       "deaths": 1,
       "hospitalizations": 16,
       "peopleTested": 1233
     },
-    "Census tract: 288.01": {
+    "288.01": {
       "positives": 63,
       "totalTests": 2211,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 1047
     },
-    "Census tract: 289.01": {
+    "289.01": {
       "positives": 58,
       "totalTests": 1590,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1036
     },
-    "Census tract: 290.03": {
+    "290.03": {
       "positives": 139,
       "totalTests": 2696,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 1371
     },
-    "Census tract: 300.04": {
+    "300.04": {
       "positives": 314,
       "totalTests": 2711,
       "deaths": 1,
       "hospitalizations": 25,
       "peopleTested": 1868
     },
-    "Census tract: 300.05": {
+    "300.05": {
       "positives": 251,
       "totalTests": 1781,
       "deaths": 1,
       "hospitalizations": 16,
       "peopleTested": 1305
     },
-    "Census tract: 300.06": {
+    "300.06": {
       "positives": 127,
       "totalTests": 1756,
       "deaths": 1,
       "hospitalizations": 11,
       "peopleTested": 1238
     },
-    "Census tract: 303.13": {
+    "303.13": {
       "positives": 184,
       "totalTests": 1799,
       "deaths": 18,
       "hospitalizations": 24,
       "peopleTested": 1161
     },
-    "Census tract: 304.03": {
+    "304.03": {
       "positives": 107,
       "totalTests": 1458,
       "deaths": 4,
       "hospitalizations": 9,
       "peopleTested": 1000
     },
-    "Census tract: 213": {
+    "213": {
       "positives": 49,
       "totalTests": 1683,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1032
     },
-    "Census tract: 8": {
+    "8": {
       "positives": 23,
       "totalTests": 1308,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 821
     },
-    "Census tract: 22": {
+    "22": {
       "positives": 22,
       "totalTests": 2967,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1865
     },
-    "Census tract: 24": {
+    "24": {
       "positives": 16,
       "totalTests": 1683,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1002
     },
-    "Census tract: 42": {
+    "42": {
       "positives": 49,
       "totalTests": 5090,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 2941
     },
-    "Census tract: 78": {
+    "78": {
       "positives": 33,
       "totalTests": 3887,
       "deaths": 3,
       "hospitalizations": 3,
       "peopleTested": 2171
     },
-    "Census tract: 103": {
+    "103": {
       "positives": 131,
       "totalTests": 5042,
       "deaths": 2,
       "hospitalizations": 4,
       "peopleTested": 2719
     },
-    "Census tract: 110.01": {
+    "110.01": {
       "positives": 139,
       "totalTests": 2664,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1304
     },
-    "Census tract: 117": {
+    "117": {
       "positives": 132,
       "totalTests": 2391,
       "deaths": 1,
       "hospitalizations": 14,
       "peopleTested": 1503
     },
-    "Census tract: 263": {
+    "263": {
       "positives": 52,
       "totalTests": 717,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 447
     },
-    "Census tract: 272": {
+    "272": {
       "positives": 104,
       "totalTests": 1182,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 762
     },
-    "Census tract: 282": {
+    "282": {
       "positives": 227,
       "totalTests": 1975,
       "deaths": 1,
       "hospitalizations": 14,
       "peopleTested": 1271
     },
-    "Census tract: 284.03": {
+    "284.03": {
       "positives": 172,
       "totalTests": 1888,
       "deaths": 1,
       "hospitalizations": 15,
       "peopleTested": 1260
     },
-    "Census tract: 283": {
+    "283": {
       "positives": 165,
       "totalTests": 2265,
       "deaths": 4,
       "hospitalizations": 19,
       "peopleTested": 1452
     },
-    "Census tract: 291.01": {
+    "291.01": {
       "positives": 70,
       "totalTests": 1362,
       "deaths": 2,
       "hospitalizations": 9,
       "peopleTested": 932
     },
-    "Census tract: 291.02": {
+    "291.02": {
       "positives": 125,
       "totalTests": 1581,
       "deaths": 3,
       "hospitalizations": 7,
       "peopleTested": 1067
     },
-    "Census tract: 298.02": {
+    "298.02": {
       "positives": 230,
       "totalTests": 3027,
       "deaths": 4,
       "hospitalizations": 20,
       "peopleTested": 2174
     },
-    "Census tract: 299.01": {
+    "299.01": {
       "positives": 149,
       "totalTests": 1421,
       "deaths": 0,
       "hospitalizations": 14,
       "peopleTested": 1041
     },
-    "Census tract: 304.01": {
+    "304.01": {
       "positives": 232,
       "totalTests": 2671,
       "deaths": 3,
       "hospitalizations": 20,
       "peopleTested": 1932
     },
-    "Census tract: 304.04": {
+    "304.04": {
       "positives": 103,
       "totalTests": 1412,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1003
     },
-    "Census tract: 41": {
+    "41": {
       "positives": 56,
       "totalTests": 5128,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 3002
     },
-    "Census tract: 119": {
+    "119": {
       "positives": 160,
       "totalTests": 3780,
       "deaths": 1,
       "hospitalizations": 10,
       "peopleTested": 2192
     },
-    "Census tract: 261": {
+    "261": {
       "positives": 184,
       "totalTests": 2932,
       "deaths": 4,
       "hospitalizations": 14,
       "peopleTested": 1853
     },
-    "Census tract: 262": {
+    "262": {
       "positives": 181,
       "totalTests": 6527,
       "deaths": 2,
       "hospitalizations": 11,
       "peopleTested": 2274
     },
-    "Census tract: 292.06": {
+    "292.06": {
       "positives": 125,
       "totalTests": 1398,
       "deaths": 4,
       "hospitalizations": 16,
       "peopleTested": 941
     },
-    "Census tract: 292.05": {
+    "292.05": {
       "positives": 122,
       "totalTests": 1805,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1240
     },
-    "Census tract: 298.01": {
+    "298.01": {
       "positives": 216,
       "totalTests": 2517,
       "deaths": 3,
       "hospitalizations": 12,
       "peopleTested": 1730
     },
-    "Census tract: 299.02": {
+    "299.02": {
       "positives": 122,
       "totalTests": 1695,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 1211
     },
-    "Census tract: 309.01": {
+    "309.01": {
       "positives": 102,
       "totalTests": 1089,
       "deaths": 1,
       "hospitalizations": 10,
       "peopleTested": 825
     },
-    "Census tract: 221.02": {
+    "221.02": {
       "positives": 55,
       "totalTests": 1903,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1370
     },
-    "Census tract: 222.03": {
+    "222.03": {
       "positives": 60,
       "totalTests": 1522,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1101
     },
-    "Census tract: 242": {
+    "242": {
       "positives": 39,
       "totalTests": 1448,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 898
     },
-    "Census tract: 292.03": {
+    "292.03": {
       "positives": 98,
       "totalTests": 1320,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 933
     },
-    "Census tract: 297": {
+    "297": {
       "positives": 255,
       "totalTests": 3363,
       "deaths": 3,
       "hospitalizations": 15,
       "peopleTested": 2389
     },
-    "Census tract: 305.01": {
+    "305.01": {
       "positives": 106,
       "totalTests": 1506,
       "deaths": 5,
       "hospitalizations": 14,
       "peopleTested": 832
     },
-    "Census tract: 308.01": {
+    "308.01": {
       "positives": 305,
       "totalTests": 3245,
       "deaths": 3,
       "hospitalizations": 18,
       "peopleTested": 1978
     },
-    "Census tract: 222.02": {
+    "222.02": {
       "positives": 71,
       "totalTests": 2106,
       "deaths": 5,
       "hospitalizations": 8,
       "peopleTested": 1531
     },
-    "Census tract: 240": {
+    "240": {
       "positives": 75,
       "totalTests": 2546,
       "deaths": 2,
       "hospitalizations": 12,
       "peopleTested": 1749
     },
-    "Census tract: 239": {
+    "239": {
       "positives": 100,
       "totalTests": 2774,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 1874
     },
-    "Census tract: 246.01": {
+    "246.01": {
       "positives": 36,
       "totalTests": 2327,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1470
     },
-    "Census tract: 253.02": {
+    "253.02": {
       "positives": 99,
       "totalTests": 3065,
       "deaths": 3,
       "hospitalizations": 11,
       "peopleTested": 1913
     },
-    "Census tract: 258.06": {
+    "258.06": {
       "positives": 100,
       "totalTests": 1696,
       "deaths": 5,
       "hospitalizations": 5,
       "peopleTested": 1156
     },
-    "Census tract: 293.03": {
+    "293.03": {
       "positives": 130,
       "totalTests": 2833,
       "deaths": 7,
       "hospitalizations": 17,
       "peopleTested": 1868
     },
-    "Census tract: 293.05": {
+    "293.05": {
       "positives": 107,
       "totalTests": 1425,
       "deaths": 4,
       "hospitalizations": 8,
       "peopleTested": 965
     },
-    "Census tract: 292.04": {
+    "292.04": {
       "positives": 165,
       "totalTests": 2264,
       "deaths": 2,
       "hospitalizations": 7,
       "peopleTested": 1616
     },
-    "Census tract: 305.03": {
+    "305.03": {
       "positives": 176,
       "totalTests": 1789,
       "deaths": 7,
       "hospitalizations": 24,
       "peopleTested": 1282
     },
-    "Census tract: 305.04": {
+    "305.04": {
       "positives": 130,
       "totalTests": 1406,
       "deaths": 0,
       "hospitalizations": 10,
       "peopleTested": 974
     },
-    "Census tract: 306": {
+    "306": {
       "positives": 149,
       "totalTests": 2215,
       "deaths": 5,
       "hospitalizations": 13,
       "peopleTested": 1584
     },
-    "Census tract: 308.02": {
+    "308.02": {
       "positives": 135,
       "totalTests": 1357,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 975
     },
-    "Census tract: 310": {
+    "310": {
       "positives": 79,
       "totalTests": 1370,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 990
     },
-    "Census tract: 219.05": {
+    "219.05": {
       "positives": 54,
       "totalTests": 1647,
       "deaths": 3,
       "hospitalizations": 10,
       "peopleTested": 1112
     },
-    "Census tract: 219.03": {
+    "219.03": {
       "positives": 53,
       "totalTests": 1758,
       "deaths": 3,
       "hospitalizations": 6,
       "peopleTested": 1235
     },
-    "Census tract: 220.06": {
+    "220.06": {
       "positives": 131,
       "totalTests": 1239,
       "deaths": 41,
       "hospitalizations": 56,
       "peopleTested": 866
     },
-    "Census tract: 225": {
+    "225": {
       "positives": 104,
       "totalTests": 3321,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 2287
     },
-    "Census tract: 227.03": {
+    "227.03": {
       "positives": 34,
       "totalTests": 848,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 582
     },
-    "Census tract: 237": {
+    "237": {
       "positives": 40,
       "totalTests": 1470,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1028
     },
-    "Census tract: 238.01": {
+    "238.01": {
       "positives": 23,
       "totalTests": 1065,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 759
     },
-    "Census tract: 247.01": {
+    "247.01": {
       "positives": 38,
       "totalTests": 1121,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 770
     },
-    "Census tract: 247.02": {
+    "247.02": {
       "positives": 92,
       "totalTests": 2672,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 1701
     },
-    "Census tract: 252": {
+    "252": {
       "positives": 155,
       "totalTests": 2840,
       "deaths": 4,
       "hospitalizations": 12,
       "peopleTested": 1927
     },
-    "Census tract: 254": {
+    "254": {
       "positives": 182,
       "totalTests": 2496,
       "deaths": 2,
       "hospitalizations": 15,
       "peopleTested": 1691
     },
-    "Census tract: 257.01": {
+    "257.01": {
       "positives": 128,
       "totalTests": 2139,
       "deaths": 3,
       "hospitalizations": 16,
       "peopleTested": 1411
     },
-    "Census tract: 258.05": {
+    "258.05": {
       "positives": 85,
       "totalTests": 1764,
       "deaths": 3,
       "hospitalizations": 13,
       "peopleTested": 1233
     },
-    "Census tract: 293.06": {
+    "293.06": {
       "positives": 66,
       "totalTests": 1227,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 825
     },
-    "Census tract: 294.05": {
+    "294.05": {
       "positives": 96,
       "totalTests": 1973,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1297
     },
-    "Census tract: 294.06": {
+    "294.06": {
       "positives": 92,
       "totalTests": 1479,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 1038
     },
-    "Census tract: 295.02": {
+    "295.02": {
       "positives": 192,
       "totalTests": 2221,
       "deaths": 1,
       "hospitalizations": 16,
       "peopleTested": 1624
     },
-    "Census tract: 296.01": {
+    "296.01": {
       "positives": 277,
       "totalTests": 2262,
       "deaths": 1,
       "hospitalizations": 17,
       "peopleTested": 1640
     },
-    "Census tract: 296.02": {
+    "296.02": {
       "positives": 170,
       "totalTests": 2103,
       "deaths": 0,
       "hospitalizations": 11,
       "peopleTested": 1539
     },
-    "Census tract: 312.05": {
+    "312.05": {
       "positives": 260,
       "totalTests": 2648,
       "deaths": 1,
       "hospitalizations": 23,
       "peopleTested": 1954
     },
-    "Census tract: 311": {
+    "311": {
       "positives": 186,
       "totalTests": 1973,
       "deaths": 3,
       "hospitalizations": 15,
       "peopleTested": 1432
     },
-    "Census tract: 219.06": {
+    "219.06": {
       "positives": 45,
       "totalTests": 1091,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 805
     },
-    "Census tract: 219.04": {
+    "219.04": {
       "positives": 57,
       "totalTests": 1404,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 989
     },
-    "Census tract: 226.05": {
+    "226.05": {
       "positives": 42,
       "totalTests": 1379,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 1014
     },
-    "Census tract: 226.06": {
+    "226.06": {
       "positives": 46,
       "totalTests": 1519,
       "deaths": 9,
       "hospitalizations": 10,
       "peopleTested": 1109
     },
-    "Census tract: 228.01": {
+    "228.01": {
       "positives": 85,
       "totalTests": 2069,
       "deaths": 2,
       "hospitalizations": 8,
       "peopleTested": 1474
     },
-    "Census tract: 236.01": {
+    "236.01": {
       "positives": 62,
       "totalTests": 2000,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 1144
     },
-    "Census tract: 234.01": {
+    "234.01": {
       "positives": 49,
       "totalTests": 1178,
       "deaths": 8,
       "hospitalizations": 8,
       "peopleTested": 821
     },
-    "Census tract: 249.01": {
+    "249.01": {
       "positives": 31,
       "totalTests": 1480,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1033
     },
-    "Census tract: 249.03": {
+    "249.03": {
       "positives": 35,
       "totalTests": 1977,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1349
     },
-    "Census tract: 250.05": {
+    "250.05": {
       "positives": 30,
       "totalTests": 1776,
       "deaths": 2,
       "hospitalizations": 4,
       "peopleTested": 1215
     },
-    "Census tract: 250.01": {
+    "250.01": {
       "positives": 34,
       "totalTests": 1663,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 1098
     },
-    "Census tract: 251.01": {
+    "251.01": {
       "positives": 113,
       "totalTests": 1720,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1206
     },
-    "Census tract: 256.01": {
+    "256.01": {
       "positives": 93,
       "totalTests": 1864,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 1258
     },
-    "Census tract: 256.02": {
+    "256.02": {
       "positives": 66,
       "totalTests": 1881,
       "deaths": 2,
       "hospitalizations": 2,
       "peopleTested": 1310
     },
-    "Census tract: 258.04": {
+    "258.04": {
       "positives": 60,
       "totalTests": 1257,
       "deaths": 2,
       "hospitalizations": 7,
       "peopleTested": 839
     },
-    "Census tract: 293.04": {
+    "293.04": {
       "positives": 66,
       "totalTests": 1747,
       "deaths": 2,
       "hospitalizations": 5,
       "peopleTested": 1211
     },
-    "Census tract: 293.07": {
+    "293.07": {
       "positives": 57,
       "totalTests": 1154,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 839
     },
-    "Census tract: 318": {
+    "318": {
       "positives": 63,
       "totalTests": 1463,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 1053
     },
-    "Census tract: 317.03": {
+    "317.03": {
       "positives": 120,
       "totalTests": 2334,
       "deaths": 1,
       "hospitalizations": 10,
       "peopleTested": 1582
     },
-    "Census tract: 317.04": {
+    "317.04": {
       "positives": 157,
       "totalTests": 2163,
       "deaths": 2,
       "hospitalizations": 8,
       "peopleTested": 1286
     },
-    "Census tract: 312.04": {
+    "312.04": {
       "positives": 73,
       "totalTests": 1569,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1147
     },
-    "Census tract: 323.21": {
+    "323.21": {
       "positives": 27,
       "totalTests": 1624,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1234
     },
-    "Census tract: 323.09": {
+    "323.09": {
       "positives": 95,
       "totalTests": 3091,
       "deaths": 20,
       "hospitalizations": 20,
       "peopleTested": 2278
     },
-    "Census tract: 228.02": {
+    "228.02": {
       "positives": 31,
       "totalTests": 1241,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 912
     },
-    "Census tract: 228.03": {
+    "228.03": {
       "positives": 52,
       "totalTests": 1539,
       "deaths": 6,
       "hospitalizations": 9,
       "peopleTested": 1175
     },
-    "Census tract: 232.01": {
+    "232.01": {
       "positives": 92,
       "totalTests": 1490,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 1095
     },
-    "Census tract: 233": {
+    "233": {
       "positives": 103,
       "totalTests": 2019,
       "deaths": 4,
       "hospitalizations": 18,
       "peopleTested": 1439
     },
-    "Census tract: 249.02": {
+    "249.02": {
       "positives": 23,
       "totalTests": 1076,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 727
     },
-    "Census tract: 251.02": {
+    "251.02": {
       "positives": 113,
       "totalTests": 2713,
       "deaths": 1,
       "hospitalizations": 12,
       "peopleTested": 1863
     },
-    "Census tract: 319.07": {
+    "319.07": {
       "positives": 84,
       "totalTests": 2453,
       "deaths": 4,
       "hospitalizations": 8,
       "peopleTested": 1672
     },
-    "Census tract: 319.09": {
+    "319.09": {
       "positives": 50,
       "totalTests": 1009,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 712
     },
-    "Census tract: 312.02": {
+    "312.02": {
       "positives": 121,
       "totalTests": 2184,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1602
     },
-    "Census tract: 323.22": {
+    "323.22": {
       "positives": 8,
       "totalTests": 894,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 636
     },
-    "Census tract: 323.23": {
+    "323.23": {
       "positives": 47,
       "totalTests": 2029,
       "deaths": 4,
       "hospitalizations": 8,
       "peopleTested": 1383
     },
-    "Census tract: 323.24": {
+    "323.24": {
       "positives": 49,
       "totalTests": 1263,
       "deaths": 3,
       "hospitalizations": 7,
       "peopleTested": 944
     },
-    "Census tract: 229.02": {
+    "229.02": {
       "positives": 48,
       "totalTests": 1822,
       "deaths": 6,
       "hospitalizations": 9,
       "peopleTested": 1285
     },
-    "Census tract: 229.01": {
+    "229.01": {
       "positives": 26,
       "totalTests": 774,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 521
     },
-    "Census tract: 231": {
+    "231": {
       "positives": 28,
       "totalTests": 1184,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 834
     },
-    "Census tract: 234.03": {
+    "234.03": {
       "positives": 24,
       "totalTests": 1212,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 863
     },
-    "Census tract: 250.03": {
+    "250.03": {
       "positives": 58,
       "totalTests": 2210,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1528
     },
-    "Census tract: 250.06": {
+    "250.06": {
       "positives": 33,
       "totalTests": 2000,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1345
     },
-    "Census tract: 319.03": {
+    "319.03": {
       "positives": 71,
       "totalTests": 2116,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 1475
     },
-    "Census tract: 319.06": {
+    "319.06": {
       "positives": 43,
       "totalTests": 1167,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 848
     },
-    "Census tract: 317.06": {
+    "317.06": {
       "positives": 123,
       "totalTests": 2235,
       "deaths": 3,
       "hospitalizations": 7,
       "peopleTested": 1588
     },
-    "Census tract: 316.01": {
+    "316.01": {
       "positives": 63,
       "totalTests": 1412,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 1029
     },
-    "Census tract: 323.26": {
+    "323.26": {
       "positives": 70,
       "totalTests": 1143,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 814
     },
-    "Census tract: 323.13": {
+    "323.13": {
       "positives": 26,
       "totalTests": 1245,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 904
     },
-    "Census tract: 323.16": {
+    "323.16": {
       "positives": 32,
       "totalTests": 1668,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1203
     },
-    "Census tract: 321.04": {
+    "321.04": {
       "positives": 148,
       "totalTests": 2746,
       "deaths": 23,
       "hospitalizations": 32,
       "peopleTested": 1693
     },
-    "Census tract: 319.04": {
+    "319.04": {
       "positives": 49,
       "totalTests": 1127,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 773
     },
-    "Census tract: 320.05": {
+    "320.05": {
       "positives": 132,
       "totalTests": 1708,
       "deaths": 1,
       "hospitalizations": 11,
       "peopleTested": 1259
     },
-    "Census tract: 320.06": {
+    "320.06": {
       "positives": 57,
       "totalTests": 1457,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1042
     },
-    "Census tract: 313.01": {
+    "313.01": {
       "positives": 28,
       "totalTests": 567,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 416
     },
-    "Census tract: 323.27": {
+    "323.27": {
       "positives": 27,
       "totalTests": 1243,
       "deaths": 3,
       "hospitalizations": 4,
       "peopleTested": 861
     },
-    "Census tract: 322.03": {
+    "322.03": {
       "positives": 47,
       "totalTests": 2332,
       "deaths": 3,
       "hospitalizations": 0,
       "peopleTested": 1646
     },
-    "Census tract: 322.07": {
+    "322.07": {
       "positives": 37,
       "totalTests": 1203,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 833
     },
-    "Census tract: 322.08": {
+    "322.08": {
       "positives": 89,
       "totalTests": 4959,
       "deaths": 4,
       "hospitalizations": 12,
       "peopleTested": 2131
     },
-    "Census tract: 320.02": {
+    "320.02": {
       "positives": 22,
       "totalTests": 738,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 541
     },
-    "Census tract: 320.07": {
+    "320.07": {
       "positives": 42,
       "totalTests": 1095,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 789
     },
-    "Census tract: 316.05": {
+    "316.05": {
       "positives": 43,
       "totalTests": 985,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 724
     },
-    "Census tract: 323.11": {
+    "323.11": {
       "positives": 32,
       "totalTests": 1475,
       "deaths": 2,
       "hospitalizations": 2,
       "peopleTested": 1085
     },
-    "Census tract: 323.29": {
+    "323.29": {
       "positives": 40,
       "totalTests": 1761,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 1243
     },
-    "Census tract: 323.28": {
+    "323.28": {
       "positives": 15,
       "totalTests": 799,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 589
     },
-    "Census tract: 323.18": {
+    "323.18": {
       "positives": 35,
       "totalTests": 1480,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1079
     },
-    "Census tract: 323.17": {
+    "323.17": {
       "positives": 47,
       "totalTests": 1614,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1201
     },
-    "Census tract: 321.03": {
+    "321.03": {
       "positives": 47,
       "totalTests": 2488,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1717
     },
-    "Census tract: 320.03": {
+    "320.03": {
       "positives": 60,
       "totalTests": 1784,
       "deaths": 2,
       "hospitalizations": 5,
       "peopleTested": 1306
     },
-    "Census tract: 320.10": {
+    "320.10": {
       "positives": 79,
       "totalTests": 1773,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 1308
     },
-    "Census tract: 320.11": {
+    "320.11": {
       "positives": 55,
       "totalTests": 1363,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1010
     },
-    "Census tract: 316.04": {
+    "316.04": {
       "positives": 57,
       "totalTests": 1416,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1042
     },
-    "Census tract: 316.03": {
+    "316.03": {
       "positives": 75,
       "totalTests": 1795,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1383
     },
-    "Census tract: 313.02": {
+    "313.02": {
       "positives": 53,
       "totalTests": 1089,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 820
     },
-    "Census tract: 323.15": {
+    "323.15": {
       "positives": 38,
       "totalTests": 1426,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 1016
     },
-    "Census tract: 322.14": {
+    "322.14": {
       "positives": 35,
       "totalTests": 1650,
       "deaths": 3,
       "hospitalizations": 3,
       "peopleTested": 1246
     },
-    "Census tract: 322.11": {
+    "322.11": {
       "positives": 32,
       "totalTests": 1301,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 903
     },
-    "Census tract: 322.12": {
+    "322.12": {
       "positives": 54,
       "totalTests": 2169,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1536
     },
-    "Census tract: 322.10": {
+    "322.10": {
       "positives": 82,
       "totalTests": 3907,
       "deaths": 11,
       "hospitalizations": 8,
       "peopleTested": 2764
     },
-    "Census tract: 321.02": {
+    "321.02": {
       "positives": 32,
       "totalTests": 1405,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 970
     },
-    "Census tract: 314": {
+    "314": {
       "positives": 108,
       "totalTests": 2115,
       "deaths": 24,
       "hospitalizations": 23,
       "peopleTested": 1505
     },
-    "Census tract: 324.01": {
+    "324.01": {
       "positives": 25,
       "totalTests": 1711,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1291
     },
-    "Census tract: 324.02": {
+    "324.02": {
       "positives": 50,
       "totalTests": 1627,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1156
     },
-    "Census tract: 322.15": {
+    "322.15": {
       "positives": 29,
       "totalTests": 1287,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 921
     },
-    "Census tract: 322.13": {
+    "322.13": {
       "positives": 45,
       "totalTests": 1411,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 942
     },
-    "Census tract: 315.01": {
+    "315.01": {
       "positives": 50,
       "totalTests": 1027,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 769
     },
-    "Census tract: 315.02": {
+    "315.02": {
       "positives": 47,
       "totalTests": 963,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 731
     },
-    "Census tract: 325": {
+    "325": {
       "positives": 26,
       "totalTests": 1641,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1162
     },
-    "Census tract: 326.01": {
+    "326.01": {
       "positives": 35,
       "totalTests": 967,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 705
     },
-    "Census tract: 326.02": {
+    "326.02": {
       "positives": 136,
       "totalTests": 4310,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 3155
     },
-    "Census tract: 327.02": {
+    "327.02": {
       "positives": 50,
       "totalTests": 2157,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 1454
     },
-    "Census tract: 327.03": {
+    "327.03": {
       "positives": 15,
       "totalTests": 878,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 614
     },
-    "Census tract: 328": {
+    "328": {
       "positives": 24,
       "totalTests": 844,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 567
     },
-    "Census tract: 327.04": {
+    "327.04": {
       "positives": 75,
       "totalTests": 2965,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2034
     },
-    "Census tract: 57": {
+    "57": {
       "positives": 31,
       "totalTests": 3357,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 2056
     },
-    "Census tract: 97.01": {
+    "97.01": {
       "positives": 72,
       "totalTests": 3072,
       "deaths": 2,
       "hospitalizations": 6,
       "peopleTested": 1838
     },
-    "Census tract: 32": {
+    "32": {
       "positives": 58,
       "totalTests": 5698,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 3387
     },
-    "Census tract: 97.02": {
+    "97.02": {
       "positives": 73,
       "totalTests": 3619,
       "deaths": 4,
       "hospitalizations": 4,
       "peopleTested": 2153
     },
-    "Census tract: 106": {
+    "106": {
       "positives": 66,
       "totalTests": 4750,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2762
     },
-    "Census tract: 303.05": {
+    "303.05": {
       "positives": 99,
       "totalTests": 1554,
       "deaths": 0,
       "hospitalizations": 9,
       "peopleTested": 1098
     },
-    "Census tract: 15": {
+    "15": {
       "positives": 34,
       "totalTests": 1452,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 892
     },
-    "Census tract: 96": {
+    "96": {
       "positives": 54,
       "totalTests": 3133,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1850
     },
-    "Census tract: 201": {
+    "201": {
       "positives": 75,
       "totalTests": 1637,
       "deaths": 18,
       "hospitalizations": 24,
       "peopleTested": 979
     },
-    "Census tract: 16": {
+    "16": {
       "positives": 30,
       "totalTests": 2542,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1524
     },
-    "Census tract: 33": {
+    "33": {
       "positives": 36,
       "totalTests": 4949,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 2760
     },
-    "Census tract: 120": {
+    "120": {
       "positives": 41,
       "totalTests": 2126,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1213
     },
-    "Census tract: 208": {
+    "208": {
       "positives": 49,
       "totalTests": 1884,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1212
     },
-    "Census tract: 14": {
+    "14": {
       "positives": 36,
       "totalTests": 2688,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1637
     },
-    "Census tract: 30": {
+    "30": {
       "positives": 28,
       "totalTests": 3757,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2214
     },
-    "Census tract: 115": {
+    "115": {
       "positives": 38,
       "totalTests": 2846,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1583
     },
-    "Census tract: 5": {
+    "5": {
       "positives": 32,
       "totalTests": 1912,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 1119
     },
-    "Census tract: 59": {
+    "59": {
       "positives": 45,
       "totalTests": 4110,
       "deaths": 1,
       "hospitalizations": 0,
       "peopleTested": 2375
     },
-    "Census tract: 69": {
+    "69": {
       "positives": 23,
       "totalTests": 2739,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1626
     },
-    "Census tract: 107.02": {
+    "107.02": {
       "positives": 95,
       "totalTests": 2229,
       "deaths": 6,
       "hospitalizations": 16,
       "peopleTested": 1343
     },
-    "Census tract: 301": {
+    "301": {
       "positives": 136,
       "totalTests": 2578,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 1776
     },
-    "Census tract: 303.11": {
+    "303.11": {
       "positives": 180,
       "totalTests": 1527,
       "deaths": 3,
       "hospitalizations": 10,
       "peopleTested": 1109
     },
-    "Census tract: 303.12": {
+    "303.12": {
       "positives": 126,
       "totalTests": 1494,
       "deaths": 3,
       "hospitalizations": 12,
       "peopleTested": 1078
     },
-    "Census tract: 107.01": {
+    "107.01": {
       "positives": 68,
       "totalTests": 1980,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1206
     },
-    "Census tract: 266": {
+    "266": {
       "positives": 60,
       "totalTests": 1215,
       "deaths": 2,
       "hospitalizations": 4,
       "peopleTested": 718
     },
-    "Census tract: 17.01": {
+    "17.01": {
       "positives": 39,
       "totalTests": 2565,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1399
     },
-    "Census tract: 70": {
+    "70": {
       "positives": 57,
       "totalTests": 4463,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 2498
     },
-    "Census tract: 4.01": {
+    "4.01": {
       "positives": 72,
       "totalTests": 3230,
       "deaths": 4,
       "hospitalizations": 8,
       "peopleTested": 1900
     },
-    "Census tract: 60": {
+    "60": {
       "positives": 108,
       "totalTests": 5285,
       "deaths": 18,
       "hospitalizations": 29,
       "peopleTested": 2358
     },
-    "Census tract: 286": {
+    "286": {
       "positives": 57,
       "totalTests": 2643,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1725
     },
-    "Census tract: 302.01": {
+    "302.01": {
       "positives": 144,
       "totalTests": 1724,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1214
     },
-    "Census tract: 202": {
+    "202": {
       "positives": 90,
       "totalTests": 2345,
       "deaths": 19,
       "hospitalizations": 15,
       "peopleTested": 1457
     },
-    "Census tract: 207": {
+    "207": {
       "positives": 56,
       "totalTests": 1816,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1144
     },
-    "Census tract: 28": {
+    "28": {
       "positives": 38,
       "totalTests": 3298,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1862
     },
-    "Census tract: 35": {
+    "35": {
       "positives": 18,
       "totalTests": 2762,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1572
     },
-    "Census tract: 49": {
+    "49": {
       "positives": 60,
       "totalTests": 4923,
       "deaths": 5,
       "hospitalizations": 3,
       "peopleTested": 2671
     },
-    "Census tract: 80.01": {
+    "80.01": {
       "positives": 62,
       "totalTests": 3536,
       "deaths": 2,
       "hospitalizations": 6,
       "peopleTested": 2073
     },
-    "Census tract: 113": {
+    "113": {
       "positives": 148,
       "totalTests": 3039,
       "deaths": 0,
       "hospitalizations": 15,
       "peopleTested": 1797
     },
-    "Census tract: 268.01": {
+    "268.01": {
       "positives": 208,
       "totalTests": 2411,
       "deaths": 0,
       "hospitalizations": 15,
       "peopleTested": 1534
     },
-    "Census tract: 268.02": {
+    "268.02": {
       "positives": 182,
       "totalTests": 2376,
       "deaths": 7,
       "hospitalizations": 14,
       "peopleTested": 1546
     },
-    "Census tract: 203": {
+    "203": {
       "positives": 103,
       "totalTests": 2736,
       "deaths": 2,
       "hospitalizations": 9,
       "peopleTested": 1731
     },
-    "Census tract: 13": {
+    "13": {
       "positives": 61,
       "totalTests": 2720,
       "deaths": 5,
       "hospitalizations": 8,
       "peopleTested": 1552
     },
-    "Census tract: 18": {
+    "18": {
       "positives": 55,
       "totalTests": 3096,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 1760
     },
-    "Census tract: 67": {
+    "67": {
       "positives": 127,
       "totalTests": 6188,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 3727
     },
-    "Census tract: 72": {
+    "72": {
       "positives": 81,
       "totalTests": 5097,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 3012
     },
-    "Census tract: 80.02": {
+    "80.02": {
       "positives": 34,
       "totalTests": 2449,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 1221
     },
-    "Census tract: 275": {
+    "275": {
       "positives": 161,
       "totalTests": 1787,
       "deaths": 9,
       "hospitalizations": 21,
       "peopleTested": 1156
     },
-    "Census tract: 303.09": {
+    "303.09": {
       "positives": 137,
       "totalTests": 1764,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1248
     },
-    "Census tract: 3": {
+    "3": {
       "positives": 40,
       "totalTests": 1288,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 787
     },
-    "Census tract: 50": {
+    "50": {
       "positives": 41,
       "totalTests": 3000,
       "deaths": 2,
       "hospitalizations": 1,
       "peopleTested": 1593
     },
-    "Census tract: 54": {
+    "54": {
       "positives": 42,
       "totalTests": 5161,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2772
     },
-    "Census tract: 206": {
+    "206": {
       "positives": 41,
       "totalTests": 1464,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 950
     },
-    "Census tract: 12": {
+    "12": {
       "positives": 87,
       "totalTests": 3848,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 2327
     },
-    "Census tract: 82": {
+    "82": {
       "positives": 59,
       "totalTests": 2420,
       "deaths": 5,
       "hospitalizations": 4,
       "peopleTested": 1391
     },
-    "Census tract: 92": {
+    "92": {
       "positives": 126,
       "totalTests": 3558,
       "deaths": 1,
       "hospitalizations": 22,
       "peopleTested": 1588
     },
-    "Census tract: 270": {
+    "270": {
       "positives": 82,
       "totalTests": 1299,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 802
     },
-    "Census tract: 204.01": {
+    "204.01": {
       "positives": 55,
       "totalTests": 1413,
       "deaths": 3,
       "hospitalizations": 3,
       "peopleTested": 928
     },
-    "Census tract: 36": {
+    "36": {
       "positives": 90,
       "totalTests": 5286,
       "deaths": 3,
       "hospitalizations": 5,
       "peopleTested": 2957
     },
-    "Census tract: 61": {
+    "61": {
       "positives": 55,
       "totalTests": 4401,
       "deaths": 2,
       "hospitalizations": 4,
       "peopleTested": 2295
     },
-    "Census tract: 84": {
+    "84": {
       "positives": 58,
       "totalTests": 5686,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 2303
     },
-    "Census tract: 83": {
+    "83": {
       "positives": 41,
       "totalTests": 2017,
       "deaths": 2,
       "hospitalizations": 0,
       "peopleTested": 1083
     },
-    "Census tract: 85": {
+    "85": {
       "positives": 115,
       "totalTests": 4086,
       "deaths": 4,
       "hospitalizations": 9,
       "peopleTested": 1721
     },
-    "Census tract: 205": {
+    "205": {
       "positives": 108,
       "totalTests": 3113,
       "deaths": 4,
       "hospitalizations": 11,
       "peopleTested": 1982
     },
-    "Census tract: 45": {
+    "45": {
       "positives": 28,
       "totalTests": 2200,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1171
     },
-    "Census tract: 52": {
+    "52": {
       "positives": 57,
       "totalTests": 4012,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 2197
     },
-    "Census tract: 65": {
+    "65": {
       "positives": 36,
       "totalTests": 3366,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1845
     },
-    "Census tract: 74.01": {
+    "74.01": {
       "positives": 62,
       "totalTests": 4130,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 2069
     },
-    "Census tract: 74.02": {
+    "74.02": {
       "positives": 44,
       "totalTests": 3418,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 1779
     },
-    "Census tract: 91": {
+    "91": {
       "positives": 35,
       "totalTests": 1182,
       "deaths": 2,
       "hospitalizations": 1,
       "peopleTested": 690
     },
-    "Census tract: 290.01": {
+    "290.01": {
       "positives": 86,
       "totalTests": 1751,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 1084
     },
-    "Census tract: 300.03": {
+    "300.03": {
       "positives": 175,
       "totalTests": 2060,
       "deaths": 1,
       "hospitalizations": 12,
       "peopleTested": 1445
     },
-    "Census tract: 2": {
+    "2": {
       "positives": 112,
       "totalTests": 4190,
       "deaths": 4,
       "hospitalizations": 19,
       "peopleTested": 2536
     },
-    "Census tract: 75": {
+    "75": {
       "positives": 78,
       "totalTests": 7033,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 3664
     },
-    "Census tract: 86": {
+    "86": {
       "positives": 93,
       "totalTests": 5355,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 2610
     },
-    "Census tract: 20": {
+    "20": {
       "positives": 26,
       "totalTests": 2166,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1265
     },
-    "Census tract: 53.01": {
+    "53.01": {
       "positives": 281,
       "totalTests": 9530,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 3013
     },
-    "Census tract: 90": {
+    "90": {
       "positives": 119,
       "totalTests": 3075,
       "deaths": 2,
       "hospitalizations": 7,
       "peopleTested": 1504
     },
-    "Census tract: 100.02": {
+    "100.02": {
       "positives": 67,
       "totalTests": 3290,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1699
     },
-    "Census tract: 214": {
+    "214": {
       "positives": 36,
       "totalTests": 1611,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1024
     },
-    "Census tract: 64": {
+    "64": {
       "positives": 20,
       "totalTests": 2663,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 1431
     },
-    "Census tract: 79": {
+    "79": {
       "positives": 71,
       "totalTests": 5325,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 2693
     },
-    "Census tract: 110.02": {
+    "110.02": {
       "positives": 116,
       "totalTests": 1921,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 1122
     },
-    "Census tract: 271": {
+    "271": {
       "positives": 103,
       "totalTests": 1352,
       "deaths": 1,
       "hospitalizations": 12,
       "peopleTested": 875
     },
-    "Census tract: 289.02": {
+    "289.02": {
       "positives": 246,
       "totalTests": 2289,
       "deaths": 3,
       "hospitalizations": 12,
       "peopleTested": 1472
     },
-    "Census tract: 204.02": {
+    "204.02": {
       "positives": 50,
       "totalTests": 2007,
       "deaths": 1,
       "hospitalizations": 8,
       "peopleTested": 1308
     },
-    "Census tract: 21": {
+    "21": {
       "positives": 31,
       "totalTests": 2284,
       "deaths": 3,
       "hospitalizations": 2,
       "peopleTested": 1341
     },
-    "Census tract: 25": {
+    "25": {
       "positives": 20,
       "totalTests": 1904,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1098
     },
-    "Census tract: 43.01": {
+    "43.01": {
       "positives": 34,
       "totalTests": 2561,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1386
     },
-    "Census tract: 43.02": {
+    "43.02": {
       "positives": 147,
       "totalTests": 4654,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1520
     },
-    "Census tract: 290.04": {
+    "290.04": {
       "positives": 169,
       "totalTests": 1094,
       "deaths": 2,
       "hospitalizations": 11,
       "peopleTested": 803
     },
-    "Census tract: 10": {
+    "10": {
       "positives": 16,
       "totalTests": 999,
       "deaths": 0,
       "hospitalizations": 1,
       "peopleTested": 596
     },
-    "Census tract: 38": {
+    "38": {
       "positives": 18,
       "totalTests": 1275,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 766
     },
-    "Census tract: 77": {
+    "77": {
       "positives": 38,
       "totalTests": 4058,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 2125
     },
-    "Census tract: 88": {
+    "88": {
       "positives": 20,
       "totalTests": 3099,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1597
     },
-    "Census tract: 89": {
+    "89": {
       "positives": 54,
       "totalTests": 4181,
       "deaths": 2,
       "hospitalizations": 2,
       "peopleTested": 2159
     },
-    "Census tract: 95": {
+    "95": {
       "positives": 88,
       "totalTests": 4713,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 2606
     },
-    "Census tract: 104.01": {
+    "104.01": {
       "positives": 70,
       "totalTests": 2207,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1259
     },
-    "Census tract: 1": {
+    "1": {
       "positives": 101,
       "totalTests": 3768,
       "deaths": 1,
       "hospitalizations": 11,
       "peopleTested": 2208
     },
-    "Census tract: 101": {
+    "101": {
       "positives": 235,
       "totalTests": 5517,
       "deaths": 17,
       "hospitalizations": 44,
       "peopleTested": 3025
     },
-    "Census tract: 288.02": {
+    "288.02": {
       "positives": 191,
       "totalTests": 2153,
       "deaths": 5,
       "hospitalizations": 17,
       "peopleTested": 1447
     },
-    "Census tract: 39": {
+    "39": {
       "positives": 26,
       "totalTests": 1727,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 996
     },
-    "Census tract: 63": {
+    "63": {
       "positives": 62,
       "totalTests": 4299,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 2289
     },
-    "Census tract: 215": {
+    "215": {
       "positives": 28,
       "totalTests": 2071,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1315
     },
-    "Census tract: 9": {
+    "9": {
       "positives": 17,
       "totalTests": 1226,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 706
     },
-    "Census tract: 111.01": {
+    "111.01": {
       "positives": 157,
       "totalTests": 3133,
       "deaths": 3,
       "hospitalizations": 15,
       "peopleTested": 1769
     },
-    "Census tract: 40": {
+    "40": {
       "positives": 31,
       "totalTests": 1845,
       "deaths": 1,
       "hospitalizations": 2,
       "peopleTested": 1039
     },
-    "Census tract: 102": {
+    "102": {
       "positives": 70,
       "totalTests": 3510,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1968
     },
-    "Census tract: 118": {
+    "118": {
       "positives": 199,
       "totalTests": 4084,
       "deaths": 4,
       "hospitalizations": 17,
       "peopleTested": 2448
     },
-    "Census tract: 111.02": {
+    "111.02": {
       "positives": 110,
       "totalTests": 7303,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1922
     },
-    "Census tract: 216": {
+    "216": {
       "positives": 48,
       "totalTests": 1941,
       "deaths": 0,
       "hospitalizations": 4,
       "peopleTested": 1300
     },
-    "Census tract: 221.01": {
+    "221.01": {
       "positives": 48,
       "totalTests": 1736,
       "deaths": 2,
       "hospitalizations": 10,
       "peopleTested": 1150
     },
-    "Census tract: 223": {
+    "223": {
       "positives": 16,
       "totalTests": 878,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 642
     },
-    "Census tract: 309.02": {
+    "309.02": {
       "positives": 151,
       "totalTests": 1647,
       "deaths": 3,
       "hospitalizations": 11,
       "peopleTested": 1222
     },
-    "Census tract: 243": {
+    "243": {
       "positives": 85,
       "totalTests": 4272,
       "deaths": 1,
       "hospitalizations": 6,
       "peopleTested": 2636
     },
-    "Census tract: 260.02": {
+    "260.02": {
       "positives": 198,
       "totalTests": 3024,
       "deaths": 7,
       "hospitalizations": 16,
       "peopleTested": 1990
     },
-    "Census tract: 217": {
+    "217": {
       "positives": 124,
       "totalTests": 2856,
       "deaths": 7,
       "hospitalizations": 19,
       "peopleTested": 1969
     },
-    "Census tract: 260.01": {
+    "260.01": {
       "positives": 77,
       "totalTests": 2544,
       "deaths": 0,
       "hospitalizations": 6,
       "peopleTested": 1621
     },
-    "Census tract: 222.01": {
+    "222.01": {
       "positives": 46,
       "totalTests": 1283,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 906
     },
-    "Census tract: 246.02": {
+    "246.02": {
       "positives": 38,
       "totalTests": 1861,
       "deaths": 0,
       "hospitalizations": 0,
       "peopleTested": 1173
     },
-    "Census tract: 245": {
+    "245": {
       "positives": 38,
       "totalTests": 2600,
       "deaths": 2,
       "hospitalizations": 5,
       "peopleTested": 1660
     },
-    "Census tract: 241": {
+    "241": {
       "positives": 61,
       "totalTests": 2133,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 1329
     },
-    "Census tract: 244": {
+    "244": {
       "positives": 37,
       "totalTests": 1297,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 821
     },
-    "Census tract: 307": {
+    "307": {
       "positives": 112,
       "totalTests": 1253,
       "deaths": 1,
       "hospitalizations": 11,
       "peopleTested": 921
     },
-    "Census tract: 218.03": {
+    "218.03": {
       "positives": 39,
       "totalTests": 1953,
       "deaths": 3,
       "hospitalizations": 5,
       "peopleTested": 1337
     },
-    "Census tract: 224": {
+    "224": {
       "positives": 72,
       "totalTests": 3597,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 2514
     },
-    "Census tract: 220.01": {
+    "220.01": {
       "positives": 46,
       "totalTests": 1818,
       "deaths": 5,
       "hospitalizations": 9,
       "peopleTested": 1209
     },
-    "Census tract: 295.03": {
+    "295.03": {
       "positives": 280,
       "totalTests": 2435,
       "deaths": 8,
       "hospitalizations": 28,
       "peopleTested": 1740
     },
-    "Census tract: 220.03": {
+    "220.03": {
       "positives": 53,
       "totalTests": 1381,
       "deaths": 1,
       "hospitalizations": 7,
       "peopleTested": 966
     },
-    "Census tract: 220.05": {
+    "220.05": {
       "positives": 51,
       "totalTests": 1440,
       "deaths": 0,
       "hospitalizations": 5,
       "peopleTested": 995
     },
-    "Census tract: 227.01": {
+    "227.01": {
       "positives": 28,
       "totalTests": 1209,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 801
     },
-    "Census tract: 238.03": {
+    "238.03": {
       "positives": 50,
       "totalTests": 2079,
       "deaths": 3,
       "hospitalizations": 7,
       "peopleTested": 1380
     },
-    "Census tract: 238.04": {
+    "238.04": {
       "positives": 60,
       "totalTests": 2884,
       "deaths": 1,
       "hospitalizations": 5,
       "peopleTested": 2015
     },
-    "Census tract: 253.01": {
+    "253.01": {
       "positives": 123,
       "totalTests": 2971,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 1963
     },
-    "Census tract: 294.03": {
+    "294.03": {
       "positives": 143,
       "totalTests": 1756,
       "deaths": 1,
       "hospitalizations": 9,
       "peopleTested": 1242
     },
-    "Census tract: 294.07": {
+    "294.07": {
       "positives": 198,
       "totalTests": 2208,
       "deaths": 12,
       "hospitalizations": 31,
       "peopleTested": 1411
     },
-    "Census tract: 218.04": {
+    "218.04": {
       "positives": 62,
       "totalTests": 1792,
       "deaths": 2,
       "hospitalizations": 3,
       "peopleTested": 1278
     },
-    "Census tract: 227.02": {
+    "227.02": {
       "positives": 23,
       "totalTests": 1200,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 835
     },
-    "Census tract: 295.04": {
+    "295.04": {
       "positives": 200,
       "totalTests": 2018,
       "deaths": 11,
       "hospitalizations": 19,
       "peopleTested": 1447
     },
-    "Census tract: 312.06": {
+    "312.06": {
       "positives": 120,
       "totalTests": 1233,
       "deaths": 4,
       "hospitalizations": 12,
       "peopleTested": 937
     },
-    "Census tract: 294.08": {
+    "294.08": {
       "positives": 104,
       "totalTests": 1171,
       "deaths": 0,
       "hospitalizations": 11,
       "peopleTested": 845
     },
-    "Census tract: 218.02": {
+    "218.02": {
       "positives": 64,
       "totalTests": 1554,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1094
     },
-    "Census tract: 226.03": {
+    "226.03": {
       "positives": 57,
       "totalTests": 1570,
       "deaths": 3,
       "hospitalizations": 1,
       "peopleTested": 1159
     },
-    "Census tract: 226.04": {
+    "226.04": {
       "positives": 47,
       "totalTests": 1681,
       "deaths": 2,
       "hospitalizations": 2,
       "peopleTested": 1131
     },
-    "Census tract: 257.02": {
+    "257.02": {
       "positives": 75,
       "totalTests": 1326,
       "deaths": 3,
       "hospitalizations": 4,
       "peopleTested": 900
     },
-    "Census tract: 258.03": {
+    "258.03": {
       "positives": 128,
       "totalTests": 1549,
       "deaths": 3,
       "hospitalizations": 11,
       "peopleTested": 1047
     },
-    "Census tract: 235": {
+    "235": {
       "positives": 31,
       "totalTests": 1230,
       "deaths": 0,
       "hospitalizations": 3,
       "peopleTested": 865
     },
-    "Census tract: 248": {
+    "248": {
       "positives": 49,
       "totalTests": 1527,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 1089
     },
-    "Census tract: 255": {
+    "255": {
       "positives": 138,
       "totalTests": 1596,
       "deaths": 3,
       "hospitalizations": 13,
       "peopleTested": 1088
     },
-    "Census tract: 323.19": {
+    "323.19": {
       "positives": 55,
       "totalTests": 1925,
       "deaths": 2,
       "hospitalizations": 5,
       "peopleTested": 1382
     },
-    "Census tract: 236.04": {
+    "236.04": {
       "positives": 81,
       "totalTests": 1688,
       "deaths": 0,
       "hospitalizations": 7,
       "peopleTested": 1179
     },
-    "Census tract: 236.03": {
+    "236.03": {
       "positives": 64,
       "totalTests": 1457,
       "deaths": 0,
       "hospitalizations": 8,
       "peopleTested": 1095
     },
-    "Census tract: 323.20": {
+    "323.20": {
       "positives": 44,
       "totalTests": 1302,
       "deaths": 3,
       "hospitalizations": 6,
       "peopleTested": 914
     },
-    "Census tract: 319.08": {
+    "319.08": {
       "positives": 54,
       "totalTests": 1556,
       "deaths": 2,
       "hospitalizations": 4,
       "peopleTested": 1033
     },
-    "Census tract: 230": {
+    "230": {
       "positives": 76,
       "totalTests": 1620,
       "deaths": 3,
       "hospitalizations": 4,
       "peopleTested": 1132
     },
-    "Census tract: 317.05": {
+    "317.05": {
       "positives": 65,
       "totalTests": 1147,
       "deaths": 1,
       "hospitalizations": 3,
       "peopleTested": 842
     },
-    "Census tract: 232.02": {
+    "232.02": {
       "positives": 100,
       "totalTests": 1454,
       "deaths": 9,
       "hospitalizations": 24,
       "peopleTested": 961
     },
-    "Census tract: 323.07": {
+    "323.07": {
       "positives": 55,
       "totalTests": 1721,
       "deaths": 0,
       "hospitalizations": 2,
       "peopleTested": 1246
     },
-    "Census tract: 323.25": {
+    "323.25": {
       "positives": 58,
       "totalTests": 1409,
       "deaths": 1,
       "hospitalizations": 4,
       "peopleTested": 1030
     },
-    "Census tract: 234.04": {
+    "234.04": {
       "positives": 25,
       "totalTests": 1202,
       "deaths": 1,
       "hospitalizations": 1,
       "peopleTested": 829
     },
-    "Census tract: 320.08": {
+    "320.08": {
       "positives": 48,
       "totalTests": 1240,
       "deaths": 0,

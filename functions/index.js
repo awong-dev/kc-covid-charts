@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const https = require('https');
 const cheerio = require('cheerio');
 const { parseExcel } = require('./excel');
-const mergeData = require('./mergedata');
+const {mergeData} = require('./mergedata');
 const scrape = require('./scrape');
 const _ = require('lodash');
 
@@ -115,8 +115,7 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       });
 
       const combinedData = await combinedDataPromise;
-      //mergeData(combinedData, data);
-      _.merge(combinedData, data);
+      mergeData(combinedData, data);
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {

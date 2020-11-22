@@ -9,7 +9,7 @@ function accumulateCount(counts, delta, accumulate) {
 // If dailyDate is set, indicates inputData is a daily file. This means
 // 'Location_Name' is set correctly. Otherwise, for HRA, the Location_Name
 // must be mapped from the index and the date is extrated from 'Week_End'.
-function mergeData(combinedData, inputData, dailyDate) {
+function mergeXlsData(combinedData, inputData, dailyDate) {
   // Dataset is City, ZIP, HRA, and Census.
   for (datasetName of Object.keys(inputData)) {
     const dataset = inputData[datasetName];
@@ -75,4 +75,26 @@ function mergeData(combinedData, inputData, dailyDate) {
   }
 }
 
-module.exports = mergeData;
+function mergeOne(data, b, name, date) {
+  data[name].date.push(date);
+  data[name].positives.push(b[name].positives);
+  data[name].totalTests.push(b[name].totalTests);
+  data[name].deaths.push(b[name].deaths);
+  data[name].hospitalizations.push(b[name].hospitalizations);
+  data[name].peopleTested.push(b[name].peopleTested);
+}
+
+function mergeData(normalized, update, date) {
+  for (const name of Object.keys(normalized)) {
+    if (name in update) {
+      mergeOne(normalized, update, name, date);
+    }
+  }
+  return normalized;
+}
+
+module.exports = {
+  mergeXlsData,
+  mergeOne,
+  mergeData,
+}

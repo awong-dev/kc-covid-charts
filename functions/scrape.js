@@ -14,6 +14,12 @@ const L_HRA = 'hra';
 const L_ZIP = 'zip';
 const L_CENSUS = 'census';
 const LOCATION_TYPES = [ L_CENSUS, L_CITY, L_HRA, L_ZIP ];
+const NAME_FUNC ={
+ [L_CITY]: x => x,
+ [L_HRA]: x => x,
+ [L_CENSUS]: x => x.slice(20)/100,
+ [L_ZIP]: x => x.slice(10),
+};
 
 const LONG_ACTION_MS = 10000;
 
@@ -139,8 +145,8 @@ async function getMeasurement(tooltip, index) {
   return await retry(() => tooltip.$eval(`span div:nth-child(${index})`, el => el.textContent), true, 10);
 }
 
-async function extractLocationName(tooltip) {
-  return await getMeasurement(tooltip, 1);
+async function extractLocationName(tooltip, extractNameFunc) {
+  return extractNameFunc(await getMeasurement(tooltip, 1));
 }
 
 async function extractTestPositivity(tooltip) {
@@ -226,7 +232,7 @@ async function scrapeRegion(page, tableauFrame, extractFunc, options = DEFAULT_S
 //
 // Throws if the tooltip format is not what is expected. This allows for
 // noticing formating changes that break the scraper.
-async function scrapeLocation(page, frame, x, y, extractFunc) {
+async function scrapeLocation(page, frame, x, y, extractFunc, extractNameFunc) {
   await page.mouse.move(x, y);
 
   let tooltip = null;
@@ -234,7 +240,7 @@ async function scrapeLocation(page, frame, x, y, extractFunc) {
   try {
     // Wait for the locationName.
     tooltip = await frame.$('div.tab-ubertipTooltip');
-    locationName = await extractLocationName(tooltip);
+    locationName = await extractLocationName(tooltip, extractNameFunc);
   } catch (err) {
     // Ignore if we can't find the tooltip.
   }
@@ -251,7 +257,7 @@ async function scrapeLocation(page, frame, x, y, extractFunc) {
 // Makes maxRetry attempts.
 //
 // Returns the scraped measurement data.
-async function scrapePoints(page, frame, locationName, points, extractFunc, maxRetry = 10) {
+async function scrapePoints(page, frame, locationName, points, extractFunc, extractNameFunc, maxRetry = 10) {
   try {
     for (let i = 0; i < maxRetry; i++) {
       const [x, y] = points[i];
@@ -273,7 +279,7 @@ async function scrapePoints(page, frame, locationName, points, extractFunc, maxR
 
 // This generates a list of coordinates for each location. Used to create a
 // map-sampling-points.json to speed up actual scraping.
-async function scrapeMapPoints(page, tableauFrame, options = DEFAULT_SCRAPE_OPTIONS) {
+async function scrapeMapPoints(page, tableauFrame, extractNameFunc, options = DEFAULT_SCRAPE_OPTIONS) {
   const data = {};
   let onePixelIsInBounds = true;
   console.error(`Starting Map Points scrape ${JSON.stringify(options)}`);
@@ -290,7 +296,7 @@ async function scrapeMapPoints(page, tableauFrame, options = DEFAULT_SCRAPE_OPTI
       let locationName = null;
       try {
         tooltip = await tableauFrame.$('div.tab-ubertipTooltip');
-        locationName = await extractLocationName(tooltip);
+        locationName = await extractLocationName(tooltip, extractNameFunc);
       } catch (err) {
         // Ignore if we can't find the tooltip.
       }
@@ -346,7 +352,7 @@ async function scrape(locationType) {
             console.error(`${locationType}, ${locationName}: ${JSON.stringify(locationInfo)}`);
             continue;
           }
-          const result = await scrapePoints(page, tableauFrame, locationName, locationInfo.points, config.extractFunc);
+          const result = await scrapePoints(page, tableauFrame, locationName, locationInfo.points, config.extractFunc, NAME_FUNC[locationType]);
           if (result) {
             _.merge(locationData, result);
           }
@@ -372,7 +378,7 @@ async function scrapeAllMapPoints() {
     for (const locationType of LOCATION_TYPES) {
       await selectLocationType(page, tableauFrame, locationType);
       await scrollToMap(tableauFrame);
-      data[locationType] = await scrapeMapPoints(page, tableauFrame);
+      data[locationType] = await scrapeMapPoints(page, tableauFrame, NAME_FUNC[locationType]);
     }
   } catch (err) {
     if (!is_gcp_environment) {
