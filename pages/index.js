@@ -34,7 +34,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries state={state} heading="Positives per population" valueAccessor={(d) => (d.positives / d.population)} />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries state={state} heading="Positives per test" valueAccessor={(d) => (d.positives / d.allTestResults || 0)} />
+          <TimeSeries state={state} heading="Positives per test" valueAccessor={(d) => (d.positives / d.allTestResults)} />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
           <TimeSeries state={state} heading="Hospitalizations" valueAccessor={(d) => (d.hospitalizations)} />

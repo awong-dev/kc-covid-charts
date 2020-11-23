@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { chain } from 'lodash';
+import { chain, sortBy } from 'lodash';
 import {
   withScriptjs, withGoogleMap, GoogleMap, Marker, Polygon,
 } from 'react-google-maps';
@@ -28,7 +28,7 @@ const MapFrame = withScriptjs(withGoogleMap(({ children }) => (
   </GoogleMap>
 )));
 
-const HRAPolygon = ({
+const HRAMultiPolygon = ({
   hraId, active, toggleActive, isHovered, setHoveredHraId
 }) => {
   const handleMouseOver = useCallback(() => setHoveredHraId(hraId), [hraId, setHoveredHraId]);
@@ -39,11 +39,11 @@ const HRAPolygon = ({
     <Polygon
       paths={polygonCoordinates.map((path) => path.map(([lng, lat]) => ({ lng, lat })))}
       options={{
-        // fillColor: 'black',
+        fillColor: 'black',
         fillOpacity: active ? 0.8 : 0.2,
         strokeWeight: isHovered ? 3 : 1,
         strokeColor: isHovered ? 'rgba(245, 158, 11, 1)' : 'black',
-        class: 'text-blue-500 fill-current',
+        zIndex: isHovered ? 2 : 1
       }}
       onClick={toggle}
       onMouseOver={handleMouseOver}
@@ -63,7 +63,7 @@ export default function Map({ state: { hras, hoveredHraId }, toggleActive, setHo
       mapElement={<div style={{ height: '100%' }} />}
     >
       {Object.values(hras).map(({ hraId, active }) => (
-        <HRAPolygon
+        <HRAMultiPolygon
           key={hraId}
           hraId={hraId}
           active={active}
