@@ -13,7 +13,7 @@ import useResizeObserver from '@react-hook/resize-observer';
 
 const margins = {
   top: 70,
-  right: 20,
+  right: 50,
   bottom: 50,
   left: 80,
 };
@@ -29,7 +29,7 @@ export default function TimeSeries({
     if (!target.current) { return; }
     const rect = target.current.getBoundingClientRect();
     setSize({ width: rect.width, height: rect.height });
-  }, []);
+  });
 
   const [diagramWidth, diagramHeight, activeHRAs] = useMemo(() => [
     width - margins.left - margins.right,
@@ -37,18 +37,22 @@ export default function TimeSeries({
     Object.values(hras).filter(({ active }) => active),
   ], [width, height, margins, hras]);
 
-  const [timeScale, valueScale] = useMemo(() => [
-    scaleTime({
-      domain: extent(activeHRAs[0].timeSeries, (d) => d.date),
-      range: [0, diagramWidth],
-      nice: true,
-    }),
-    scaleLinear({
-      domain: [0, max(activeHRAs, (hra) => max(hra.timeSeries, valueAccessor))],
-      range: [diagramHeight, 0],
-      nice: true,
-    }),
-  ], [activeHRAs, diagramHeight]);
+  const [timeScale, valueScale] = useMemo(() => {
+    const firstHra = activeHRAs[0];
+    const timeDomain = firstHra ? extent(firstHra.timeSeries, (d) => d.date) : undefined;
+    return [
+      scaleTime({
+        domain: timeDomain,
+        range: [0, diagramWidth],
+        nice: true,
+      }),
+      scaleLinear({
+        domain: [0, max(activeHRAs, (hra) => max(hra.timeSeries, valueAccessor))],
+        range: [diagramHeight, 0],
+        nice: true,
+      }),
+    ];
+  }, [activeHRAs, diagramHeight]);
 
   return (
     <svg ref={target} className="bg-gray-100 flex-1">
@@ -86,11 +90,11 @@ const Framing = memo(
       <text x={0} y={-25} fontSize={30}>
         {heading}
       </text>
-      <GridRows scale={valueScale} width={diagramWidth} height={diagramHeight} stroke="#d0d0d0" />
+      <GridRows scale={valueScale} width={diagramWidth} height={diagramHeight} stroke="#d0d0d0" numTicks={5} />
       <GridColumns scale={timeScale} width={diagramWidth} height={diagramHeight} stroke="#d0d0d0" />
       <line x1={diagramWidth} x2={diagramWidth} y1={0} y2={diagramHeight} stroke="#d0d0d0" />
       <AxisBottom top={diagramHeight} scale={timeScale} />
-      <AxisLeft scale={valueScale} />
+      <AxisLeft scale={valueScale} numTicks={5} />
     </>
   ),
 );
@@ -109,15 +113,19 @@ const HRALine = memo(
         strokeOpacity={0.8}
         defined={(d) => Number.isFinite(valueAccessor(d))}
       />
-      {timeSeries.map((d) => (
-        <Circle
-          key={d.date}
-          cx={timeScale(d.date)}
-          cy={valueScale(valueAccessor(d))}
-          r={3}
-          className="fill-current"
-        />
-      ))}
+      {timeSeries.map((d) => {
+        const value = valueAccessor(d);
+        if (!Number.isFinite(value)) { return null; }
+        return (
+          <Circle
+            key={d.date}
+            cx={timeScale(d.date)}
+            cy={valueScale(value)}
+            r={3}
+            className="fill-current"
+          />
+        );
+      })}
     </g>
   ),
 );
