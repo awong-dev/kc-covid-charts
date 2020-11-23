@@ -89,10 +89,7 @@ async function downloadLatestData(force) {
 
 async function scrapeLatestData(type) {
   console.log(`scraping ${type}`);
-  const last_update = new Date();
-  const data = await scrape.scrape(type);
-  data.date = [ last_update ];
-  return data;
+  return await scrape.scrape(type);
 }
 
 exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
@@ -105,6 +102,8 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
     }
     const data = await scrapeLatestData(type);
     if (data !== null) {
+      const today = new Date();
+      today.setHours(0,0,0,0);
       // Update the data.json.
       const dataFileRef = admin.storage().bucket().file(`processed/data-${type}.json`);
       const combinedDataPromise = new Promise((resolve, reject) => {
@@ -116,7 +115,7 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       });
 
       const combinedData = await combinedDataPromise;
-      mergeData(combinedData[type], data);
+      mergeData(combinedData, data, today.getTime());
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {
@@ -125,7 +124,7 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
         predefinedAcl: "publicRead"
       });
 
-      response.send(`found new data: ${data.date[0]}`);
+      response.send(`found new data: ${today}`);
     } else {
       response.send(`no updates`);
     }

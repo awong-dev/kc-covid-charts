@@ -261,8 +261,9 @@ async function scrapePoints(page, frame, locationName, points, extractFunc, extr
   try {
     for (let i = 0; i < maxRetry; i++) {
       const [x, y] = points[i];
+      let result = null;
       for (let retry = 0; retry < 10; retry++) {
-        const result = await scrapeLocation(page, frame, x, y, extractFunc, extractNameFunc);
+        result = await scrapeLocation(page, frame, x, y, extractFunc, extractNameFunc);
         if (result[0] === locationName) {
           return result[1];
         }
@@ -344,13 +345,12 @@ async function scrape(locationType) {
 
     await selectLocationType(page, tableauFrame, locationType);
     await scrollToMap(tableauFrame);
-    const typeData = data[locationType] = data[locationType] || {};
     for (const config of MEASUREMENT_CONFIG) {
       console.log(`scraping ${config.measurement}`);
       await selectMeasurement(tableauFrame, config.measurement);
       if (locationType in MapSamplePoints) {
         for (const [locationName, locationInfo] of Object.entries(MapSamplePoints[locationType])) {
-          const locationData = typeData[locationName] = typeData[locationName] || {};
+          const locationData = data[locationName] = data[locationName] || {};
           if (!locationInfo.points) {
             console.error(`${locationType}, ${locationName}: ${JSON.stringify(locationInfo)}`);
             continue;

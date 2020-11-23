@@ -75,8 +75,8 @@ function mergeXlsData(combinedData, inputData, dailyDate) {
   }
 }
 
-function mergeOne(data, b, name, date) {
-  data[name].date.push(date);
+function mergeOne(data, b, name, dateTs) {
+  data[name].date.push(dateTs);
   data[name].positives.push(b[name].positives);
   data[name].totalTests.push(b[name].totalTests);
   data[name].deaths.push(b[name].deaths);
@@ -84,10 +84,10 @@ function mergeOne(data, b, name, date) {
   data[name].peopleTested.push(b[name].peopleTested);
 }
 
-function mergeData(normalized, update, date) {
+function mergeData(normalized, update, dateTs) {
   for (const name of Object.keys(normalized)) {
     if (name in update) {
-      mergeOne(normalized, update, name, date);
+      mergeOne(normalized, update, name, dateTs);
     }
   }
   return normalized;
