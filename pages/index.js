@@ -12,7 +12,11 @@ export default function CombinedChart({ covidData }) {
     <main className="p-4 h-full w-full min-h-screen flex flex-row items-stretch justify-items-stretch bg-purple-100 space-x-4">
       <div className="w-1/4 flex flex-col items-stretch justify-start space-y-4">
         <div className="h-1/4 overflow-hidden shadow-lg flex items-stretch justify-items-stretch overflow-hidden">
-          <Map state={state} toggleActive={toggleActive} />
+          <Map
+            state={state}
+            toggleActive={toggleActive}
+            setHoveredHraId={setHoveredHraId}
+          />
         </div>
         <div className="flex-stretch shadow-lg">
           <HRAList

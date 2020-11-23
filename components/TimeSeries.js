@@ -107,6 +107,7 @@ const HRALine = memo(
         className="stroke-current"
         strokeWidth={1.5}
         strokeOpacity={0.8}
+        defined={(d) => Number.isFinite(valueAccessor(d))}
       />
       {timeSeries.map((d) => (
         <Circle

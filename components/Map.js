@@ -29,24 +29,31 @@ const MapFrame = withScriptjs(withGoogleMap(({ children }) => (
 )));
 
 const HRAPolygon = ({
-  hraId, active, toggleActive, isHovered,
+  hraId, active, toggleActive, isHovered, setHoveredHraId
 }) => {
+  const handleMouseOver = useCallback(() => setHoveredHraId(hraId), [hraId, setHoveredHraId]);
+  const handleMouseOut = useCallback(() => setHoveredHraId(null), [hraId, setHoveredHraId]);
+
   const toggle = useCallback(() => toggleActive(hraId), [hraId]);
   return (polygonsCoordsByHRAId[hraId].map((polygonCoordinates) => (
     <Polygon
       paths={polygonCoordinates.map((path) => path.map(([lng, lat]) => ({ lng, lat })))}
       options={{
-        fillColor: active ? 'red' : 'black',
+        // fillColor: 'black',
+        fillOpacity: active ? 0.8 : 0.2,
         strokeWeight: isHovered ? 3 : 1,
-        strokeColor: isHovered ? 'yellow' : 'black',
+        strokeColor: isHovered ? 'rgba(245, 158, 11, 1)' : 'black',
+        class: 'text-blue-500 fill-current',
       }}
       onClick={toggle}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
     />
   ))
   );
 };
 
-export default function Map({ state: { hras, hoveredHraId }, toggleActive }) {
+export default function Map({ state: { hras, hoveredHraId }, toggleActive, setHoveredHraId }) {
   return (
     <MapFrame
       isMarkerShown
@@ -61,7 +68,9 @@ export default function Map({ state: { hras, hoveredHraId }, toggleActive }) {
           hraId={hraId}
           active={active}
           toggleActive={toggleActive}
-          isHovered={hoveredHraId === hraId} />
+          isHovered={hoveredHraId === hraId}
+          setHoveredHraId={setHoveredHraId}
+        />
       ))}
     </MapFrame>
   );
