@@ -1,44 +1,46 @@
-import Head from 'next/head'
-import DataTable from '../components/data-table'
-import TimeSeries from '../components/time-series'
-import styles from '../styles/Home.module.css'
+import TimeSeries from '../components/TimeSeries';
+import HRAList from '../components/HRAList';
+import Map from '../components/Map';
+import useCombinedState from '../hooks/useCombinedState';
 
-export default function Home({covidData}) {
+export default function CombinedChart({ covidData }) {
+  const {
+    state, toggleActive, setHoveredHraId,
+  } = useCombinedState(covidData);
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>King County Covid Charts</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          King County Covid Charts
-        </h1>
-
-        <p className={styles.description}>
-          Provides a slightly different view of the data on 
-          <a href="https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx">King County Daily Outbreak Summary.</a>
-        </p>
-
-        <div className={styles.grid}>
-          <TimeSeries locationData={covidData['HRA']} />
-          <DataTable locationType="HRA" locationData={covidData['HRA']} />
+    <main className="p-4 h-full w-full min-h-screen flex flex-row items-stretch justify-items-stretch bg-purple-100 space-x-4">
+      <div className="w-1/4 flex flex-col items-stretch justify-start space-y-4">
+        <div className="h-1/4 overflow-hidden shadow-lg flex items-stretch justify-items-stretch overflow-hidden">
+          <Map state={state} toggleActive={toggleActive} />
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        <div className="flex-stretch shadow-lg">
+          <HRAList
+            state={state}
+            toggleActive={toggleActive}
+            setHoveredHraId={setHoveredHraId}
+          />
+        </div>
+      </div>
+      <div className="flex-grow flex flex-col items-stretch justify-start space-y-4">
+        <div className="h-80 flex overflow-hidden shadow-lg">
+          <TimeSeries state={state} heading="People tested" valueAccessor={(d) => d.peopleTested} />
+        </div>
+        <div className="h-80 flex overflow-hidden shadow-lg">
+          <TimeSeries state={state} heading="Positives per population" valueAccessor={(d) => (d.positives / d.population)} />
+        </div>
+        <div className="h-80 flex overflow-hidden shadow-lg">
+          <TimeSeries state={state} heading="Positives per test" valueAccessor={(d) => (d.positives / d.allTestResults || 0)} />
+        </div>
+        <div className="h-80 flex overflow-hidden shadow-lg">
+          <TimeSeries state={state} heading="Hospitalizations" valueAccessor={(d) => (d.hospitalizations)} />
+        </div>
+        <div className="h-80 flex overflow-hidden shadow-lg">
+          <TimeSeries state={state} heading="Deaths" valueAccessor={(d) => (d.deaths)} />
+        </div>
+      </div>
+    </main>
+  );
 }
 
 export async function getStaticProps() {
@@ -50,5 +52,5 @@ export async function getStaticProps() {
       covidData,
     },
     revalidate: 1, // In seconds
-  }
+  };
 }
