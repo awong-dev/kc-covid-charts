@@ -13,7 +13,7 @@ const HRAListItem = ({
   const handleMouseLeave = useCallback(() => setHoveredHraId(null), [hraId, setHoveredHraId]);
   return (
     <li
-      className={`flex items-stretch justify-items-stretch${isHovered && ' bg-yellow-300'}`}
+      className={`flex items-stretch justify-items-stretch text-sm ${isHovered && ' bg-yellow-500'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
