@@ -47,7 +47,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="Positives per test"
-            valueAccessor={(d) => (d.positives / d.allTestResults)}
+            valueAccessor={(d) => (d.positives / d.totalTests)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>

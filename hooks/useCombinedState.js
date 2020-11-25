@@ -15,13 +15,13 @@ const buildDefaultState = (covidData) => {
   const covidDataByHraId = chain(Object.entries(covidData.HRA))
     .filter(([_, {hraId}]) => !!hraId)
     .keyBy(([_, {hraId}]) => Number(hraId))
-    .mapValues(([hraName, { hraId, population, date, peopleTested, allTestResults, positives, hospitalizations, deaths }], i) => ({
+    .mapValues(([hraName, { hraId, population, date, peopleTested, totalTests, positives, hospitalizations, deaths }], i) => ({
       hraId: hraId,
       name: hraName,
       active: true, // TK
-      timeSeries: zip(date, peopleTested, allTestResults, positives, hospitalizations, deaths)
-        .map(([date, peopleTested, allTestResults, positives, hospitalizations, deaths]) => (
-          {population, date, peopleTested, allTestResults, positives, hospitalizations, deaths}
+      timeSeries: zip(date, peopleTested, totalTests, positives, hospitalizations, deaths)
+        .map(([date, peopleTested, totalTests, positives, hospitalizations, deaths]) => (
+          {population, date, peopleTested, totalTests, positives, hospitalizations, deaths}
       ))
     }))
     .value()
