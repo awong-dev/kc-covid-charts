@@ -1,0 +1,4155 @@
+{
+  "zip": {
+    "98070": {
+      "positives": 39,
+      "totalTests": 3882,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 2667
+    },
+    "98422": {
+      "positives": 2,
+      "totalTests": 35,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 11
+    },
+    "98199": {
+      "positives": 138,
+      "totalTests": 12165,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 7264
+    },
+    "98116": {
+      "positives": 335,
+      "totalTests": 16181,
+      "deaths": 8,
+      "hospitalizations": 20,
+      "peopleTested": 9365
+    },
+    "98023": {
+      "positives": 1361,
+      "totalTests": 16591,
+      "deaths": 11,
+      "hospitalizations": 82,
+      "peopleTested": 11558
+    },
+    "98117": {
+      "positives": 314,
+      "totalTests": 21906,
+      "deaths": 8,
+      "hospitalizations": 28,
+      "peopleTested": 12387
+    },
+    "98107": {
+      "positives": 212,
+      "totalTests": 18623,
+      "deaths": 5,
+      "hospitalizations": 17,
+      "peopleTested": 10419
+    },
+    "98136": {
+      "positives": 153,
+      "totalTests": 10553,
+      "deaths": 4,
+      "hospitalizations": 10,
+      "peopleTested": 5836
+    },
+    "98177": {
+      "positives": 256,
+      "totalTests": 10457,
+      "deaths": 22,
+      "hospitalizations": 36,
+      "peopleTested": 6209
+    },
+    "98146": {
+      "positives": 763,
+      "totalTests": 12488,
+      "deaths": 19,
+      "hospitalizations": 58,
+      "peopleTested": 7703
+    },
+    "98119": {
+      "positives": 208,
+      "totalTests": 15106,
+      "deaths": 2,
+      "hospitalizations": 8,
+      "peopleTested": 8480
+    },
+    "98126": {
+      "positives": 356,
+      "totalTests": 14193,
+      "deaths": 16,
+      "hospitalizations": 31,
+      "peopleTested": 8049
+    },
+    "98166": {
+      "positives": 391,
+      "totalTests": 9301,
+      "deaths": 5,
+      "hospitalizations": 38,
+      "peopleTested": 5945
+    },
+    "98106": {
+      "positives": 572,
+      "totalTests": 13395,
+      "deaths": 4,
+      "hospitalizations": 46,
+      "peopleTested": 7815
+    },
+    "98133": {
+      "positives": 744,
+      "totalTests": 24190,
+      "deaths": 31,
+      "hospitalizations": 74,
+      "peopleTested": 14507
+    },
+    "98103": {
+      "positives": 463,
+      "totalTests": 35960,
+      "deaths": 18,
+      "hospitalizations": 34,
+      "peopleTested": 19659
+    },
+    "98134": {
+      "positives": 30,
+      "totalTests": 1170,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 609
+    },
+    "98109": {
+      "positives": 421,
+      "totalTests": 20899,
+      "deaths": 20,
+      "hospitalizations": 43,
+      "peopleTested": 11278
+    },
+    "98121": {
+      "positives": 180,
+      "totalTests": 8961,
+      "deaths": 3,
+      "hospitalizations": 11,
+      "peopleTested": 5230
+    },
+    "98101": {
+      "positives": 243,
+      "totalTests": 11812,
+      "deaths": 10,
+      "hospitalizations": 27,
+      "peopleTested": 5644
+    },
+    "98104": {
+      "positives": 412,
+      "totalTests": 12948,
+      "deaths": 10,
+      "hospitalizations": 54,
+      "peopleTested": 5952
+    },
+    "98003": {
+      "positives": 1772,
+      "totalTests": 17257,
+      "deaths": 38,
+      "hospitalizations": 145,
+      "peopleTested": 11804
+    },
+    "98102": {
+      "positives": 247,
+      "totalTests": 18774,
+      "deaths": 2,
+      "hospitalizations": 10,
+      "peopleTested": 9720
+    },
+    "98108": {
+      "positives": 591,
+      "totalTests": 14455,
+      "deaths": 6,
+      "hospitalizations": 37,
+      "peopleTested": 7756
+    },
+    "98168": {
+      "positives": 1274,
+      "totalTests": 14996,
+      "deaths": 9,
+      "hospitalizations": 70,
+      "peopleTested": 9348
+    },
+    "98148": {
+      "positives": 251,
+      "totalTests": 4090,
+      "deaths": 4,
+      "hospitalizations": 19,
+      "peopleTested": 2650
+    },
+    "98198": {
+      "positives": 988,
+      "totalTests": 14685,
+      "deaths": 11,
+      "hospitalizations": 68,
+      "peopleTested": 9170
+    },
+    "98354": {
+      "positives": 21,
+      "totalTests": 144,
+      "deaths": 2,
+      "hospitalizations": 1,
+      "peopleTested": 92
+    },
+    "98155": {
+      "positives": 517,
+      "totalTests": 15613,
+      "deaths": 27,
+      "hospitalizations": 57,
+      "peopleTested": 9617
+    },
+    "98125": {
+      "positives": 521,
+      "totalTests": 21775,
+      "deaths": 9,
+      "hospitalizations": 48,
+      "peopleTested": 13010
+    },
+    "98115": {
+      "positives": 434,
+      "totalTests": 32280,
+      "deaths": 8,
+      "hospitalizations": 26,
+      "peopleTested": 18463
+    },
+    "98105": {
+      "positives": 762,
+      "totalTests": 39151,
+      "deaths": 1,
+      "hospitalizations": 13,
+      "peopleTested": 16763
+    },
+    "98122": {
+      "positives": 454,
+      "totalTests": 32388,
+      "deaths": 7,
+      "hospitalizations": 24,
+      "peopleTested": 16142
+    },
+    "98158": {
+      "positives": 0,
+      "totalTests": 1,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1
+    },
+    "98112": {
+      "positives": 220,
+      "totalTests": 18612,
+      "deaths": 4,
+      "hospitalizations": 16,
+      "peopleTested": 9653
+    },
+    "98144": {
+      "positives": 621,
+      "totalTests": 22806,
+      "deaths": 22,
+      "hospitalizations": 65,
+      "peopleTested": 11891
+    },
+    "98188": {
+      "positives": 980,
+      "totalTests": 13334,
+      "deaths": 8,
+      "hospitalizations": 74,
+      "peopleTested": 6702
+    },
+    "98195": {
+      "positives": 18,
+      "totalTests": 663,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 233
+    },
+    "98032": {
+      "positives": 1196,
+      "totalTests": 14050,
+      "deaths": 14,
+      "hospitalizations": 72,
+      "peopleTested": 9218
+    },
+    "98001": {
+      "positives": 996,
+      "totalTests": 11341,
+      "deaths": 14,
+      "hospitalizations": 76,
+      "peopleTested": 8115
+    },
+    "98118": {
+      "positives": 1131,
+      "totalTests": 32480,
+      "deaths": 15,
+      "hospitalizations": 83,
+      "peopleTested": 15926
+    },
+    "98178": {
+      "positives": 592,
+      "totalTests": 11450,
+      "deaths": 8,
+      "hospitalizations": 38,
+      "peopleTested": 6971
+    },
+    "98028": {
+      "positives": 256,
+      "totalTests": 8040,
+      "deaths": 9,
+      "hospitalizations": 35,
+      "peopleTested": 5394
+    },
+    "98034": {
+      "positives": 624,
+      "totalTests": 14596,
+      "deaths": 55,
+      "hospitalizations": 105,
+      "peopleTested": 10269
+    },
+    "98047": {
+      "positives": 179,
+      "totalTests": 1989,
+      "deaths": 3,
+      "hospitalizations": 14,
+      "peopleTested": 1469
+    },
+    "98040": {
+      "positives": 254,
+      "totalTests": 12662,
+      "deaths": 5,
+      "hospitalizations": 18,
+      "peopleTested": 7886
+    },
+    "98057": {
+      "positives": 337,
+      "totalTests": 7098,
+      "deaths": 10,
+      "hospitalizations": 28,
+      "peopleTested": 4555
+    },
+    "98039": {
+      "positives": 44,
+      "totalTests": 1483,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 911
+    },
+    "98004": {
+      "positives": 397,
+      "totalTests": 14070,
+      "deaths": 10,
+      "hospitalizations": 40,
+      "peopleTested": 9296
+    },
+    "98030": {
+      "positives": 1226,
+      "totalTests": 11711,
+      "deaths": 24,
+      "hospitalizations": 93,
+      "peopleTested": 8343
+    },
+    "98002": {
+      "positives": 1210,
+      "totalTests": 13384,
+      "deaths": 18,
+      "hospitalizations": 98,
+      "peopleTested": 8812
+    },
+    "98092": {
+      "positives": 1026,
+      "totalTests": 11946,
+      "deaths": 9,
+      "hospitalizations": 84,
+      "peopleTested": 8659
+    },
+    "98011": {
+      "positives": 301,
+      "totalTests": 8945,
+      "deaths": 12,
+      "hospitalizations": 28,
+      "peopleTested": 6098
+    },
+    "98031": {
+      "positives": 1034,
+      "totalTests": 13504,
+      "deaths": 18,
+      "hospitalizations": 84,
+      "peopleTested": 9198
+    },
+    "98033": {
+      "positives": 405,
+      "totalTests": 14265,
+      "deaths": 7,
+      "hospitalizations": 24,
+      "peopleTested": 9798
+    },
+    "98055": {
+      "positives": 487,
+      "totalTests": 8229,
+      "deaths": 18,
+      "hospitalizations": 45,
+      "peopleTested": 5529
+    },
+    "98056": {
+      "positives": 714,
+      "totalTests": 12569,
+      "deaths": 10,
+      "hospitalizations": 51,
+      "peopleTested": 8233
+    },
+    "98006": {
+      "positives": 325,
+      "totalTests": 11726,
+      "deaths": 4,
+      "hospitalizations": 18,
+      "peopleTested": 8071
+    },
+    "98058": {
+      "positives": 731,
+      "totalTests": 14416,
+      "deaths": 18,
+      "hospitalizations": 56,
+      "peopleTested": 9814
+    },
+    "98005": {
+      "positives": 210,
+      "totalTests": 6185,
+      "deaths": 0,
+      "hospitalizations": 22,
+      "peopleTested": 4145
+    },
+    "98072": {
+      "positives": 212,
+      "totalTests": 6385,
+      "deaths": 5,
+      "hospitalizations": 22,
+      "peopleTested": 4549
+    },
+    "98059": {
+      "positives": 510,
+      "totalTests": 12368,
+      "deaths": 7,
+      "hospitalizations": 39,
+      "peopleTested": 8464
+    },
+    "98042": {
+      "positives": 859,
+      "totalTests": 14631,
+      "deaths": 9,
+      "hospitalizations": 56,
+      "peopleTested": 10081
+    },
+    "98052": {
+      "positives": 591,
+      "totalTests": 18450,
+      "deaths": 50,
+      "hospitalizations": 79,
+      "peopleTested": 13344
+    },
+    "98007": {
+      "positives": 370,
+      "totalTests": 7016,
+      "deaths": 14,
+      "hospitalizations": 37,
+      "peopleTested": 5009
+    },
+    "98008": {
+      "positives": 353,
+      "totalTests": 7561,
+      "deaths": 16,
+      "hospitalizations": 48,
+      "peopleTested": 5251
+    },
+    "98077": {
+      "positives": 100,
+      "totalTests": 3500,
+      "deaths": 2,
+      "hospitalizations": 7,
+      "peopleTested": 2517
+    },
+    "98022": {
+      "positives": 328,
+      "totalTests": 5949,
+      "deaths": 28,
+      "hospitalizations": 41,
+      "peopleTested": 4312
+    },
+    "98027": {
+      "positives": 349,
+      "totalTests": 10639,
+      "deaths": 25,
+      "hospitalizations": 48,
+      "peopleTested": 7102
+    },
+    "98053": {
+      "positives": 117,
+      "totalTests": 5348,
+      "deaths": 6,
+      "hospitalizations": 15,
+      "peopleTested": 3761
+    },
+    "98074": {
+      "positives": 183,
+      "totalTests": 7728,
+      "deaths": 5,
+      "hospitalizations": 9,
+      "peopleTested": 5540
+    },
+    "98075": {
+      "positives": 212,
+      "totalTests": 6940,
+      "deaths": 4,
+      "hospitalizations": 10,
+      "peopleTested": 4845
+    },
+    "98038": {
+      "positives": 438,
+      "totalTests": 10328,
+      "deaths": 4,
+      "hospitalizations": 23,
+      "peopleTested": 7532
+    },
+    "98029": {
+      "positives": 212,
+      "totalTests": 10536,
+      "deaths": 13,
+      "hospitalizations": 14,
+      "peopleTested": 6042
+    },
+    "98010": {
+      "positives": 76,
+      "totalTests": 1655,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1224
+    },
+    "98051": {
+      "positives": 70,
+      "totalTests": 1113,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 835
+    },
+    "98019": {
+      "positives": 87,
+      "totalTests": 3160,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 2305
+    },
+    "98014": {
+      "positives": 66,
+      "totalTests": 2123,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 1507
+    },
+    "98024": {
+      "positives": 56,
+      "totalTests": 1654,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1192
+    },
+    "98065": {
+      "positives": 181,
+      "totalTests": 5202,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 3719
+    },
+    "98045": {
+      "positives": 177,
+      "totalTests": 5767,
+      "deaths": 3,
+      "hospitalizations": 6,
+      "peopleTested": 3882
+    },
+    "98288": {
+      "positives": 0,
+      "totalTests": 96,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 64
+    },
+    "98224": {
+      "positives": 1,
+      "totalTests": 62,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 31
+    }
+  },
+  "hra": {
+    "Vashon Island": {
+      "positives": 30,
+      "totalTests": 3872,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 2658
+    },
+    "QA/Magnolia": {
+      "positives": 655,
+      "totalTests": 42924,
+      "deaths": 21,
+      "hospitalizations": 48,
+      "peopleTested": 24191
+    },
+    "West Seattle": {
+      "positives": 698,
+      "totalTests": 37773,
+      "deaths": 21,
+      "hospitalizations": 37,
+      "peopleTested": 21476
+    },
+    "Fed Way-Dash Pt": {
+      "positives": 971,
+      "totalTests": 11166,
+      "deaths": 6,
+      "hospitalizations": 68,
+      "peopleTested": 7745
+    },
+    "Ballard": {
+      "positives": 459,
+      "totalTests": 39164,
+      "deaths": 8,
+      "hospitalizations": 31,
+      "peopleTested": 22323
+    },
+    "Shoreline": {
+      "positives": 861,
+      "totalTests": 25293,
+      "deaths": 52,
+      "hospitalizations": 101,
+      "peopleTested": 15594
+    },
+    "NW Seattle": {
+      "positives": 672,
+      "totalTests": 28752,
+      "deaths": 21,
+      "hospitalizations": 65,
+      "peopleTested": 16067
+    },
+    "Delridge": {
+      "positives": 666,
+      "totalTests": 18073,
+      "deaths": 8,
+      "hospitalizations": 58,
+      "peopleTested": 10485
+    },
+    "Burien": {
+      "positives": 1301,
+      "totalTests": 20386,
+      "deaths": 25,
+      "hospitalizations": 120,
+      "peopleTested": 12999
+    },
+    "North Highline": {
+      "positives": 654,
+      "totalTests": 8525,
+      "deaths": 7,
+      "hospitalizations": 44,
+      "peopleTested": 5284
+    },
+    "Fed Way-Central/Military Rd": {
+      "positives": 2008,
+      "totalTests": 21581,
+      "deaths": 40,
+      "hospitalizations": 152,
+      "peopleTested": 14882
+    },
+    "Des Moines/Normandy Park": {
+      "positives": 828,
+      "totalTests": 15632,
+      "deaths": 6,
+      "hospitalizations": 40,
+      "peopleTested": 9535
+    },
+    "Fremont/Greenlake": {
+      "positives": 507,
+      "totalTests": 41315,
+      "deaths": 13,
+      "hospitalizations": 22,
+      "peopleTested": 22438
+    },
+    "Downtown": {
+      "positives": 942,
+      "totalTests": 51180,
+      "deaths": 26,
+      "hospitalizations": 91,
+      "peopleTested": 26239
+    },
+    "Beacon/Gtown/S.Park": {
+      "positives": 953,
+      "totalTests": 24818,
+      "deaths": 7,
+      "hospitalizations": 67,
+      "peopleTested": 13329
+    },
+    "Capitol Hill/E.lake": {
+      "positives": 541,
+      "totalTests": 41821,
+      "deaths": 7,
+      "hospitalizations": 26,
+      "peopleTested": 21726
+    },
+    "North Seattle": {
+      "positives": 622,
+      "totalTests": 26322,
+      "deaths": 23,
+      "hospitalizations": 77,
+      "peopleTested": 15579
+    },
+    "East Federal Way": {
+      "positives": 1011,
+      "totalTests": 11550,
+      "deaths": 14,
+      "hospitalizations": 82,
+      "peopleTested": 8238
+    },
+    "SeaTac/Tukwila": {
+      "positives": 1832,
+      "totalTests": 24262,
+      "deaths": 19,
+      "hospitalizations": 125,
+      "peopleTested": 13377
+    },
+    "Central Seattle": {
+      "positives": 660,
+      "totalTests": 41392,
+      "deaths": 13,
+      "hospitalizations": 42,
+      "peopleTested": 20653
+    },
+    "NE Seattle": {
+      "positives": 916,
+      "totalTests": 54151,
+      "deaths": 8,
+      "hospitalizations": 25,
+      "peopleTested": 25748
+    },
+    "Kenmore/LFP": {
+      "positives": 377,
+      "totalTests": 14096,
+      "deaths": 11,
+      "hospitalizations": 42,
+      "peopleTested": 9246
+    },
+    "Kent-West": {
+      "positives": 911,
+      "totalTests": 10464,
+      "deaths": 12,
+      "hospitalizations": 58,
+      "peopleTested": 7101
+    },
+    "SE Seattle": {
+      "positives": 1118,
+      "totalTests": 32996,
+      "deaths": 29,
+      "hospitalizations": 102,
+      "peopleTested": 16176
+    },
+    "Auburn-North": {
+      "positives": 1322,
+      "totalTests": 15213,
+      "deaths": 24,
+      "hospitalizations": 116,
+      "peopleTested": 10640
+    },
+    "Renton-South": {
+      "positives": 1182,
+      "totalTests": 20911,
+      "deaths": 37,
+      "hospitalizations": 102,
+      "peopleTested": 13674
+    },
+    "Auburn-South": {
+      "positives": 913,
+      "totalTests": 10010,
+      "deaths": 9,
+      "hospitalizations": 62,
+      "peopleTested": 6726
+    },
+    "Kirkland North": {
+      "positives": 384,
+      "totalTests": 10225,
+      "deaths": 11,
+      "hospitalizations": 36,
+      "peopleTested": 7216
+    },
+    "Mercer Isle/Pt Cities": {
+      "positives": 351,
+      "totalTests": 16246,
+      "deaths": 6,
+      "hospitalizations": 22,
+      "peopleTested": 10099
+    },
+    "Kent-SE": {
+      "positives": 1813,
+      "totalTests": 20556,
+      "deaths": 30,
+      "hospitalizations": 124,
+      "peopleTested": 14290
+    },
+    "Bothell/Woodinville": {
+      "positives": 396,
+      "totalTests": 12477,
+      "deaths": 15,
+      "hospitalizations": 39,
+      "peopleTested": 8620
+    },
+    "Bellevue-West": {
+      "positives": 359,
+      "totalTests": 13008,
+      "deaths": 8,
+      "hospitalizations": 35,
+      "peopleTested": 8840
+    },
+    "Kirkland": {
+      "positives": 625,
+      "totalTests": 18551,
+      "deaths": 51,
+      "hospitalizations": 91,
+      "peopleTested": 12778
+    },
+    "Renton-North": {
+      "positives": 742,
+      "totalTests": 13390,
+      "deaths": 5,
+      "hospitalizations": 43,
+      "peopleTested": 8654
+    },
+    "Kent-East": {
+      "positives": 897,
+      "totalTests": 12275,
+      "deaths": 17,
+      "hospitalizations": 80,
+      "peopleTested": 8292
+    },
+    "Bellevue-NE": {
+      "positives": 419,
+      "totalTests": 10653,
+      "deaths": 12,
+      "hospitalizations": 42,
+      "peopleTested": 7474
+    },
+    "Renton-East": {
+      "positives": 553,
+      "totalTests": 10739,
+      "deaths": 10,
+      "hospitalizations": 49,
+      "peopleTested": 7286
+    },
+    "Black Diamond/Enumclaw/SE County": {
+      "positives": 675,
+      "totalTests": 13620,
+      "deaths": 29,
+      "hospitalizations": 60,
+      "peopleTested": 9934
+    },
+    "Bellevue-South": {
+      "positives": 265,
+      "totalTests": 9955,
+      "deaths": 3,
+      "hospitalizations": 16,
+      "peopleTested": 6794
+    },
+    "Newcastle/Four Creeks": {
+      "positives": 259,
+      "totalTests": 9691,
+      "deaths": 9,
+      "hospitalizations": 26,
+      "peopleTested": 6596
+    },
+    "Bellevue-Central": {
+      "positives": 530,
+      "totalTests": 11092,
+      "deaths": 20,
+      "hospitalizations": 66,
+      "peopleTested": 7532
+    },
+    "Fairwood": {
+      "positives": 344,
+      "totalTests": 8501,
+      "deaths": 9,
+      "hospitalizations": 22,
+      "peopleTested": 5829
+    },
+    "Redmond": {
+      "positives": 545,
+      "totalTests": 17183,
+      "deaths": 49,
+      "hospitalizations": 78,
+      "peopleTested": 12446
+    },
+    "Bear Creek/Carnation/Duvall": {
+      "positives": 473,
+      "totalTests": 18453,
+      "deaths": 12,
+      "hospitalizations": 36,
+      "peopleTested": 13193
+    },
+    "Covington/Maple Valley": {
+      "positives": 854,
+      "totalTests": 17705,
+      "deaths": 11,
+      "hospitalizations": 49,
+      "peopleTested": 12795
+    },
+    "Issaquah": {
+      "positives": 406,
+      "totalTests": 15401,
+      "deaths": 36,
+      "hospitalizations": 54,
+      "peopleTested": 9107
+    },
+    "Sammamish": {
+      "positives": 365,
+      "totalTests": 14254,
+      "deaths": 8,
+      "hospitalizations": 17,
+      "peopleTested": 10083
+    },
+    "Snoqualmie/North Bend/Skykomish": {
+      "positives": 423,
+      "totalTests": 15831,
+      "deaths": 3,
+      "hospitalizations": 12,
+      "peopleTested": 11023
+    }
+  },
+  "city": {
+    "Vashon": {
+      "positives": 30,
+      "totalTests": 2647,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1933
+    },
+    "Seattle": {
+      "positives": 9346,
+      "totalTests": 480377,
+      "deaths": 191,
+      "hospitalizations": 670,
+      "peopleTested": 256240
+    },
+    "Federal Way": {
+      "positives": 2988,
+      "totalTests": 32765,
+      "deaths": 46,
+      "hospitalizations": 220,
+      "peopleTested": 22640
+    },
+    "Shoreline": {
+      "positives": 898,
+      "totalTests": 25341,
+      "deaths": 66,
+      "hospitalizations": 119,
+      "peopleTested": 15629
+    },
+    "Burien": {
+      "positives": 1249,
+      "totalTests": 20427,
+      "deaths": 25,
+      "hospitalizations": 117,
+      "peopleTested": 13005
+    },
+    "White Center": {
+      "positives": 593,
+      "totalTests": 4781,
+      "deaths": 6,
+      "hospitalizations": 38,
+      "peopleTested": 3232
+    },
+    "Tacoma": {
+      "positives": 13,
+      "totalTests": 412,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 122
+    },
+    "Normandy Park": {
+      "positives": 80,
+      "totalTests": 2833,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1802
+    },
+    "Des Moines": {
+      "positives": 788,
+      "totalTests": 12810,
+      "deaths": 7,
+      "hospitalizations": 41,
+      "peopleTested": 7753
+    },
+    "Boulevard Park": {
+      "positives": 110,
+      "totalTests": 1644,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1028
+    },
+    "Milton": {
+      "positives": 20,
+      "totalTests": 366,
+      "deaths": 2,
+      "hospitalizations": 1,
+      "peopleTested": 254
+    },
+    "SeaTac": {
+      "positives": 1059,
+      "totalTests": 11832,
+      "deaths": 15,
+      "hospitalizations": 88,
+      "peopleTested": 7534
+    },
+    "Tukwila": {
+      "positives": 786,
+      "totalTests": 12423,
+      "deaths": 3,
+      "hospitalizations": 39,
+      "peopleTested": 5868
+    },
+    "Lake Forest Park": {
+      "positives": 114,
+      "totalTests": 5568,
+      "deaths": 2,
+      "hospitalizations": 6,
+      "peopleTested": 3510
+    },
+    "Kent": {
+      "positives": 3583,
+      "totalTests": 43441,
+      "deaths": 59,
+      "hospitalizations": 261,
+      "peopleTested": 29788
+    },
+    "Lakeland South": {
+      "positives": 319,
+      "totalTests": 2864,
+      "deaths": 4,
+      "hospitalizations": 27,
+      "peopleTested": 2102
+    },
+    "Lakeland North": {
+      "positives": 407,
+      "totalTests": 3163,
+      "deaths": 4,
+      "hospitalizations": 33,
+      "peopleTested": 2398
+    },
+    "Auburn": {
+      "positives": 2278,
+      "totalTests": 25332,
+      "deaths": 33,
+      "hospitalizations": 178,
+      "peopleTested": 17399
+    },
+    "Kenmore": {
+      "positives": 254,
+      "totalTests": 8065,
+      "deaths": 9,
+      "hospitalizations": 36,
+      "peopleTested": 5410
+    },
+    "Pacific": {
+      "positives": 150,
+      "totalTests": 1894,
+      "deaths": 3,
+      "hospitalizations": 13,
+      "peopleTested": 1390
+    },
+    "Bryn Mawr-Skyway": {
+      "positives": 346,
+      "totalTests": 6879,
+      "deaths": 6,
+      "hospitalizations": 24,
+      "peopleTested": 4301
+    },
+    "Kirkland": {
+      "positives": 993,
+      "totalTests": 28553,
+      "deaths": 61,
+      "hospitalizations": 126,
+      "peopleTested": 19823
+    },
+    "Algona": {
+      "positives": 122,
+      "totalTests": 999,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 745
+    },
+    "Mercer Island": {
+      "positives": 248,
+      "totalTests": 12650,
+      "deaths": 5,
+      "hospitalizations": 16,
+      "peopleTested": 7880
+    },
+    "Renton": {
+      "positives": 2113,
+      "totalTests": 37657,
+      "deaths": 43,
+      "hospitalizations": 167,
+      "peopleTested": 24943
+    },
+    "Medina": {
+      "positives": 39,
+      "totalTests": 1477,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 905
+    },
+    "Hunts Point": {
+      "positives": 10,
+      "totalTests": 290,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 167
+    },
+    "Bothell": {
+      "positives": 296,
+      "totalTests": 9263,
+      "deaths": 14,
+      "hospitalizations": 28,
+      "peopleTested": 6302
+    },
+    "Clyde Hill": {
+      "positives": 43,
+      "totalTests": 1300,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 819
+    },
+    "Yarrow Point": {
+      "positives": 14,
+      "totalTests": 580,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 360
+    },
+    "Bellevue": {
+      "positives": 1536,
+      "totalTests": 44041,
+      "deaths": 43,
+      "hospitalizations": 157,
+      "peopleTested": 30199
+    },
+    "Beaux Arts Village": {
+      "positives": 9,
+      "totalTests": 213,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 132
+    },
+    "Newcastle": {
+      "positives": 89,
+      "totalTests": 4099,
+      "deaths": 3,
+      "hospitalizations": 10,
+      "peopleTested": 2754
+    },
+    "Lake Holm": {
+      "positives": 40,
+      "totalTests": 596,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 465
+    },
+    "Woodinville": {
+      "positives": 130,
+      "totalTests": 3833,
+      "deaths": 2,
+      "hospitalizations": 12,
+      "peopleTested": 2733
+    },
+    "Fairwood": {
+      "positives": 292,
+      "totalTests": 4732,
+      "deaths": 8,
+      "hospitalizations": 20,
+      "peopleTested": 3404
+    },
+    "Lake Morton-Berrydale": {
+      "positives": 133,
+      "totalTests": 2084,
+      "deaths": 1,
+      "hospitalizations": 10,
+      "peopleTested": 1555
+    },
+    "Redmond": {
+      "positives": 570,
+      "totalTests": 17430,
+      "deaths": 50,
+      "hospitalizations": 78,
+      "peopleTested": 12639
+    },
+    "East Renton Highlands": {
+      "positives": 133,
+      "totalTests": 3740,
+      "deaths": 3,
+      "hospitalizations": 12,
+      "peopleTested": 2583
+    },
+    "Cottage Lake": {
+      "positives": 175,
+      "totalTests": 6396,
+      "deaths": 5,
+      "hospitalizations": 14,
+      "peopleTested": 4585
+    },
+    "Covington": {
+      "positives": 375,
+      "totalTests": 5881,
+      "deaths": 5,
+      "hospitalizations": 25,
+      "peopleTested": 4201
+    },
+    "Lake Tapps": {},
+    "Maple Heights-Lake Desire": {
+      "positives": 38,
+      "totalTests": 753,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 578
+    },
+    "Issaquah": {
+      "positives": 408,
+      "totalTests": 15380,
+      "deaths": 37,
+      "hospitalizations": 55,
+      "peopleTested": 9105
+    },
+    "Shadow Lake": {
+      "positives": 21,
+      "totalTests": 426,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 323
+    },
+    "Union Hill-Novelty Hill": {
+      "positives": 125,
+      "totalTests": 3680,
+      "deaths": 6,
+      "hospitalizations": 16,
+      "peopleTested": 2771
+    },
+    "Sammamish": {
+      "positives": 447,
+      "totalTests": 17563,
+      "deaths": 8,
+      "hospitalizations": 18,
+      "peopleTested": 12397
+    },
+    "Hobart": {
+      "positives": 76,
+      "totalTests": 1573,
+      "deaths": 3,
+      "hospitalizations": 6,
+      "peopleTested": 1194
+    },
+    "Maple Valley": {
+      "positives": 319,
+      "totalTests": 7413,
+      "deaths": 2,
+      "hospitalizations": 15,
+      "peopleTested": 5428
+    },
+    "Mirrormont": {
+      "positives": 29,
+      "totalTests": 747,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 555
+    },
+    "Black Diamond": {
+      "positives": 49,
+      "totalTests": 1439,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1062
+    },
+    "Enumclaw": {
+      "positives": 206,
+      "totalTests": 3661,
+      "deaths": 26,
+      "hospitalizations": 31,
+      "peopleTested": 2664
+    },
+    "Ravensdale": {
+      "positives": 33,
+      "totalTests": 380,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 322
+    },
+    "Duvall": {
+      "positives": 64,
+      "totalTests": 2206,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1612
+    },
+    "Ames Lake": {
+      "positives": 10,
+      "totalTests": 417,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 292
+    },
+    "Fall City": {
+      "positives": 18,
+      "totalTests": 530,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 394
+    },
+    "Lake Marcel-Stillwater": {
+      "positives": 13,
+      "totalTests": 227,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 180
+    },
+    "Carnation": {
+      "positives": 20,
+      "totalTests": 503,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 347
+    },
+    "Snoqualmie": {
+      "positives": 135,
+      "totalTests": 4253,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 3070
+    },
+    "North Bend": {
+      "positives": 110,
+      "totalTests": 3188,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 2132
+    },
+    "Riverbend": {
+      "positives": 15,
+      "totalTests": 468,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 348
+    },
+    "Wilderness Rim": {
+      "positives": 14,
+      "totalTests": 339,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 246
+    },
+    "Tanner": {
+      "positives": 12,
+      "totalTests": 213,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 162
+    },
+    "Baring": {
+      "positives": 1,
+      "totalTests": 42,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 16
+    },
+    "Skykomish": {
+      "positives": 0,
+      "totalTests": 79,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 50
+    }
+  },
+  "census": {
+    "277.02": {
+      "positives": 19,
+      "totalTests": 1626,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1159
+    },
+    "277.01": {
+      "positives": 11,
+      "totalTests": 2251,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1502
+    },
+    "57": {
+      "positives": 35,
+      "totalTests": 3483,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 2096
+    },
+    "56": {
+      "positives": 47,
+      "totalTests": 3973,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 2396
+    },
+    "97.01": {
+      "positives": 73,
+      "totalTests": 3172,
+      "deaths": 2,
+      "hospitalizations": 6,
+      "peopleTested": 1872
+    },
+    "303.06": {
+      "positives": 137,
+      "totalTests": 1950,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1379
+    },
+    "31": {
+      "positives": 48,
+      "totalTests": 3685,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 2200
+    },
+    "32": {
+      "positives": 61,
+      "totalTests": 5908,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 3450
+    },
+    "97.02": {
+      "positives": 78,
+      "totalTests": 3694,
+      "deaths": 4,
+      "hospitalizations": 4,
+      "peopleTested": 2177
+    },
+    "106": {
+      "positives": 73,
+      "totalTests": 4894,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 2807
+    },
+    "303.05": {
+      "positives": 108,
+      "totalTests": 1584,
+      "deaths": 0,
+      "hospitalizations": 10,
+      "peopleTested": 1108
+    },
+    "15": {
+      "positives": 38,
+      "totalTests": 1498,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 909
+    },
+    "96": {
+      "positives": 61,
+      "totalTests": 3204,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1864
+    },
+    "105": {
+      "positives": 115,
+      "totalTests": 6107,
+      "deaths": 8,
+      "hospitalizations": 7,
+      "peopleTested": 3374
+    },
+    "116": {
+      "positives": 91,
+      "totalTests": 4971,
+      "deaths": 4,
+      "hospitalizations": 5,
+      "peopleTested": 2546
+    },
+    "121": {
+      "positives": 29,
+      "totalTests": 1644,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1006
+    },
+    "201": {
+      "positives": 82,
+      "totalTests": 1703,
+      "deaths": 18,
+      "hospitalizations": 25,
+      "peopleTested": 1003
+    },
+    "16": {
+      "positives": 40,
+      "totalTests": 2630,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1556
+    },
+    "58.01": {
+      "positives": 39,
+      "totalTests": 3415,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 2040
+    },
+    "58.02": {
+      "positives": 49,
+      "totalTests": 3453,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1942
+    },
+    "33": {
+      "positives": 39,
+      "totalTests": 5094,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 2804
+    },
+    "47": {
+      "positives": 109,
+      "totalTests": 7128,
+      "deaths": 4,
+      "hospitalizations": 11,
+      "peopleTested": 3968
+    },
+    "98": {
+      "positives": 72,
+      "totalTests": 4483,
+      "deaths": 3,
+      "hospitalizations": 6,
+      "peopleTested": 2559
+    },
+    "120": {
+      "positives": 47,
+      "totalTests": 2198,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1231
+    },
+    "209": {
+      "positives": 38,
+      "totalTests": 1724,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1051
+    },
+    "278": {
+      "positives": 34,
+      "totalTests": 1568,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1004
+    },
+    "208": {
+      "positives": 55,
+      "totalTests": 1951,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1237
+    },
+    "14": {
+      "positives": 46,
+      "totalTests": 2801,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1684
+    },
+    "30": {
+      "positives": 30,
+      "totalTests": 3854,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 2234
+    },
+    "99": {
+      "positives": 64,
+      "totalTests": 3502,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 2088
+    },
+    "115": {
+      "positives": 41,
+      "totalTests": 2924,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1607
+    },
+    "202": {
+      "positives": 93,
+      "totalTests": 2408,
+      "deaths": 18,
+      "hospitalizations": 15,
+      "peopleTested": 1478
+    },
+    "5": {
+      "positives": 32,
+      "totalTests": 1952,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1125
+    },
+    "17.02": {
+      "positives": 101,
+      "totalTests": 4187,
+      "deaths": 5,
+      "hospitalizations": 16,
+      "peopleTested": 1967
+    },
+    "59": {
+      "positives": 52,
+      "totalTests": 4256,
+      "deaths": 1,
+      "hospitalizations": 0,
+      "peopleTested": 2411
+    },
+    "69": {
+      "positives": 23,
+      "totalTests": 2805,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1653
+    },
+    "107.02": {
+      "positives": 97,
+      "totalTests": 2254,
+      "deaths": 6,
+      "hospitalizations": 16,
+      "peopleTested": 1355
+    },
+    "114.02": {
+      "positives": 103,
+      "totalTests": 2375,
+      "deaths": 1,
+      "hospitalizations": 11,
+      "peopleTested": 1385
+    },
+    "267": {
+      "positives": 132,
+      "totalTests": 2472,
+      "deaths": 1,
+      "hospitalizations": 7,
+      "peopleTested": 1569
+    },
+    "301": {
+      "positives": 150,
+      "totalTests": 2632,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1813
+    },
+    "303.11": {
+      "positives": 191,
+      "totalTests": 1582,
+      "deaths": 3,
+      "hospitalizations": 12,
+      "peopleTested": 1131
+    },
+    "303.12": {
+      "positives": 135,
+      "totalTests": 1573,
+      "deaths": 3,
+      "hospitalizations": 13,
+      "peopleTested": 1096
+    },
+    "71": {
+      "positives": 80,
+      "totalTests": 3006,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1747
+    },
+    "107.01": {
+      "positives": 71,
+      "totalTests": 2018,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 1220
+    },
+    "114.01": {
+      "positives": 86,
+      "totalTests": 2302,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1363
+    },
+    "266": {
+      "positives": 60,
+      "totalTests": 1250,
+      "deaths": 2,
+      "hospitalizations": 4,
+      "peopleTested": 718
+    },
+    "276": {
+      "positives": 114,
+      "totalTests": 1529,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 983
+    },
+    "17.01": {
+      "positives": 40,
+      "totalTests": 2640,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1426
+    },
+    "29": {
+      "positives": 38,
+      "totalTests": 3059,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1723
+    },
+    "34": {
+      "positives": 23,
+      "totalTests": 2410,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1366
+    },
+    "48": {
+      "positives": 28,
+      "totalTests": 3580,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1949
+    },
+    "70": {
+      "positives": 62,
+      "totalTests": 4572,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 2524
+    },
+    "108": {
+      "positives": 95,
+      "totalTests": 2807,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1607
+    },
+    "4.01": {
+      "positives": 80,
+      "totalTests": 3302,
+      "deaths": 4,
+      "hospitalizations": 8,
+      "peopleTested": 1910
+    },
+    "4.02": {
+      "positives": 76,
+      "totalTests": 2923,
+      "deaths": 3,
+      "hospitalizations": 9,
+      "peopleTested": 1680
+    },
+    "60": {
+      "positives": 113,
+      "totalTests": 5481,
+      "deaths": 18,
+      "hospitalizations": 29,
+      "peopleTested": 2387
+    },
+    "68": {
+      "positives": 19,
+      "totalTests": 2016,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1171
+    },
+    "279": {
+      "positives": 150,
+      "totalTests": 3614,
+      "deaths": 3,
+      "hospitalizations": 24,
+      "peopleTested": 2228
+    },
+    "286": {
+      "positives": 68,
+      "totalTests": 2757,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1769
+    },
+    "302.01": {
+      "positives": 148,
+      "totalTests": 1795,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1251
+    },
+    "303.08": {
+      "positives": 184,
+      "totalTests": 2554,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1708
+    },
+    "303.10": {
+      "positives": 166,
+      "totalTests": 2153,
+      "deaths": 2,
+      "hospitalizations": 12,
+      "peopleTested": 1502
+    },
+    "303.04": {
+      "positives": 118,
+      "totalTests": 1252,
+      "deaths": 0,
+      "hospitalizations": 9,
+      "peopleTested": 855
+    },
+    "207": {
+      "positives": 57,
+      "totalTests": 1870,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1165
+    },
+    "28": {
+      "positives": 40,
+      "totalTests": 3388,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1882
+    },
+    "35": {
+      "positives": 20,
+      "totalTests": 2840,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1602
+    },
+    "49": {
+      "positives": 62,
+      "totalTests": 5059,
+      "deaths": 5,
+      "hospitalizations": 3,
+      "peopleTested": 2709
+    },
+    "80.01": {
+      "positives": 70,
+      "totalTests": 3608,
+      "deaths": 2,
+      "hospitalizations": 6,
+      "peopleTested": 2096
+    },
+    "113": {
+      "positives": 156,
+      "totalTests": 3097,
+      "deaths": 0,
+      "hospitalizations": 15,
+      "peopleTested": 1808
+    },
+    "265": {
+      "positives": 179,
+      "totalTests": 1996,
+      "deaths": 3,
+      "hospitalizations": 13,
+      "peopleTested": 1209
+    },
+    "268.01": {
+      "positives": 215,
+      "totalTests": 2457,
+      "deaths": 0,
+      "hospitalizations": 15,
+      "peopleTested": 1543
+    },
+    "268.02": {
+      "positives": 185,
+      "totalTests": 2458,
+      "deaths": 7,
+      "hospitalizations": 14,
+      "peopleTested": 1576
+    },
+    "203": {
+      "positives": 111,
+      "totalTests": 2812,
+      "deaths": 2,
+      "hospitalizations": 9,
+      "peopleTested": 1763
+    },
+    "13": {
+      "positives": 67,
+      "totalTests": 2792,
+      "deaths": 5,
+      "hospitalizations": 8,
+      "peopleTested": 1576
+    },
+    "18": {
+      "positives": 56,
+      "totalTests": 3178,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1785
+    },
+    "67": {
+      "positives": 133,
+      "totalTests": 6363,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 3765
+    },
+    "72": {
+      "positives": 90,
+      "totalTests": 5223,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 3070
+    },
+    "80.02": {
+      "positives": 35,
+      "totalTests": 2484,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1230
+    },
+    "275": {
+      "positives": 168,
+      "totalTests": 1861,
+      "deaths": 9,
+      "hospitalizations": 23,
+      "peopleTested": 1183
+    },
+    "303.09": {
+      "positives": 148,
+      "totalTests": 1840,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1286
+    },
+    "210": {
+      "positives": 84,
+      "totalTests": 2706,
+      "deaths": 2,
+      "hospitalizations": 13,
+      "peopleTested": 1713
+    },
+    "3": {
+      "positives": 43,
+      "totalTests": 1326,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 802
+    },
+    "6": {
+      "positives": 168,
+      "totalTests": 5196,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 3013
+    },
+    "27": {
+      "positives": 51,
+      "totalTests": 3854,
+      "deaths": 2,
+      "hospitalizations": 5,
+      "peopleTested": 2126
+    },
+    "46": {
+      "positives": 15,
+      "totalTests": 2308,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1326
+    },
+    "50": {
+      "positives": 47,
+      "totalTests": 3074,
+      "deaths": 2,
+      "hospitalizations": 1,
+      "peopleTested": 1622
+    },
+    "54": {
+      "positives": 44,
+      "totalTests": 5295,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 2804
+    },
+    "81": {
+      "positives": 112,
+      "totalTests": 13261,
+      "deaths": 4,
+      "hospitalizations": 14,
+      "peopleTested": 7047
+    },
+    "93": {
+      "positives": 85,
+      "totalTests": 3331,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 1812
+    },
+    "206": {
+      "positives": 42,
+      "totalTests": 1494,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 960
+    },
+    "66": {
+      "positives": 51,
+      "totalTests": 3163,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1633
+    },
+    "73": {
+      "positives": 154,
+      "totalTests": 6086,
+      "deaths": 3,
+      "hospitalizations": 16,
+      "peopleTested": 3392
+    },
+    "109": {
+      "positives": 24,
+      "totalTests": 2160,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 799
+    },
+    "112": {
+      "positives": 101,
+      "totalTests": 1779,
+      "deaths": 2,
+      "hospitalizations": 7,
+      "peopleTested": 1051
+    },
+    "12": {
+      "positives": 91,
+      "totalTests": 3942,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 2364
+    },
+    "19": {
+      "positives": 60,
+      "totalTests": 2827,
+      "deaths": 0,
+      "hospitalizations": 8,
+      "peopleTested": 1614
+    },
+    "51": {
+      "positives": 29,
+      "totalTests": 2851,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1556
+    },
+    "82": {
+      "positives": 60,
+      "totalTests": 2445,
+      "deaths": 5,
+      "hospitalizations": 5,
+      "peopleTested": 1402
+    },
+    "92": {
+      "positives": 128,
+      "totalTests": 3567,
+      "deaths": 1,
+      "hospitalizations": 22,
+      "peopleTested": 1589
+    },
+    "270": {
+      "positives": 90,
+      "totalTests": 1351,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 828
+    },
+    "274": {
+      "positives": 177,
+      "totalTests": 2254,
+      "deaths": 0,
+      "hospitalizations": 11,
+      "peopleTested": 1437
+    },
+    "280": {
+      "positives": 115,
+      "totalTests": 1254,
+      "deaths": 1,
+      "hospitalizations": 7,
+      "peopleTested": 829
+    },
+    "285": {
+      "positives": 92,
+      "totalTests": 1715,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 1122
+    },
+    "287": {
+      "positives": 71,
+      "totalTests": 2053,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1323
+    },
+    "302.02": {
+      "positives": 347,
+      "totalTests": 2620,
+      "deaths": 9,
+      "hospitalizations": 27,
+      "peopleTested": 1791
+    },
+    "303.14": {
+      "positives": 94,
+      "totalTests": 1440,
+      "deaths": 3,
+      "hospitalizations": 11,
+      "peopleTested": 954
+    },
+    "303.13": {
+      "positives": 186,
+      "totalTests": 1815,
+      "deaths": 19,
+      "hospitalizations": 25,
+      "peopleTested": 1176
+    },
+    "204.01": {
+      "positives": 57,
+      "totalTests": 1457,
+      "deaths": 3,
+      "hospitalizations": 3,
+      "peopleTested": 944
+    },
+    "36": {
+      "positives": 96,
+      "totalTests": 5457,
+      "deaths": 3,
+      "hospitalizations": 5,
+      "peopleTested": 3006
+    },
+    "61": {
+      "positives": 59,
+      "totalTests": 4534,
+      "deaths": 2,
+      "hospitalizations": 4,
+      "peopleTested": 2338
+    },
+    "84": {
+      "positives": 59,
+      "totalTests": 5763,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 2327
+    },
+    "83": {
+      "positives": 44,
+      "totalTests": 2077,
+      "deaths": 2,
+      "hospitalizations": 0,
+      "peopleTested": 1090
+    },
+    "85": {
+      "positives": 118,
+      "totalTests": 4479,
+      "deaths": 5,
+      "hospitalizations": 11,
+      "peopleTested": 1780
+    },
+    "264": {
+      "positives": 164,
+      "totalTests": 2783,
+      "deaths": 1,
+      "hospitalizations": 11,
+      "peopleTested": 1536
+    },
+    "289.01": {
+      "positives": 66,
+      "totalTests": 1628,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1059
+    },
+    "304.03": {
+      "positives": 114,
+      "totalTests": 1500,
+      "deaths": 4,
+      "hospitalizations": 10,
+      "peopleTested": 1020
+    },
+    "205": {
+      "positives": 115,
+      "totalTests": 3203,
+      "deaths": 4,
+      "hospitalizations": 11,
+      "peopleTested": 2020
+    },
+    "211": {
+      "positives": 115,
+      "totalTests": 2541,
+      "deaths": 16,
+      "hospitalizations": 23,
+      "peopleTested": 1373
+    },
+    "45": {
+      "positives": 32,
+      "totalTests": 2281,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1196
+    },
+    "52": {
+      "positives": 59,
+      "totalTests": 4120,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 2224
+    },
+    "65": {
+      "positives": 40,
+      "totalTests": 3466,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1872
+    },
+    "74.01": {
+      "positives": 62,
+      "totalTests": 4208,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 2087
+    },
+    "74.02": {
+      "positives": 48,
+      "totalTests": 3534,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 1810
+    },
+    "91": {
+      "positives": 35,
+      "totalTests": 1203,
+      "deaths": 2,
+      "hospitalizations": 1,
+      "peopleTested": 694
+    },
+    "284.02": {
+      "positives": 213,
+      "totalTests": 1865,
+      "deaths": 1,
+      "hospitalizations": 17,
+      "peopleTested": 1257
+    },
+    "288.01": {
+      "positives": 68,
+      "totalTests": 2261,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1068
+    },
+    "290.01": {
+      "positives": 92,
+      "totalTests": 1821,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 1113
+    },
+    "300.03": {
+      "positives": 188,
+      "totalTests": 2118,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 1479
+    },
+    "2": {
+      "positives": 120,
+      "totalTests": 4293,
+      "deaths": 4,
+      "hospitalizations": 19,
+      "peopleTested": 2564
+    },
+    "53.02": {
+      "positives": 36,
+      "totalTests": 2717,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1118
+    },
+    "75": {
+      "positives": 82,
+      "totalTests": 7227,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 3716
+    },
+    "86": {
+      "positives": 98,
+      "totalTests": 5480,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 2610
+    },
+    "104.02": {
+      "positives": 88,
+      "totalTests": 2804,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1521
+    },
+    "20": {
+      "positives": 28,
+      "totalTests": 2230,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1283
+    },
+    "26": {
+      "positives": 40,
+      "totalTests": 3285,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1908
+    },
+    "44": {
+      "positives": 104,
+      "totalTests": 7285,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 3005
+    },
+    "53.01": {
+      "positives": 285,
+      "totalTests": 9868,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 3047
+    },
+    "62": {
+      "positives": 48,
+      "totalTests": 3002,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1695
+    },
+    "90": {
+      "positives": 126,
+      "totalTests": 3116,
+      "deaths": 2,
+      "hospitalizations": 8,
+      "peopleTested": 1527
+    },
+    "94": {
+      "positives": 115,
+      "totalTests": 4313,
+      "deaths": 3,
+      "hospitalizations": 11,
+      "peopleTested": 2300
+    },
+    "100.02": {
+      "positives": 68,
+      "totalTests": 3362,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1712
+    },
+    "100.01": {
+      "positives": 106,
+      "totalTests": 2511,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1408
+    },
+    "263": {
+      "positives": 53,
+      "totalTests": 726,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 456
+    },
+    "273": {
+      "positives": 223,
+      "totalTests": 2333,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1564
+    },
+    "281": {
+      "positives": 167,
+      "totalTests": 1050,
+      "deaths": 4,
+      "hospitalizations": 10,
+      "peopleTested": 698
+    },
+    "204.02": {
+      "positives": 50,
+      "totalTests": 2065,
+      "deaths": 2,
+      "hospitalizations": 8,
+      "peopleTested": 1331
+    },
+    "214": {
+      "positives": 38,
+      "totalTests": 1647,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1041
+    },
+    "7": {
+      "positives": 63,
+      "totalTests": 2475,
+      "deaths": 2,
+      "hospitalizations": 6,
+      "peopleTested": 1530
+    },
+    "11": {
+      "positives": 17,
+      "totalTests": 1481,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 864
+    },
+    "64": {
+      "positives": 21,
+      "totalTests": 2748,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1449
+    },
+    "76": {
+      "positives": 39,
+      "totalTests": 3589,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1808
+    },
+    "79": {
+      "positives": 75,
+      "totalTests": 5473,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 2723
+    },
+    "87": {
+      "positives": 60,
+      "totalTests": 4823,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 1897
+    },
+    "110.02": {
+      "positives": 120,
+      "totalTests": 1979,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1138
+    },
+    "271": {
+      "positives": 111,
+      "totalTests": 1387,
+      "deaths": 1,
+      "hospitalizations": 13,
+      "peopleTested": 887
+    },
+    "289.02": {
+      "positives": 258,
+      "totalTests": 2364,
+      "deaths": 3,
+      "hospitalizations": 12,
+      "peopleTested": 1503
+    },
+    "290.03": {
+      "positives": 147,
+      "totalTests": 2759,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 1407
+    },
+    "300.04": {
+      "positives": 321,
+      "totalTests": 2779,
+      "deaths": 1,
+      "hospitalizations": 25,
+      "peopleTested": 1892
+    },
+    "300.05": {
+      "positives": 261,
+      "totalTests": 1835,
+      "deaths": 1,
+      "hospitalizations": 16,
+      "peopleTested": 1333
+    },
+    "300.06": {
+      "positives": 133,
+      "totalTests": 1810,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 1265
+    },
+    "304.01": {
+      "positives": 252,
+      "totalTests": 2774,
+      "deaths": 3,
+      "hospitalizations": 20,
+      "peopleTested": 1994
+    },
+    "21": {
+      "positives": 30,
+      "totalTests": 2381,
+      "deaths": 3,
+      "hospitalizations": 2,
+      "peopleTested": 1364
+    },
+    "25": {
+      "positives": 20,
+      "totalTests": 1949,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1113
+    },
+    "43.01": {
+      "positives": 35,
+      "totalTests": 2646,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1391
+    },
+    "43.02": {
+      "positives": 152,
+      "totalTests": 4787,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1530
+    },
+    "290.04": {
+      "positives": 174,
+      "totalTests": 1126,
+      "deaths": 2,
+      "hospitalizations": 11,
+      "peopleTested": 815
+    },
+    "213": {
+      "positives": 52,
+      "totalTests": 1743,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1061
+    },
+    "10": {
+      "positives": 18,
+      "totalTests": 1019,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 606
+    },
+    "38": {
+      "positives": 18,
+      "totalTests": 1310,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 772
+    },
+    "77": {
+      "positives": 43,
+      "totalTests": 4191,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 2170
+    },
+    "88": {
+      "positives": 22,
+      "totalTests": 3187,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1625
+    },
+    "89": {
+      "positives": 58,
+      "totalTests": 4280,
+      "deaths": 2,
+      "hospitalizations": 2,
+      "peopleTested": 2183
+    },
+    "95": {
+      "positives": 89,
+      "totalTests": 4805,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 2626
+    },
+    "104.01": {
+      "positives": 72,
+      "totalTests": 2280,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1275
+    },
+    "304.04": {
+      "positives": 105,
+      "totalTests": 1441,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1014
+    },
+    "1": {
+      "positives": 106,
+      "totalTests": 3824,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 2240
+    },
+    "24": {
+      "positives": 17,
+      "totalTests": 1719,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1021
+    },
+    "42": {
+      "positives": 52,
+      "totalTests": 5268,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 2976
+    },
+    "101": {
+      "positives": 248,
+      "totalTests": 5679,
+      "deaths": 17,
+      "hospitalizations": 46,
+      "peopleTested": 3077
+    },
+    "117": {
+      "positives": 137,
+      "totalTests": 2445,
+      "deaths": 1,
+      "hospitalizations": 14,
+      "peopleTested": 1516
+    },
+    "272": {
+      "positives": 111,
+      "totalTests": 1221,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 777
+    },
+    "284.03": {
+      "positives": 188,
+      "totalTests": 1935,
+      "deaths": 1,
+      "hospitalizations": 17,
+      "peopleTested": 1283
+    },
+    "288.02": {
+      "positives": 201,
+      "totalTests": 2232,
+      "deaths": 5,
+      "hospitalizations": 20,
+      "peopleTested": 1485
+    },
+    "298.01": {
+      "positives": 235,
+      "totalTests": 2607,
+      "deaths": 3,
+      "hospitalizations": 12,
+      "peopleTested": 1778
+    },
+    "298.02": {
+      "positives": 258,
+      "totalTests": 3132,
+      "deaths": 4,
+      "hospitalizations": 20,
+      "peopleTested": 2227
+    },
+    "299.01": {
+      "positives": 165,
+      "totalTests": 1485,
+      "deaths": 0,
+      "hospitalizations": 12,
+      "peopleTested": 1072
+    },
+    "8": {
+      "positives": 23,
+      "totalTests": 1331,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 826
+    },
+    "22": {
+      "positives": 22,
+      "totalTests": 3040,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1887
+    },
+    "39": {
+      "positives": 27,
+      "totalTests": 1757,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1011
+    },
+    "41": {
+      "positives": 59,
+      "totalTests": 5257,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 3038
+    },
+    "63": {
+      "positives": 62,
+      "totalTests": 4413,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 2322
+    },
+    "78": {
+      "positives": 35,
+      "totalTests": 3996,
+      "deaths": 3,
+      "hospitalizations": 3,
+      "peopleTested": 2200
+    },
+    "103": {
+      "positives": 137,
+      "totalTests": 5175,
+      "deaths": 3,
+      "hospitalizations": 4,
+      "peopleTested": 2770
+    },
+    "110.01": {
+      "positives": 141,
+      "totalTests": 2658,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1305
+    },
+    "282": {
+      "positives": 239,
+      "totalTests": 2024,
+      "deaths": 1,
+      "hospitalizations": 16,
+      "peopleTested": 1296
+    },
+    "283": {
+      "positives": 178,
+      "totalTests": 2364,
+      "deaths": 4,
+      "hospitalizations": 19,
+      "peopleTested": 1496
+    },
+    "291.01": {
+      "positives": 76,
+      "totalTests": 1401,
+      "deaths": 2,
+      "hospitalizations": 10,
+      "peopleTested": 947
+    },
+    "291.02": {
+      "positives": 129,
+      "totalTests": 1638,
+      "deaths": 3,
+      "hospitalizations": 8,
+      "peopleTested": 1089
+    },
+    "215": {
+      "positives": 29,
+      "totalTests": 2125,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1338
+    },
+    "9": {
+      "positives": 17,
+      "totalTests": 1260,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 714
+    },
+    "111.01": {
+      "positives": 175,
+      "totalTests": 3197,
+      "deaths": 3,
+      "hospitalizations": 15,
+      "peopleTested": 1793
+    },
+    "40": {
+      "positives": 34,
+      "totalTests": 1913,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1067
+    },
+    "102": {
+      "positives": 72,
+      "totalTests": 3559,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1983
+    },
+    "118": {
+      "positives": 219,
+      "totalTests": 4255,
+      "deaths": 4,
+      "hospitalizations": 17,
+      "peopleTested": 2517
+    },
+    "292.06": {
+      "positives": 132,
+      "totalTests": 1444,
+      "deaths": 4,
+      "hospitalizations": 16,
+      "peopleTested": 960
+    },
+    "299.02": {
+      "positives": 130,
+      "totalTests": 1775,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1247
+    },
+    "111.02": {
+      "positives": 116,
+      "totalTests": 7390,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1916
+    },
+    "119": {
+      "positives": 169,
+      "totalTests": 3924,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 2236
+    },
+    "262": {
+      "positives": 193,
+      "totalTests": 6658,
+      "deaths": 2,
+      "hospitalizations": 11,
+      "peopleTested": 2332
+    },
+    "292.05": {
+      "positives": 129,
+      "totalTests": 1855,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1264
+    },
+    "216": {
+      "positives": 49,
+      "totalTests": 2005,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1311
+    },
+    "221.01": {
+      "positives": 50,
+      "totalTests": 1777,
+      "deaths": 2,
+      "hospitalizations": 10,
+      "peopleTested": 1157
+    },
+    "261": {
+      "positives": 199,
+      "totalTests": 3018,
+      "deaths": 4,
+      "hospitalizations": 13,
+      "peopleTested": 1894
+    },
+    "223": {
+      "positives": 18,
+      "totalTests": 895,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 650
+    },
+    "308.01": {
+      "positives": 329,
+      "totalTests": 3431,
+      "deaths": 3,
+      "hospitalizations": 18,
+      "peopleTested": 2021
+    },
+    "309.01": {
+      "positives": 103,
+      "totalTests": 1146,
+      "deaths": 1,
+      "hospitalizations": 10,
+      "peopleTested": 844
+    },
+    "309.02": {
+      "positives": 160,
+      "totalTests": 1677,
+      "deaths": 3,
+      "hospitalizations": 11,
+      "peopleTested": 1235
+    },
+    "297": {
+      "positives": 264,
+      "totalTests": 3492,
+      "deaths": 3,
+      "hospitalizations": 15,
+      "peopleTested": 2458
+    },
+    "243": {
+      "positives": 88,
+      "totalTests": 4405,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 2688
+    },
+    "260.02": {
+      "positives": 207,
+      "totalTests": 3097,
+      "deaths": 7,
+      "hospitalizations": 17,
+      "peopleTested": 2020
+    },
+    "305.01": {
+      "positives": 118,
+      "totalTests": 1548,
+      "deaths": 5,
+      "hospitalizations": 14,
+      "peopleTested": 855
+    },
+    "217": {
+      "positives": 127,
+      "totalTests": 2945,
+      "deaths": 7,
+      "hospitalizations": 19,
+      "peopleTested": 2022
+    },
+    "260.01": {
+      "positives": 81,
+      "totalTests": 2603,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 1645
+    },
+    "221.02": {
+      "positives": 55,
+      "totalTests": 1969,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1395
+    },
+    "222.01": {
+      "positives": 47,
+      "totalTests": 1323,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 919
+    },
+    "242": {
+      "positives": 40,
+      "totalTests": 1473,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 903
+    },
+    "246.01": {
+      "positives": 38,
+      "totalTests": 2357,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1485
+    },
+    "246.02": {
+      "positives": 40,
+      "totalTests": 1906,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1190
+    },
+    "292.03": {
+      "positives": 101,
+      "totalTests": 1335,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 940
+    },
+    "222.03": {
+      "positives": 63,
+      "totalTests": 1560,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1118
+    },
+    "245": {
+      "positives": 44,
+      "totalTests": 2672,
+      "deaths": 2,
+      "hospitalizations": 5,
+      "peopleTested": 1683
+    },
+    "241": {
+      "positives": 64,
+      "totalTests": 2167,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1343
+    },
+    "292.04": {
+      "positives": 171,
+      "totalTests": 2296,
+      "deaths": 2,
+      "hospitalizations": 7,
+      "peopleTested": 1640
+    },
+    "244": {
+      "positives": 38,
+      "totalTests": 1310,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 834
+    },
+    "253.02": {
+      "positives": 111,
+      "totalTests": 3180,
+      "deaths": 3,
+      "hospitalizations": 11,
+      "peopleTested": 1954
+    },
+    "305.03": {
+      "positives": 184,
+      "totalTests": 1848,
+      "deaths": 7,
+      "hospitalizations": 25,
+      "peopleTested": 1316
+    },
+    "306": {
+      "positives": 157,
+      "totalTests": 2264,
+      "deaths": 4,
+      "hospitalizations": 14,
+      "peopleTested": 1598
+    },
+    "307": {
+      "positives": 121,
+      "totalTests": 1298,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 944
+    },
+    "310": {
+      "positives": 84,
+      "totalTests": 1433,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1006
+    },
+    "218.03": {
+      "positives": 49,
+      "totalTests": 2020,
+      "deaths": 3,
+      "hospitalizations": 5,
+      "peopleTested": 1364
+    },
+    "222.02": {
+      "positives": 74,
+      "totalTests": 2162,
+      "deaths": 5,
+      "hospitalizations": 8,
+      "peopleTested": 1559
+    },
+    "240": {
+      "positives": 81,
+      "totalTests": 2610,
+      "deaths": 2,
+      "hospitalizations": 12,
+      "peopleTested": 1777
+    },
+    "293.05": {
+      "positives": 110,
+      "totalTests": 1472,
+      "deaths": 4,
+      "hospitalizations": 9,
+      "peopleTested": 985
+    },
+    "305.04": {
+      "positives": 135,
+      "totalTests": 1455,
+      "deaths": 0,
+      "hospitalizations": 10,
+      "peopleTested": 984
+    },
+    "308.02": {
+      "positives": 147,
+      "totalTests": 1397,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1000
+    },
+    "224": {
+      "positives": 77,
+      "totalTests": 3710,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 2571
+    },
+    "258.06": {
+      "positives": 114,
+      "totalTests": 1787,
+      "deaths": 5,
+      "hospitalizations": 5,
+      "peopleTested": 1194
+    },
+    "293.03": {
+      "positives": 140,
+      "totalTests": 2913,
+      "deaths": 7,
+      "hospitalizations": 18,
+      "peopleTested": 1907
+    },
+    "220.01": {
+      "positives": 49,
+      "totalTests": 1876,
+      "deaths": 5,
+      "hospitalizations": 10,
+      "peopleTested": 1237
+    },
+    "227.01": {
+      "positives": 29,
+      "totalTests": 1343,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 880
+    },
+    "239": {
+      "positives": 102,
+      "totalTests": 2884,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 1925
+    },
+    "295.03": {
+      "positives": 292,
+      "totalTests": 2492,
+      "deaths": 8,
+      "hospitalizations": 28,
+      "peopleTested": 1775
+    },
+    "296.02": {
+      "positives": 184,
+      "totalTests": 2173,
+      "deaths": 0,
+      "hospitalizations": 11,
+      "peopleTested": 1573
+    },
+    "311": {
+      "positives": 197,
+      "totalTests": 2032,
+      "deaths": 3,
+      "hospitalizations": 15,
+      "peopleTested": 1452
+    },
+    "218.04": {
+      "positives": 68,
+      "totalTests": 1864,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 1311
+    },
+    "220.03": {
+      "positives": 58,
+      "totalTests": 1434,
+      "deaths": 1,
+      "hospitalizations": 7,
+      "peopleTested": 996
+    },
+    "220.05": {
+      "positives": 56,
+      "totalTests": 1476,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 1013
+    },
+    "220.06": {
+      "positives": 132,
+      "totalTests": 1275,
+      "deaths": 41,
+      "hospitalizations": 57,
+      "peopleTested": 881
+    },
+    "225": {
+      "positives": 108,
+      "totalTests": 3401,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 2321
+    },
+    "238.03": {
+      "positives": 52,
+      "totalTests": 2155,
+      "deaths": 3,
+      "hospitalizations": 7,
+      "peopleTested": 1412
+    },
+    "238.04": {
+      "positives": 65,
+      "totalTests": 2959,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 2050
+    },
+    "253.01": {
+      "positives": 134,
+      "totalTests": 3121,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 2040
+    },
+    "294.03": {
+      "positives": 146,
+      "totalTests": 1785,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1258
+    },
+    "294.07": {
+      "positives": 202,
+      "totalTests": 2268,
+      "deaths": 12,
+      "hospitalizations": 31,
+      "peopleTested": 1423
+    },
+    "312.05": {
+      "positives": 279,
+      "totalTests": 2732,
+      "deaths": 1,
+      "hospitalizations": 23,
+      "peopleTested": 1994
+    },
+    "227.02": {
+      "positives": 26,
+      "totalTests": 1243,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 861
+    },
+    "247.02": {
+      "positives": 95,
+      "totalTests": 2729,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1722
+    },
+    "257.01": {
+      "positives": 134,
+      "totalTests": 2222,
+      "deaths": 3,
+      "hospitalizations": 18,
+      "peopleTested": 1445
+    },
+    "258.05": {
+      "positives": 98,
+      "totalTests": 1825,
+      "deaths": 3,
+      "hospitalizations": 13,
+      "peopleTested": 1261
+    },
+    "295.04": {
+      "positives": 212,
+      "totalTests": 2069,
+      "deaths": 11,
+      "hospitalizations": 19,
+      "peopleTested": 1472
+    },
+    "312.06": {
+      "positives": 126,
+      "totalTests": 1277,
+      "deaths": 4,
+      "hospitalizations": 12,
+      "peopleTested": 960
+    },
+    "237": {
+      "positives": 44,
+      "totalTests": 1506,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1043
+    },
+    "238.01": {
+      "positives": 25,
+      "totalTests": 1105,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 778
+    },
+    "252": {
+      "positives": 172,
+      "totalTests": 2960,
+      "deaths": 4,
+      "hospitalizations": 12,
+      "peopleTested": 1988
+    },
+    "293.06": {
+      "positives": 69,
+      "totalTests": 1249,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 840
+    },
+    "294.08": {
+      "positives": 116,
+      "totalTests": 1204,
+      "deaths": 0,
+      "hospitalizations": 10,
+      "peopleTested": 863
+    },
+    "296.01": {
+      "positives": 286,
+      "totalTests": 2292,
+      "deaths": 1,
+      "hospitalizations": 17,
+      "peopleTested": 1656
+    },
+    "254": {
+      "positives": 198,
+      "totalTests": 2541,
+      "deaths": 2,
+      "hospitalizations": 16,
+      "peopleTested": 1722
+    },
+    "256.01": {
+      "positives": 94,
+      "totalTests": 1929,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 1285
+    },
+    "218.02": {
+      "positives": 70,
+      "totalTests": 1614,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1128
+    },
+    "219.05": {
+      "positives": 58,
+      "totalTests": 1672,
+      "deaths": 3,
+      "hospitalizations": 10,
+      "peopleTested": 1119
+    },
+    "219.03": {
+      "positives": 59,
+      "totalTests": 1827,
+      "deaths": 3,
+      "hospitalizations": 5,
+      "peopleTested": 1274
+    },
+    "227.03": {
+      "positives": 35,
+      "totalTests": 879,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 599
+    },
+    "236.01": {
+      "positives": 63,
+      "totalTests": 2023,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1149
+    },
+    "247.01": {
+      "positives": 38,
+      "totalTests": 1142,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 778
+    },
+    "294.05": {
+      "positives": 104,
+      "totalTests": 2031,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1330
+    },
+    "294.06": {
+      "positives": 100,
+      "totalTests": 1523,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 1057
+    },
+    "295.02": {
+      "positives": 207,
+      "totalTests": 2294,
+      "deaths": 1,
+      "hospitalizations": 16,
+      "peopleTested": 1658
+    },
+    "226.03": {
+      "positives": 63,
+      "totalTests": 1631,
+      "deaths": 3,
+      "hospitalizations": 1,
+      "peopleTested": 1186
+    },
+    "226.04": {
+      "positives": 48,
+      "totalTests": 1718,
+      "deaths": 2,
+      "hospitalizations": 2,
+      "peopleTested": 1151
+    },
+    "257.02": {
+      "positives": 77,
+      "totalTests": 1354,
+      "deaths": 3,
+      "hospitalizations": 4,
+      "peopleTested": 911
+    },
+    "258.04": {
+      "positives": 66,
+      "totalTests": 1297,
+      "deaths": 2,
+      "hospitalizations": 7,
+      "peopleTested": 862
+    },
+    "258.03": {
+      "positives": 143,
+      "totalTests": 1608,
+      "deaths": 3,
+      "hospitalizations": 11,
+      "peopleTested": 1085
+    },
+    "293.04": {
+      "positives": 76,
+      "totalTests": 1808,
+      "deaths": 2,
+      "hospitalizations": 5,
+      "peopleTested": 1239
+    },
+    "235": {
+      "positives": 33,
+      "totalTests": 1271,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 881
+    },
+    "219.06": {
+      "positives": 45,
+      "totalTests": 1131,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 824
+    },
+    "219.04": {
+      "positives": 61,
+      "totalTests": 1455,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1021
+    },
+    "248": {
+      "positives": 50,
+      "totalTests": 1574,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1109
+    },
+    "249.01": {
+      "positives": 33,
+      "totalTests": 1527,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1057
+    },
+    "250.01": {
+      "positives": 37,
+      "totalTests": 1701,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1120
+    },
+    "255": {
+      "positives": 147,
+      "totalTests": 1648,
+      "deaths": 3,
+      "hospitalizations": 13,
+      "peopleTested": 1135
+    },
+    "293.07": {
+      "positives": 59,
+      "totalTests": 1180,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 849
+    },
+    "312.04": {
+      "positives": 84,
+      "totalTests": 1623,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1177
+    },
+    "323.19": {
+      "positives": 58,
+      "totalTests": 1986,
+      "deaths": 2,
+      "hospitalizations": 5,
+      "peopleTested": 1416
+    },
+    "226.05": {
+      "positives": 44,
+      "totalTests": 1419,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1027
+    },
+    "236.04": {
+      "positives": 85,
+      "totalTests": 1751,
+      "deaths": 0,
+      "hospitalizations": 7,
+      "peopleTested": 1209
+    },
+    "256.02": {
+      "positives": 70,
+      "totalTests": 1940,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 1335
+    },
+    "312.02": {
+      "positives": 132,
+      "totalTests": 2248,
+      "deaths": 1,
+      "hospitalizations": 9,
+      "peopleTested": 1636
+    },
+    "226.06": {
+      "positives": 53,
+      "totalTests": 1563,
+      "deaths": 9,
+      "hospitalizations": 10,
+      "peopleTested": 1131
+    },
+    "228.01": {
+      "positives": 87,
+      "totalTests": 2119,
+      "deaths": 2,
+      "hospitalizations": 8,
+      "peopleTested": 1510
+    },
+    "234.01": {
+      "positives": 60,
+      "totalTests": 1221,
+      "deaths": 8,
+      "hospitalizations": 8,
+      "peopleTested": 849
+    },
+    "249.03": {
+      "positives": 39,
+      "totalTests": 2034,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1381
+    },
+    "250.05": {
+      "positives": 33,
+      "totalTests": 1825,
+      "deaths": 2,
+      "hospitalizations": 4,
+      "peopleTested": 1234
+    },
+    "251.01": {
+      "positives": 117,
+      "totalTests": 1760,
+      "deaths": 0,
+      "hospitalizations": 8,
+      "peopleTested": 1234
+    },
+    "251.02": {
+      "positives": 123,
+      "totalTests": 2797,
+      "deaths": 1,
+      "hospitalizations": 12,
+      "peopleTested": 1890
+    },
+    "318": {
+      "positives": 64,
+      "totalTests": 1511,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1070
+    },
+    "317.03": {
+      "positives": 128,
+      "totalTests": 2417,
+      "deaths": 1,
+      "hospitalizations": 10,
+      "peopleTested": 1617
+    },
+    "317.04": {
+      "positives": 162,
+      "totalTests": 2209,
+      "deaths": 2,
+      "hospitalizations": 8,
+      "peopleTested": 1310
+    },
+    "236.03": {
+      "positives": 69,
+      "totalTests": 1505,
+      "deaths": 0,
+      "hospitalizations": 8,
+      "peopleTested": 1121
+    },
+    "323.20": {
+      "positives": 48,
+      "totalTests": 1341,
+      "deaths": 3,
+      "hospitalizations": 6,
+      "peopleTested": 939
+    },
+    "323.21": {
+      "positives": 29,
+      "totalTests": 1670,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1261
+    },
+    "323.09": {
+      "positives": 102,
+      "totalTests": 3186,
+      "deaths": 20,
+      "hospitalizations": 20,
+      "peopleTested": 2334
+    },
+    "319.07": {
+      "positives": 89,
+      "totalTests": 2522,
+      "deaths": 4,
+      "hospitalizations": 8,
+      "peopleTested": 1703
+    },
+    "319.08": {
+      "positives": 58,
+      "totalTests": 1603,
+      "deaths": 2,
+      "hospitalizations": 4,
+      "peopleTested": 1054
+    },
+    "319.09": {
+      "positives": 54,
+      "totalTests": 1053,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 736
+    },
+    "249.02": {
+      "positives": 27,
+      "totalTests": 1104,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 746
+    },
+    "228.02": {
+      "positives": 32,
+      "totalTests": 1279,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 933
+    },
+    "228.03": {
+      "positives": 54,
+      "totalTests": 1587,
+      "deaths": 6,
+      "hospitalizations": 9,
+      "peopleTested": 1198
+    },
+    "232.01": {
+      "positives": 94,
+      "totalTests": 1534,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1121
+    },
+    "233": {
+      "positives": 117,
+      "totalTests": 2065,
+      "deaths": 4,
+      "hospitalizations": 19,
+      "peopleTested": 1465
+    },
+    "319.03": {
+      "positives": 80,
+      "totalTests": 2183,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1510
+    },
+    "230": {
+      "positives": 79,
+      "totalTests": 1642,
+      "deaths": 3,
+      "hospitalizations": 4,
+      "peopleTested": 1146
+    },
+    "234.03": {
+      "positives": 27,
+      "totalTests": 1235,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 872
+    },
+    "250.06": {
+      "positives": 36,
+      "totalTests": 2063,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1381
+    },
+    "317.05": {
+      "positives": 69,
+      "totalTests": 1193,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 858
+    },
+    "317.06": {
+      "positives": 130,
+      "totalTests": 2289,
+      "deaths": 3,
+      "hospitalizations": 8,
+      "peopleTested": 1608
+    },
+    "323.23": {
+      "positives": 51,
+      "totalTests": 2113,
+      "deaths": 4,
+      "hospitalizations": 8,
+      "peopleTested": 1412
+    },
+    "323.24": {
+      "positives": 53,
+      "totalTests": 1305,
+      "deaths": 3,
+      "hospitalizations": 7,
+      "peopleTested": 964
+    },
+    "229.01": {
+      "positives": 28,
+      "totalTests": 799,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 538
+    },
+    "232.02": {
+      "positives": 112,
+      "totalTests": 1511,
+      "deaths": 9,
+      "hospitalizations": 24,
+      "peopleTested": 993
+    },
+    "250.03": {
+      "positives": 69,
+      "totalTests": 2292,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1579
+    },
+    "323.13": {
+      "positives": 27,
+      "totalTests": 1282,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 922
+    },
+    "319.06": {
+      "positives": 43,
+      "totalTests": 1193,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 862
+    },
+    "316.01": {
+      "positives": 67,
+      "totalTests": 1442,
+      "deaths": 1,
+      "hospitalizations": 6,
+      "peopleTested": 1041
+    },
+    "229.02": {
+      "positives": 52,
+      "totalTests": 1859,
+      "deaths": 6,
+      "hospitalizations": 9,
+      "peopleTested": 1300
+    },
+    "231": {
+      "positives": 33,
+      "totalTests": 1220,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 854
+    },
+    "323.07": {
+      "positives": 59,
+      "totalTests": 1766,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 1269
+    },
+    "323.22": {
+      "positives": 9,
+      "totalTests": 923,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 653
+    },
+    "323.25": {
+      "positives": 62,
+      "totalTests": 1450,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 1054
+    },
+    "320.06": {
+      "positives": 68,
+      "totalTests": 1511,
+      "deaths": 1,
+      "hospitalizations": 3,
+      "peopleTested": 1071
+    },
+    "313.01": {
+      "positives": 36,
+      "totalTests": 589,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 429
+    },
+    "319.04": {
+      "positives": 49,
+      "totalTests": 1154,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 786
+    },
+    "320.05": {
+      "positives": 140,
+      "totalTests": 1789,
+      "deaths": 1,
+      "hospitalizations": 11,
+      "peopleTested": 1307
+    },
+    "234.04": {
+      "positives": 27,
+      "totalTests": 1251,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 849
+    },
+    "321.04": {
+      "positives": 150,
+      "totalTests": 2811,
+      "deaths": 23,
+      "hospitalizations": 32,
+      "peopleTested": 1715
+    },
+    "323.26": {
+      "positives": 73,
+      "totalTests": 1168,
+      "deaths": 0,
+      "hospitalizations": 5,
+      "peopleTested": 828
+    },
+    "323.16": {
+      "positives": 35,
+      "totalTests": 1730,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1227
+    },
+    "322.03": {
+      "positives": 54,
+      "totalTests": 2426,
+      "deaths": 3,
+      "hospitalizations": 0,
+      "peopleTested": 1700
+    },
+    "320.07": {
+      "positives": 43,
+      "totalTests": 1128,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 804
+    },
+    "316.05": {
+      "positives": 46,
+      "totalTests": 1015,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 741
+    },
+    "323.11": {
+      "positives": 33,
+      "totalTests": 1517,
+      "deaths": 2,
+      "hospitalizations": 2,
+      "peopleTested": 1108
+    },
+    "323.27": {
+      "positives": 31,
+      "totalTests": 1270,
+      "deaths": 3,
+      "hospitalizations": 4,
+      "peopleTested": 871
+    },
+    "322.07": {
+      "positives": 39,
+      "totalTests": 1224,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 839
+    },
+    "320.02": {
+      "positives": 24,
+      "totalTests": 758,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 556
+    },
+    "321.03": {
+      "positives": 53,
+      "totalTests": 2581,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1762
+    },
+    "322.08": {
+      "positives": 92,
+      "totalTests": 5022,
+      "deaths": 4,
+      "hospitalizations": 12,
+      "peopleTested": 2167
+    },
+    "323.28": {
+      "positives": 15,
+      "totalTests": 827,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 606
+    },
+    "323.18": {
+      "positives": 36,
+      "totalTests": 1539,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1113
+    },
+    "323.17": {
+      "positives": 49,
+      "totalTests": 1687,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 1240
+    },
+    "320.08": {
+      "positives": 54,
+      "totalTests": 1279,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 911
+    },
+    "323.29": {
+      "positives": 44,
+      "totalTests": 1818,
+      "deaths": 1,
+      "hospitalizations": 8,
+      "peopleTested": 1280
+    },
+    "316.04": {
+      "positives": 61,
+      "totalTests": 1452,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1058
+    },
+    "316.03": {
+      "positives": 80,
+      "totalTests": 1848,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1409
+    },
+    "320.03": {
+      "positives": 62,
+      "totalTests": 1846,
+      "deaths": 2,
+      "hospitalizations": 5,
+      "peopleTested": 1340
+    },
+    "320.10": {
+      "positives": 82,
+      "totalTests": 1823,
+      "deaths": 1,
+      "hospitalizations": 5,
+      "peopleTested": 1327
+    },
+    "320.11": {
+      "positives": 59,
+      "totalTests": 1417,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1044
+    },
+    "313.02": {
+      "positives": 55,
+      "totalTests": 1129,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 839
+    },
+    "322.14": {
+      "positives": 36,
+      "totalTests": 1699,
+      "deaths": 3,
+      "hospitalizations": 5,
+      "peopleTested": 1274
+    },
+    "322.11": {
+      "positives": 35,
+      "totalTests": 1353,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 940
+    },
+    "322.10": {
+      "positives": 90,
+      "totalTests": 4044,
+      "deaths": 11,
+      "hospitalizations": 8,
+      "peopleTested": 2838
+    },
+    "321.02": {
+      "positives": 32,
+      "totalTests": 1438,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 984
+    },
+    "323.15": {
+      "positives": 38,
+      "totalTests": 1476,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 1050
+    },
+    "322.12": {
+      "positives": 59,
+      "totalTests": 2240,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 1569
+    },
+    "314": {
+      "positives": 117,
+      "totalTests": 2166,
+      "deaths": 25,
+      "hospitalizations": 23,
+      "peopleTested": 1522
+    },
+    "324.01": {
+      "positives": 29,
+      "totalTests": 1775,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 1327
+    },
+    "322.15": {
+      "positives": 34,
+      "totalTests": 1337,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 950
+    },
+    "322.13": {
+      "positives": 46,
+      "totalTests": 1447,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 957
+    },
+    "324.02": {
+      "positives": 55,
+      "totalTests": 1689,
+      "deaths": 1,
+      "hospitalizations": 2,
+      "peopleTested": 1189
+    },
+    "315.01": {
+      "positives": 53,
+      "totalTests": 1064,
+      "deaths": 1,
+      "hospitalizations": 4,
+      "peopleTested": 791
+    },
+    "315.02": {
+      "positives": 51,
+      "totalTests": 1007,
+      "deaths": 0,
+      "hospitalizations": 6,
+      "peopleTested": 761
+    },
+    "325": {
+      "positives": 29,
+      "totalTests": 1680,
+      "deaths": 0,
+      "hospitalizations": 3,
+      "peopleTested": 1182
+    },
+    "326.01": {
+      "positives": 35,
+      "totalTests": 988,
+      "deaths": 0,
+      "hospitalizations": 1,
+      "peopleTested": 713
+    },
+    "326.02": {
+      "positives": 147,
+      "totalTests": 4438,
+      "deaths": 0,
+      "hospitalizations": 4,
+      "peopleTested": 3197
+    },
+    "327.02": {
+      "positives": 55,
+      "totalTests": 2220,
+      "deaths": 2,
+      "hospitalizations": 3,
+      "peopleTested": 1474
+    },
+    "327.03": {
+      "positives": 15,
+      "totalTests": 891,
+      "deaths": 0,
+      "hospitalizations": 0,
+      "peopleTested": 620
+    },
+    "328": {
+      "positives": 25,
+      "totalTests": 873,
+      "deaths": 1,
+      "hospitalizations": 1,
+      "peopleTested": 587
+    },
+    "327.04": {
+      "positives": 86,
+      "totalTests": 3039,
+      "deaths": 0,
+      "hospitalizations": 2,
+      "peopleTested": 2054
+    }
+  }
+}

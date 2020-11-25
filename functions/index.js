@@ -5,7 +5,9 @@ const fetch = require('node-fetch');
 const https = require('https');
 const cheerio = require('cheerio');
 const { parseExcel } = require('./excel');
-const mergeData = require('./mergedata');
+const {mergeData} = require('./mergedata');
+const scrape = require('./scrape');
+const _ = require('lodash');
 
 const logger = functions.logger;
 
@@ -85,12 +87,25 @@ async function downloadLatestData(force) {
   return await scrapeDataFile(datafile, force);
 }
 
-exports.snapshotData = functions.https.onRequest(async (request, response) => {
+async function scrapeLatestData(type) {
+  console.log(`scraping ${type}`);
+  return await scrape.scrape(type);
+}
+
+exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
+  .https.onRequest(async (request, response) => {
   try {
-    const { last_update, data } = await downloadLatestData(request.query.force === '1');
+    const type = request.query.type;
+    if (!scrape.LOCATION_TYPES.includes(type)) {
+      console.error(`Invalid type ${type}`);
+      return response.status(400).send(`invalid type: ${type}`);
+    }
+    const data = await scrapeLatestData(type);
     if (data !== null) {
+      const today = new Date();
+      today.setHours(0,0,0,0);
       // Update the data.json.
-      const dataFileRef = admin.storage().bucket().file('processed/data.json');
+      const dataFileRef = admin.storage().bucket().file(`processed/data-${type}.json`);
       const combinedDataPromise = new Promise((resolve, reject) => {
         const chunks = [];
         dataFileRef.createReadStream()
@@ -100,7 +115,7 @@ exports.snapshotData = functions.https.onRequest(async (request, response) => {
       });
 
       const combinedData = await combinedDataPromise;
-      mergeData(combinedData, data);
+      mergeData(combinedData, data, today.getTime());
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {
@@ -109,9 +124,9 @@ exports.snapshotData = functions.https.onRequest(async (request, response) => {
         predefinedAcl: "publicRead"
       });
 
-      response.send(`found new data: ${last_update}`);
+      response.send(`found new data: ${today}`);
     } else {
-      response.send(`no updates since: ${last_update}`);
+      response.send(`no updates`);
     }
   } catch (err) {
     logger.error(err);

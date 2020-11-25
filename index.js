@@ -1,16 +1,15 @@
 // Bootstrap script to build the initial JSON file.
 
 const admin = require('firebase-admin');
+const fs = require('fs');
+const glob = require('glob');
 const { parseExcel } = require('./functions/excel');
 const mergeData = require('./functions/mergedata');
 const { idToHra, hraToId } = require('./hra');
 
-const fs = require('fs');
-const glob = require('glob');
-
 admin.initializeApp({
-  databaseURL: "https://kc-covid-chart.firebaseio.com",
-  storageBucket: "kc-covid-chart.appspot.com"
+  databaseURL: 'https://kc-covid-chart.firebaseio.com',
+  storageBucket: 'kc-covid-chart.appspot.com',
 });
 
 function globmise(pattern, options) {
@@ -36,7 +35,7 @@ async function readFiles() {
   mergeData(combinedData, biweekly);
 
   const jsonFiles = await globmise(`${jsonDir}/kc-daily-covid-data-*.json`);
-  const dateExtract = /kc-daily-covid-data-(.*)\.\json/;
+  const dateExtract = /kc-daily-covid-data-(.*)\.json/;
   for (const f of jsonFiles) {
     console.log(`Processing ${f}`);
     const date = new Date(f.match(dateExtract)[1]);
@@ -55,17 +54,17 @@ async function processOutput(dataPromise) {
   await fileRef.save(JSON.stringify(combinedData), {
     gzip: true,
     metadata: {
-      contentType: "application/json",
+      contentType: 'application/json',
     },
-    predefinedAcl: "publicRead"
+    predefinedAcl: 'publicRead',
   });
 }
 
-//processOutput(readFiles());
+// processOutput(readFiles());
 
 async function test() {
   const fileRef = admin.storage().bucket().file('processed/combined.json');
-  const ref =admin.storage().bucket().file('processed/combined.json');
+  const ref = admin.storage().bucket().file('processed/combined.json');
   const existResult = await ref.exists();
   console.log(existResult);
   if (existResult[0]) {
