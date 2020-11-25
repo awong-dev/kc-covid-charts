@@ -18,7 +18,7 @@ const buildDefaultState = (covidData) => {
     .mapValues(([hraName, { hraId, population, date, peopleTested, allTestResults, positives, hospitalizations, deaths }], i) => ({
       hraId: hraId,
       name: hraName,
-      active: hraName === 'Downtown', // TK
+      active: true, // TK
       timeSeries: zip(date, peopleTested, allTestResults, positives, hospitalizations, deaths)
         .map(([date, peopleTested, allTestResults, positives, hospitalizations, deaths]) => (
           {population, date, peopleTested, allTestResults, positives, hospitalizations, deaths}

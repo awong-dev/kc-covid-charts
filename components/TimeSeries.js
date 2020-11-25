@@ -1,9 +1,11 @@
+import { useCallback } from 'react';
 import { LinePath, Circle } from '@visx/shape';
 import { scaleTime, scaleLinear } from '@visx/scale';
 import { AxisLeft, AxisBottom } from '@visx/axis';
 import { GridRows, GridColumns } from '@visx/grid';
+import { voronoi, VoronoiPolygon } from '@visx/voronoi';
 import { Group } from '@visx/group';
-import { zipWith } from 'lodash';
+import { flatten, sortBy } from 'lodash';
 import { max, extent } from 'd3-array';
 import {
   memo,
@@ -22,6 +24,7 @@ export default function TimeSeries({
   state: { hras, hoveredHraId },
   heading,
   valueAccessor,
+  setHoveredHraId,
 }) {
   const target = useRef(null);
   const [{ width, height }, setSize] = useState({ width: 0, height: 0 });
@@ -31,11 +34,14 @@ export default function TimeSeries({
     setSize({ width: rect.width, height: rect.height });
   });
 
-  const [diagramWidth, diagramHeight, activeHRAs] = useMemo(() => [
+  const [diagramWidth, diagramHeight] = useMemo(() => [
     width - margins.left - margins.right,
     height - margins.top - margins.bottom,
-    Object.values(hras).filter(({ active }) => active),
   ], [width, height, margins, hras]);
+
+  const activeHRAs = useMemo(() => {
+    return Object.values(hras).filter(({ active }) => active)
+  }, [hras])
 
   const [timeScale, valueScale] = useMemo(() => {
     const firstHra = activeHRAs[0];
@@ -54,6 +60,21 @@ export default function TimeSeries({
     ];
   }, [activeHRAs, diagramHeight]);
 
+  const voronoiPolygons = useMemo(
+    () => {
+      const points = flatten(activeHRAs.map(({timeSeries, hraId}) => timeSeries.map(t => ({...t, hraId}))))
+        .filter(point => isFinite(valueAccessor(point)));
+      const voronoiDiagram = voronoi({
+        x: (d) => timeScale(d.date),
+        y: (d) => valueScale(valueAccessor(d)),
+        width: diagramWidth,
+        height: diagramHeight,
+      })(points)
+      return voronoiDiagram.polygons()
+    }, [diagramWidth, diagramHeight, activeHRAs],
+  );
+  
+
   return (
     <svg ref={target} className="bg-gray-100 flex-1">
       <Group left={margins.left} top={margins.top}>
@@ -64,9 +85,8 @@ export default function TimeSeries({
           diagramHeight={diagramHeight}
           heading={heading}
         />
-        {activeHRAs.map(({ hraId, timeSeries }) => {
+        {sortBy(activeHRAs, h => h.hraId === hoveredHraId).map(({ hraId, timeSeries }) => {
           const isHovered = hraId === hoveredHraId;
-          console.warn('ISHOVERED:', isHovered, hraId, hoveredHraId);
           return (
             <HRALine
               timeSeries={timeSeries}
@@ -77,6 +97,11 @@ export default function TimeSeries({
             />
           );
         })}
+        <g>
+          {voronoiPolygons.map((polygon, i) => (
+            <HoverableVoronoiPolygon key={i /* TK */} polygon={polygon} setHoveredHraId={setHoveredHraId} />
+          ))}
+        </g>
       </Group>
     </svg>
   );
@@ -109,7 +134,7 @@ const HRALine = memo(
         x={(d) => timeScale(d.date)}
         y={(d) => valueScale(valueAccessor(d))}
         className="stroke-current"
-        strokeWidth={1.5}
+        strokeWidth={isHovered ? 3 : 0.5}
         strokeOpacity={0.8}
         defined={(d) => Number.isFinite(valueAccessor(d))}
       />
@@ -121,7 +146,7 @@ const HRALine = memo(
             key={d.date}
             cx={timeScale(d.date)}
             cy={valueScale(value)}
-            r={3}
+            r={isHovered ? 3 : 1}
             className="fill-current"
           />
         );
@@ -129,3 +154,16 @@ const HRALine = memo(
     </g>
   ),
 );
+
+const HoverableVoronoiPolygon = ({polygon, setHoveredHraId}) => {
+  const handleMouseEnter = useCallback(() => setHoveredHraId(polygon.data.hraId), [polygon, setHoveredHraId]);
+  const handleMouseLeave = useCallback(() => setHoveredHraId(null), [setHoveredHraId]);
+
+  return <VoronoiPolygon
+  key={3}
+  polygon={polygon}
+  style={{fill: 'green', fillOpacity: 0, strokeWidth: 0}}
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+  />
+}

@@ -11,7 +11,7 @@ export default function CombinedChart({ covidData }) {
   return (
     <main className="p-4 h-full w-full min-h-screen flex flex-row items-stretch justify-items-stretch bg-purple-100 space-x-4">
       <div className="w-1/4 flex flex-col items-stretch justify-start space-y-4">
-        <div className="h-1/4 overflow-hidden shadow-lg flex items-stretch justify-items-stretch overflow-hidden">
+        <div className="h-60 overflow-hidden shadow-lg flex items-stretch justify-items-stretch overflow-hidden">
           <Map
             state={state}
             toggleActive={toggleActive}
@@ -28,19 +28,44 @@ export default function CombinedChart({ covidData }) {
       </div>
       <div className="flex-grow flex flex-col items-stretch justify-start space-y-4">
         <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries state={state} heading="People tested" valueAccessor={(d) => d.peopleTested} />
+          <TimeSeries
+            state={state}
+            heading="People tested"
+            valueAccessor={(d) => d.peopleTested}
+            setHoveredHraId={setHoveredHraId}
+          />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries state={state} heading="Positives per population" valueAccessor={(d) => (d.positives / d.population)} />
+          <TimeSeries
+            state={state}
+            heading="Positives per population"
+            valueAccessor={(d) => (d.positives / d.population)}
+            setHoveredHraId={setHoveredHraId}
+          />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries state={state} heading="Positives per test" valueAccessor={(d) => (d.positives / d.allTestResults)} />
+          <TimeSeries
+            state={state}
+            heading="Positives per test"
+            valueAccessor={(d) => (d.positives / d.allTestResults)}
+            setHoveredHraId={setHoveredHraId}
+          />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries state={state} heading="Hospitalizations" valueAccessor={(d) => (d.hospitalizations)} />
+          <TimeSeries
+            state={state}
+            heading="Hospitalizations"
+            valueAccessor={(d) => (d.hospitalizations)}
+            setHoveredHraId={setHoveredHraId}
+          />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries state={state} heading="Deaths" valueAccessor={(d) => (d.deaths)} />
+          <TimeSeries
+            state={state}
+            heading="Deaths"
+            valueAccessor={(d) => (d.deaths)}
+            setHoveredHraId={setHoveredHraId}
+          />
         </div>
       </div>
     </main>
