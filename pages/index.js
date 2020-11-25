@@ -48,12 +48,12 @@ export default function CombinedChart({ covidData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://firebasestorage.googleapis.com/v0/b/kc-covid-chart.appspot.com/o/processed%2Fdata.json?alt=media&token=18ebf1ec-4143-4272-9b3a-4bee6c62793e');
-  const covidData = await res.json();
+  const res = await fetch('https://firebasestorage.googleapis.com/v0/b/kc-covid-chart.appspot.com/o/processed%2Fdata-hra.json?alt=media&token=4b4c8ed7-f16f-47a1-9cd0-803e745b08d7');
+  const hraData = await res.json();
 
   return {
     props: {
-      covidData,
+      covidData: { HRA: hraData },
     },
     revalidate: 1, // In seconds
   };
