@@ -1,11 +1,15 @@
 const fs = require('fs');
-const combined = require('./data.json');
+const combined = require('./data-hra.json');
+const {mergeData} = require('./functions/mergedata.js');
+const hra = require('./hra.js');
 const _ = require('lodash');
 const nov15 = require('./data/nov-15-scrape.json');
 const nov16 = require('./data/nov-16-scrape.json');
 const nov17 = require('./data/nov-17-scrape.json');
 const nov20 = require('./data/nov-20-scrape.json');
 const nov21 = require('./data/nov-21-scrape.json');
+
+const Missing = Object.keys(_.pickBy(hra.mapScrapHraToHra, (v,k) => v !== k));
 
 // Target format should be
 //  { 
@@ -56,34 +60,28 @@ const nov17Date = (new Date('Nov 17 2020 PST')).getTime();
 const nov20Date = (new Date('Nov 20 2020 PST')).getTime();
 const nov21Date = (new Date('Nov 21 2020 PST')).getTime();
 
+function isMissing(v, k) {
+  return Missing.includes(k);
+}
+
+function adaptMissing(data) {
+  return _.mapKeys(_.pickBy(data, isMissing), (v,k) => hra.mapScrapHraToHra[k]);
+}
+
+
 function mergeType(data, type, secondType) {
-  let normalized = combinedToNormal(data[type]);
-  if (type === 'Census') {
-/*
-    // Census Tract is actually just one data point in Census, incorrectly merged.
-    let tractData = combinedToNormal(data['Census Tract']);
-    _.merge(normalized, tractData);
-*/
-    // Rip the 533030 off the front of the census number.
-    normalized = _.mapKeys(normalized, (v,k) => k.slice(6)/100);
-  }
-  mergeData(normalized, nov15[secondType], nov15Date);
-  mergeData(normalized, nov16[secondType], nov16Date);
-  mergeData(normalized, nov17[secondType], nov17Date);
-  mergeData(normalized, nov20[secondType], nov20Date);
-  mergeData(normalized, nov21[secondType], nov21Date);
+  let normalized = data
+  mergeData(normalized, adaptMissing(nov15[secondType]), nov15Date);
+  mergeData(normalized, adaptMissing(nov16[secondType]), nov16Date);
+  mergeData(normalized, adaptMissing(nov17[secondType]), nov17Date);
+  mergeData(normalized, adaptMissing(nov20[secondType]), nov20Date);
+  mergeData(normalized, adaptMissing(nov21[secondType]), nov21Date);
   return normalized;
 }
 
 function split() {
-  const city = mergeType(combined, 'City', 'city');
   const hra = mergeType(combined, 'HRA', 'hra');
-  const zip = mergeType(combined, 'ZIP', 'zip');
-  const census = mergeType(combined, 'Census', 'census');
-  fs.writeFileSync('data-city.json', JSON.stringify(city, null, 2));
-  fs.writeFileSync('data-hra.json', JSON.stringify(hra, null, 2));
-  fs.writeFileSync('data-zip.json', JSON.stringify(zip, null, 2));
-  fs.writeFileSync('data-census.json', JSON.stringify(census, null, 2));
+  fs.writeFileSync('data-hra-new.json', JSON.stringify(hra));
 }
 
 split();

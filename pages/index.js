@@ -73,7 +73,7 @@ export default function CombinedChart({ covidData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://firebasestorage.googleapis.com/v0/b/kc-covid-chart.appspot.com/o/processed%2Fdata-hra.json?alt=media&token=4b4c8ed7-f16f-47a1-9cd0-803e745b08d7');
+  const res = await fetch('https://firebasestorage.googleapis.com/v0/b/kc-covid-chart.appspot.com/o/processed%2Fdata-hra.json?alt=media&token=9b00a68b-6ce0-4d32-b24f-03a04fa6216c');
   const hraData = await res.json();
 
   return {
