@@ -102,7 +102,7 @@ const hraToId = {
   'Vashon Island': 25000,
 };
 
-const hraToMapScrapHra = {
+const hraToMapScrapeHra = {
 'Auburn North':                    'Auburn-North',
 'Auburn South':                    'Auburn-South',
 'Ballard':                         'Ballard',
@@ -153,7 +153,7 @@ const hraToMapScrapHra = {
 'West Seattle':                    'West Seattle',
 };
 
-const mapScrapHraToHra = {
+const mapScrapeHraToHra = {
 'Auburn-North':                    'Auburn North',
 'Auburn-South':                    'Auburn South',
 'Ballard':                         'Ballard',
@@ -204,4 +204,4 @@ const mapScrapHraToHra = {
 'West Seattle':                    'West Seattle',
 };
 
-module.exports = { idToHra, hraToId, hraToMapScrapHra, mapScrapHraToHra };
+module.exports = { idToHra, hraToId, hraToMapScrapeHra, mapScrapeHraToHra };

@@ -5,6 +5,8 @@ const _ = require('lodash');
 const MapSamplePoints = require('./map-sample-points.json');
 
 const M_TEST_POS = 'Test Positivity';
+const M_POSITIVES = 'Positives';
+const M_ALL_TEST_RESULTS = 'All test results';
 const M_DEATHS = 'Deaths';
 const M_HOSP = 'Hospitalizations';
 const M_PEOPLE_TESTED = 'People tested';
@@ -29,8 +31,11 @@ const is_gcp_environment = process.env.GCP_PROJECT !== undefined;
 
 const MEASUREMENT_CONFIG = [
   {
-    measurement: M_TEST_POS,
-    extractFunc: extractTestPositivity,
+    measurement: M_POSITIVES,
+    extractFunc: extractPositives,
+  }, {
+    measurement: M_ALL_TEST_RESULTS,
+    extractFunc: extractAllTestResults,
   }, {
     measurement: M_DEATHS,
     extractFunc: extractDeaths,
@@ -157,6 +162,22 @@ async function extractTestPositivity(tooltip) {
   const positives = toNumber((await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1]);
   const totalTests = toNumber((await getMeasurement(tooltip, 6)).match(/All test results: (.*)/)[1]);
   return { positives, totalTests };
+}
+
+async function extractPositives(tooltip) {
+  // For Test Positivity...
+  // 1 = location name
+  // 5 = positives "Positive test results: nnn"
+  const positives = toNumber((await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1]);
+  return { positives };
+}
+
+async function extractAllTestResults(tooltip) {
+  // For Test Positivity...
+  // 1 = location name
+  // 5 = positives "Positive test results: nnn"
+  const totalTests = toNumber((await getMeasurement(tooltip, 5)).match(/All test results: (.*)/)[1]);
+  return { totalTests };
 }
 
 async function extractDeaths(tooltip) {
@@ -337,10 +358,11 @@ function mergeMapPoints(points1, points2) {
 // Main entry point to scraping.
 async function scrape(locationType) {
   const browser = await launchBrowser();
+  let page = null;
   const data = {};
 
   try {
-    const page = await setupPage(browser);
+    page = await setupPage(browser);
     const tableauFrame = await setupTableauFrame(page);
 
     await selectLocationType(page, tableauFrame, locationType);
@@ -362,6 +384,11 @@ async function scrape(locationType) {
         }
       }
     }
+  } catch (err) {
+    if (!is_gcp_environment && page) {
+      await page.screenshot({path: 'failure.png'});
+    }
+    throw err;
   } finally {
     await browser.close();
   }
@@ -377,7 +404,7 @@ async function scrapeAllMapPoints() {
   const data = {};
 
   try {
-    await selectMeasurement(tableauFrame, M_TEST_POS);
+    await selectMeasurement(tableauFrame, M_POSITIVES);
     for (const locationType of LOCATION_TYPES) {
       await selectLocationType(page, tableauFrame, locationType);
       await scrollToMap(tableauFrame);

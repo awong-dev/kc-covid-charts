@@ -6,8 +6,10 @@ const https = require('https');
 const cheerio = require('cheerio');
 const { parseExcel } = require('./excel');
 const {mergeData} = require('./mergedata');
-const scrape = require('./scrape');
 const _ = require('lodash');
+
+const scrape = require('./scrape');
+const hras = require('./hras');
 
 const logger = functions.logger;
 
@@ -115,7 +117,7 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       });
 
       const combinedData = await combinedDataPromise;
-      mergeData(combinedData, data, today.getTime());
+      mergeData(combinedData, _.mapKeys(data, (v,k) => hras.mapScrapeHraToHra(k)), today.getTime());
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {

@@ -76,12 +76,17 @@ function mergeXlsData(combinedData, inputData, dailyDate) {
 }
 
 function mergeOne(data, b, name, dateTs) {
-  data[name].date.push(dateTs);
-  data[name].positives.push(b[name].positives);
-  data[name].totalTests.push(b[name].totalTests);
-  data[name].deaths.push(b[name].deaths);
-  data[name].hospitalizations.push(b[name].hospitalizations);
-  data[name].peopleTested.push(b[name].peopleTested);
+  const target = data[name];
+  if (target.date.includes(dateTs)) {
+    console.error(`Skipping ${name}. Date ${dateTs} already there.`);
+    return;
+  }
+  target.date.push(dateTs);
+  target.positives.push(b[name].positives);
+  target.totalTests.push(b[name].totalTests);
+  target.deaths.push(b[name].deaths);
+  target.hospitalizations.push(b[name].hospitalizations);
+  target.peopleTested.push(b[name].peopleTested);
 }
 
 function mergeData(normalized, update, dateTs) {
