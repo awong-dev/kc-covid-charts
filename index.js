@@ -5,7 +5,7 @@ const fs = require('fs');
 const glob = require('glob');
 const { parseExcel } = require('./functions/excel');
 const mergeData = require('./functions/mergedata');
-const { idToHra, hraToId } = require('./hra');
+const { idToHra, hraToId } = require('./functions/hras');
 
 admin.initializeApp({
   databaseURL: 'https://kc-covid-chart.firebaseio.com',
