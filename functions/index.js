@@ -103,10 +103,19 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       return response.status(400).send(`invalid type: ${type}`);
     }
     const data = await scrapeLatestData(type);
+    return;
     if (data !== null) {
       const today = new Date();
       today.setHours(0,0,0,0);
-      // Update the data.json.
+      const scrapeFileRef = admin.storage().bucket().file(`scrape-${type}-${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}.json`);
+      const saveScrapePromise = scrapeFileRef.save(JSON.stringify(data), {
+        gzip: true,
+        metadata: {
+          contentType: "application/json",
+        },
+        predefinedAcl: "publicRead"
+      });
+      // Update the processed data.json.
       const dataFileRef = admin.storage().bucket().file(`processed/data-${type}.json`);
       const combinedDataPromise = new Promise((resolve, reject) => {
         const chunks = [];
@@ -125,6 +134,8 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
         },
         predefinedAcl: "publicRead"
       });
+
+      await saveScrapePromise;
 
       response.send(`found new data: ${today}`);
     } else {

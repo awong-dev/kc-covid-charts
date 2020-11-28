@@ -19,8 +19,9 @@ const LOCATION_TYPES = [ L_CENSUS, L_CITY, L_HRA, L_ZIP ];
 const NAME_FUNC = {
  [L_CITY]: x => x,
  [L_HRA]: x => x,
- [L_CENSUS]: x => x.slice(20)/100,
- [L_ZIP]: x => x.slice(10),
+// [L_CENSUS]: x => (x.split(':').slice(-1)[0])/100,  // For Census Tract with 530xxx prefix.
+ [L_CENSUS]: x => x.split(':').slice(-1)[0].trim(),
+ [L_ZIP]: x => x.split(':').slice(-1)[0].trim(),
 };
 
 const LONG_ACTION_MS = 10000;
@@ -75,8 +76,8 @@ async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
 
 async function launchBrowser() {
   return await puppeteer.launch({
-//    headless: false,
-    userDataDir: '/tmp/puppeteer-userdata',
+    headless: false,
+//    userDataDir: '/tmp/puppeteer-userdata',
     args: ['--disable-features=site-per-process', '--font-render-hinting=none', '--no-sandbox'],
   });
 }
@@ -225,7 +226,6 @@ async function scrapeRegion(page, tableauFrame, extractFunc, options = DEFAULT_S
       try {
         await page.mouse.move(x, y);
         onePixelIsInBounds = true;
-        await sleep(10); // give a bit for hover to raect.
 
         let tooltip = null;
         try {
@@ -396,29 +396,43 @@ async function scrape(locationType) {
   return data;
 }
 
-async function scrapeAllMapPoints() {
+async function scrapeAllMapPoints(locationType) {
   const browser = await launchBrowser();
   const page = await setupPage(browser);
   const tableauFrame = await setupTableauFrame(page);
+
+  /*
+  const SCRAPE_OPTIONS = {
+    [L_CITY]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 10, yinc: 10},
+    [L_CENSUS]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2},
+    [L_HRA]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 10, yinc: 10},
+    [L_ZIP]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2},
+  };
+ */
+  const SCRAPE_OPTIONS = {
+    [L_CITY]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10},
+    [L_CENSUS]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 2, yinc: 2},
+    [L_HRA]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10},
+    [L_ZIP]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 2, yinc: 2},
+  };
 
   const data = {};
 
   try {
     await selectMeasurement(tableauFrame, M_POSITIVES);
-    for (const locationType of LOCATION_TYPES) {
-      await selectLocationType(page, tableauFrame, locationType);
-      await scrollToMap(tableauFrame);
-      data[locationType] = await scrapeMapPoints(page, tableauFrame, NAME_FUNC[locationType]);
-    }
+    await selectLocationType(page, tableauFrame, locationType);
+    await scrollToMap(tableauFrame);
+    data[locationType] = await scrapeMapPoints(page, tableauFrame, NAME_FUNC[locationType],
+                                               SCRAPE_OPTIONS[locationType]);
   } catch (err) {
     if (!is_gcp_environment) {
       await page.screenshot({path: 'crashed.png'});
     }
     console.error("Crashed " + err);
+  } finally {
+    await browser.close();
   }
 
-  await browser.close();
-  console.log(JSON.stringify(data, null, 2));
   return data;
 }
 
@@ -436,7 +450,13 @@ async function test() {
 
 if (require.main === module) {
   if (process.argv[2] == "samplemap") {
-    scrapeAllMapPoints();
+    scrapes = [];
+    for (const locationType of LOCATION_TYPES) {
+      scrapes.push(scrapeAllMapPoints(locationType));
+    }
+    Promise.all(scrapes).then(results => {
+      console.log(JSON.stringify(Object.assign({}, ...results), null, 2));
+    });
   }
 
   scrape(process.argv[2]).then(data => console.log(JSON.stringify(data, null, 2)));
@@ -451,8 +471,10 @@ module.exports = {
   extractTestPositivity,
   mergeMapPoints,
   scrape,
+  scrapeAllMapPoints,
   scrapeMapPoints,
   scrapeRegion,
+  scrollToMap,
   selectLocationType,
   selectMeasurement,
   setupPage,
