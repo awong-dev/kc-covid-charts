@@ -76,9 +76,16 @@ async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
 
 async function launchBrowser() {
   return await puppeteer.launch({
-    headless: false,
+//    headless: false,
 //    userDataDir: '/tmp/puppeteer-userdata',
-    args: ['--disable-features=site-per-process', '--font-render-hinting=none', '--no-sandbox'],
+    args: [
+      '--disable-features=site-per-process',
+      '--font-render-hinting=none',
+      '--disable-background-timer-throttling',
+      '--disable-backgrounding-occluded-windows',
+      '--disable-renderer-backgrounding',
+      '--no-sandbox'
+    ],
   });
 }
 
@@ -401,20 +408,20 @@ async function scrapeAllMapPoints(locationType) {
   const page = await setupPage(browser);
   const tableauFrame = await setupTableauFrame(page);
 
-  /*
   const SCRAPE_OPTIONS = {
     [L_CITY]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 10, yinc: 10},
     [L_CENSUS]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2},
     [L_HRA]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 10, yinc: 10},
     [L_ZIP]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2},
   };
- */
+  /*
   const SCRAPE_OPTIONS = {
     [L_CITY]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10},
     [L_CENSUS]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 2, yinc: 2},
     [L_HRA]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10},
     [L_ZIP]: { startx: 400, starty: 50, endx: 500, endy: 100, xinc: 2, yinc: 2},
   };
+ */
 
   const data = {};
 
@@ -448,15 +455,18 @@ async function test() {
   return [ browser, page, tableauFrame ];
 }
 
+async function doSampleMap() {
+  const scrapes = [];
+  for (const locationType of LOCATION_TYPES) {
+    scrapes.push(scrapeAllMapPoints(locationType));
+  }
+  const results = await Promise.all(scrapes);
+  console.log(JSON.stringify(Object.assign({}, ...results), null, 2));
+}
+
 if (require.main === module) {
   if (process.argv[2] == "samplemap") {
-    scrapes = [];
-    for (const locationType of LOCATION_TYPES) {
-      scrapes.push(scrapeAllMapPoints(locationType));
-    }
-    Promise.all(scrapes).then(results => {
-      console.log(JSON.stringify(Object.assign({}, ...results), null, 2));
-    });
+    return doSampleMap();
   }
 
   scrape(process.argv[2]).then(data => console.log(JSON.stringify(data, null, 2)));
