@@ -103,7 +103,6 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       return response.status(400).send(`invalid type: ${type}`);
     }
     const data = await scrapeLatestData(type);
-    return;
     if (data !== null) {
       const today = new Date();
       today.setHours(0,0,0,0);
@@ -126,7 +125,11 @@ exports.snapshotData = functions.runWith({timeoutSeconds: 500, memory: '1GB'})
       });
 
       const combinedData = await combinedDataPromise;
-      mergeData(combinedData, _.mapKeys(data, (v,k) => hras.mapScrapeHraToHra(k)), today.getTime());
+      if (type === 'hra') {
+        mergeData(combinedData, _.mapKeys(data, (v,k) => hras.mapScrapeHraToHra[k]), today.getTime());
+      } else {
+        mergeData(combinedData, data, today.getTime());
+      }
       await dataFileRef.save(JSON.stringify(combinedData), {
         gzip: true,
         metadata: {

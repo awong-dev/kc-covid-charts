@@ -397,9 +397,11 @@ async function scrape(locationType) {
     }
     throw err;
   } finally {
+    console.log("Closing browser");
     await browser.close();
   }
 
+  console.log("Returning data");
   return data;
 }
 
