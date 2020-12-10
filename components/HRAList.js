@@ -5,17 +5,13 @@ const HRAListItem = ({
   active,
   name,
   toggleActive,
-  isHovered,
-  setHoveredHraId,
+  color,
 }) => {
   const handleChange = useCallback(() => toggleActive(hraId), [hraId]);
-  const handleMouseEnter = useCallback(() => setHoveredHraId(hraId), [hraId, setHoveredHraId]);
-  const handleMouseLeave = useCallback(() => setHoveredHraId(null), [hraId, setHoveredHraId]);
   return (
     <li
-      className={`flex items-stretch justify-items-stretch text-sm ${isHovered && ' bg-yellow-500'}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className={`flex items-stretch justify-items-stretch text-sm`}
+      style={{background: color}}
     >
       {/* I think the linter is wrong here — the input is a child of the label and that should
       be fine. */}
@@ -28,21 +24,20 @@ const HRAListItem = ({
   );
 };
 
-export default function HRAList({ state: { hras, hoveredHraId }, toggleActive, setHoveredHraId, setAllInactive}) {
+export default function HRAList({ state: { hras }, toggleActive, setAllInactive}) {
   const handleSetAllInactive = useCallback(() => setAllInactive());
 
   return (
     <>
       <button onClick={handleSetAllInactive} className="border-2 border-gray-600 rounded px-2 mb-2 bg-gray-200">Deselect all</button>
       <ul className="divide-y divide-white bg-gray-100">
-        {Object.values(hras).map(({ hraId, name, active }, i) => (
+        {Object.values(hras).map(({ hraId, name, active, color }, i) => (
           <HRAListItem
             hraId={hraId}
             name={name}
             active={active}
             toggleActive={toggleActive}
-            isHovered={hraId === hoveredHraId}
-            setHoveredHraId={setHoveredHraId}
+            color={active ? color : undefined}
           />
         ))}
       </ul>

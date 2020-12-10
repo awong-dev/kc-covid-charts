@@ -21,10 +21,9 @@ const margins = {
 };
 
 export default function TimeSeries({
-  state: { hras, hoveredHraId },
+  state: { hras },
   heading,
   valueAccessor,
-  setHoveredHraId,
 }) {
   const target = useRef(null);
   const [{ width, height }, setSize] = useState({ width: 0, height: 0 });
@@ -88,21 +87,21 @@ export default function TimeSeries({
           diagramHeight={diagramHeight}
           heading={heading}
         />
-        {sortBy(activeHRAs, h => h.hraId === hoveredHraId).map(({ hraId, timeSeries }) => {
-          const isHovered = hraId === hoveredHraId;
+        {activeHRAs.map(({ hraId, timeSeries, color }) => {
           return (
             <HRALine
               timeSeries={timeSeries}
               timeScale={timeScale}
               valueScale={valueScale}
               valueAccessor={valueAccessor}
-              isHovered={isHovered}
+              color={color}
             />
           );
         })}
         <g>
           {voronoiPolygons.map((polygon, i) => (
-            <HoverableVoronoiPolygon key={i /* TK */} polygon={polygon} setHoveredHraId={setHoveredHraId} />
+            /* <HoverableVoronoiPolygon key={polygon.data.hraId} polygon={polygon} /> */
+            null
           ))}
         </g>
       </Group>
@@ -129,19 +128,19 @@ const Framing = memo(
 
 const HRALine = memo(
   ({
-    timeSeries, timeScale, valueScale, valueAccessor, isHovered,
+    timeSeries, timeScale, valueScale, valueAccessor, color
   }) => (
-    <g className={isHovered ? 'text-yellow-500' : 'text-black'}>
+    <g>
       <LinePath
         data={timeSeries}
         x={(d) => timeScale(d.date)}
         y={(d) => valueScale(valueAccessor(d))}
-        className="stroke-current"
-        strokeWidth={isHovered ? 3 : 0.5}
+        stroke={color}
+        strokeWidth={1}
         strokeOpacity={0.8}
         defined={(d) => Number.isFinite(valueAccessor(d))}
       />
-      {timeSeries.map((d) => {
+      {/* timeSeries.map((d) => {
         const value = valueAccessor(d);
         if (!Number.isFinite(value)) { return null; }
         return (
@@ -149,18 +148,19 @@ const HRALine = memo(
             key={d.date}
             cx={timeScale(d.date)}
             cy={valueScale(value)}
-            r={isHovered ? 3 : 1}
-            className={`fill-current ${d.interpolated ? 'text-red-500' : ''}`}
+            r={1}
+            fill={color}
+            // className={`fill-current ${d.interpolated ? 'text-red-500' : ''}`}
           />
         );
-      })}
+      }) */}
     </g>
   ),
 );
 
-const HoverableVoronoiPolygon = ({polygon, setHoveredHraId}) => {
-  const handleMouseEnter = useCallback(() => setHoveredHraId(polygon.data.hraId), [polygon, setHoveredHraId]);
-  const handleMouseLeave = useCallback(() => setHoveredHraId(null), [setHoveredHraId]);
+const HoverableVoronoiPolygon = ({polygon}) => {
+  const handleMouseEnter = useCallback(() => (undefined), []); // TK
+  const handleMouseLeave = useCallback(() => (undefined), []); // TK
 
   return <VoronoiPolygon
   key={3}

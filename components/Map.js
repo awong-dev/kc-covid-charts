@@ -29,31 +29,27 @@ const MapFrame = withScriptjs(withGoogleMap(({ children }) => (
 )));
 
 const HRAMultiPolygon = ({
-  hraId, active, toggleActive, isHovered, setHoveredHraId
+  hraId, active, toggleActive, color
 }) => {
-  const handleMouseOver = useCallback(() => setHoveredHraId(hraId), [hraId, setHoveredHraId]);
-  const handleMouseOut = useCallback(() => setHoveredHraId(null), [hraId, setHoveredHraId]);
-
   const toggle = useCallback(() => toggleActive(hraId), [hraId]);
-  return (polygonsCoordsByHRAId[hraId].map((polygonCoordinates) => (
+  return (polygonsCoordsByHRAId[hraId].map((polygonCoordinates, i) => (
     <Polygon
+      key={i}
       paths={polygonCoordinates.map((path) => path.map(([lng, lat]) => ({ lng, lat })))}
       options={{
-        fillColor: 'black',
+        fillColor: color,
         fillOpacity: active ? 0.8 : 0.2,
-        strokeWeight: isHovered ? 3 : 0.5,
-        strokeColor: isHovered ? 'rgba(245, 158, 11, 1)' : 'black',
-        zIndex: isHovered ? 2 : 1
+        strokeWeight: 0.5,
+        strokeColor: 'black',
+        zIndex: 1
       }}
       onClick={toggle}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
     />
   ))
   );
 };
 
-export default function Map({ state: { hras, hoveredHraId }, toggleActive, setHoveredHraId }) {
+export default function Map({ state: { hras }, toggleActive }) {
   return (
     <MapFrame
       isMarkerShown
@@ -62,14 +58,13 @@ export default function Map({ state: { hras, hoveredHraId }, toggleActive, setHo
       containerElement={<div className="flex-grow" />}
       mapElement={<div style={{ height: '100%' }} />}
     >
-      {Object.values(hras).map(({ hraId, active }) => (
+      {Object.values(hras).map(({ hraId, active, color }) => (
         <HRAMultiPolygon
           key={hraId}
           hraId={hraId}
           active={active}
           toggleActive={toggleActive}
-          isHovered={hoveredHraId === hraId}
-          setHoveredHraId={setHoveredHraId}
+          color={color}
         />
       ))}
     </MapFrame>

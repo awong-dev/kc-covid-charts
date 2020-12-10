@@ -1,11 +1,48 @@
-import { chain, zip, mapValues } from 'lodash';
+import { chain, zip, mapValues, includes, remove } from 'lodash';
 import { useCallback, useReducer, useMemo } from 'react';
 import { addDays, differenceInMilliseconds, differenceInHours } from 'date-fns'
+import { schemeTableau10 } from 'd3-scale-chromatic'
+
+/*
+interface State {
+  hras: {
+    [hraId]: {
+      hraId: number
+      name: string
+      active: boolean
+      // color — only used when active, or when going back to an active state and trying to preserve color:
+      color: string | undefined
+    }
+  }
+  unusedColors: [string] // most recently used at the end
+}
+*/
 
 const reducer = (state, action) => {
   switch(action.type) {
     case 'TOGGLE_ACTIVE':
-      return {...state, hras: {...state.hras, [action.hraId]: {...state.hras[action.hraId], active: !state.hras[action.hraId].active}}}
+      const hra = state.hras[action.hraId]
+      const newActiveValue = !state.hras[action.hraId].active
+      let color = hra.color
+      const unusedColors = [...state.unusedColors]
+      if (newActiveValue) {
+        // see if the hra has a preferred color that is not used:
+        if (color && includes(unusedColors, color)) {
+          remove(unusedColors, color)
+        }
+        // or just take the least recently used one:
+        else {
+          color = unusedColors.shift()
+        }
+      } else {
+        unusedColors.push(hra.color)
+      }
+      const result = {
+        ...state,
+        hras: {...state.hras, [action.hraId]: {...hra, active: newActiveValue, color}},
+        unusedColors,
+      }
+      return result;
     case 'SET_ALL_INACTIVE':
       return {...state, hras: mapValues(state.hras, (hra) => ({...hra, active: false}))}
     case 'SET_HOVER':
@@ -14,8 +51,7 @@ const reducer = (state, action) => {
   }
 }
 
-const interpolatedFields = 
-[
+const interpolatedFields = [
   'population',
   'peopleTested',
   'totalTests',
@@ -102,7 +138,7 @@ const buildDefaultState = (covidData) => {
       return ({
         hraId: hraId,
         name: hraName,
-        active: hraId === 1000,
+        active: false,
         timeSeries: interpolatedDataWithDerivatives
       });
     })
@@ -110,7 +146,8 @@ const buildDefaultState = (covidData) => {
 
   return {
     hras: covidDataByHraId,
-    hoveredHraId: 1000,
+    hoveredHraId: undefined,
+    unusedColors: [...schemeTableau10]
   }
 }
 
