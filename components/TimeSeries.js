@@ -6,7 +6,7 @@ import { GridRows, GridColumns } from '@visx/grid';
 import { voronoi, VoronoiPolygon } from '@visx/voronoi';
 import { Group } from '@visx/group';
 import { flatten, sortBy } from 'lodash';
-import { max, extent } from 'd3-array';
+import { min, max, extent } from 'd3-array';
 import {
   memo,
   useLayoutEffect, useMemo, useRef, useState,
@@ -53,7 +53,10 @@ export default function TimeSeries({
         nice: true,
       }),
       scaleLinear({
-        domain: [0, max(activeHRAs, (hra) => max(hra.timeSeries, valueAccessor))],
+        domain: [
+          min(activeHRAs, (hra) => min(hra.timeSeries, valueAccessor)),
+          max(activeHRAs, (hra) => max(hra.timeSeries, valueAccessor))
+        ],
         range: [diagramHeight, 0],
         nice: true,
       }),
@@ -147,7 +150,7 @@ const HRALine = memo(
             cx={timeScale(d.date)}
             cy={valueScale(value)}
             r={isHovered ? 3 : 1}
-            className="fill-current"
+            className={`fill-current ${d.interpolated ? 'text-red-500' : ''}`}
           />
         );
       })}

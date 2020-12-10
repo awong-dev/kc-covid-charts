@@ -5,7 +5,7 @@ import useCombinedState from '../hooks/useCombinedState';
 
 export default function CombinedChart({ covidData }) {
   const {
-    state, toggleActive, setHoveredHraId,
+    state, toggleActive, setHoveredHraId, setAllInactive
   } = useCombinedState(covidData);
 
   return (
@@ -23,6 +23,7 @@ export default function CombinedChart({ covidData }) {
             state={state}
             toggleActive={toggleActive}
             setHoveredHraId={setHoveredHraId}
+            setAllInactive={setAllInactive}
           />
         </div>
       </div>
@@ -30,32 +31,24 @@ export default function CombinedChart({ covidData }) {
         <div className="h-80 flex overflow-hidden shadow-lg">
           <TimeSeries
             state={state}
-            heading="People tested"
-            valueAccessor={(d) => d.peopleTested}
+            heading="New positives per 100k"
+            valueAccessor={(d) => (100000 * d.Δpositives / d.population)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
           <TimeSeries
             state={state}
-            heading="Positives per population"
-            valueAccessor={(d) => (d.positives / d.population)}
+            heading="Positives per people tested"
+            valueAccessor={(d) => (d.Δpositives / d.ΔpeopleTested)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
         <div className="h-80 flex overflow-hidden shadow-lg">
           <TimeSeries
             state={state}
-            heading="Positives per test"
-            valueAccessor={(d) => (d.positives / d.totalTests)}
-            setHoveredHraId={setHoveredHraId}
-          />
-        </div>
-        <div className="h-80 flex overflow-hidden shadow-lg">
-          <TimeSeries
-            state={state}
-            heading="Hospitalizations"
-            valueAccessor={(d) => (d.hospitalizations)}
+            heading="Tests"
+            valueAccessor={(d) => (d.ΔtotalTests)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
@@ -63,7 +56,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="Deaths"
-            valueAccessor={(d) => (d.deaths)}
+            valueAccessor={(d) => (d.Δdeaths)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>

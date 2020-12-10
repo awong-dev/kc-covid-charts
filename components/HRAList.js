@@ -28,19 +28,24 @@ const HRAListItem = ({
   );
 };
 
-export default function HRAList({ state: { hras, hoveredHraId }, toggleActive, setHoveredHraId }) {
+export default function HRAList({ state: { hras, hoveredHraId }, toggleActive, setHoveredHraId, setAllInactive}) {
+  const handleSetAllInactive = useCallback(() => setAllInactive());
+
   return (
-    <ul className="divide-y divide-white bg-gray-100">
-      {Object.values(hras).map(({ hraId, name, active }, i) => (
-        <HRAListItem
-          hraId={hraId}
-          name={name}
-          active={active}
-          toggleActive={toggleActive}
-          isHovered={hraId === hoveredHraId}
-          setHoveredHraId={setHoveredHraId}
-        />
-      ))}
-    </ul>
+    <>
+      <button onClick={handleSetAllInactive} className="border-2 border-gray-600 rounded px-2 mb-2 bg-gray-200">Deselect all</button>
+      <ul className="divide-y divide-white bg-gray-100">
+        {Object.values(hras).map(({ hraId, name, active }, i) => (
+          <HRAListItem
+            hraId={hraId}
+            name={name}
+            active={active}
+            toggleActive={toggleActive}
+            isHovered={hraId === hoveredHraId}
+            setHoveredHraId={setHoveredHraId}
+          />
+        ))}
+      </ul>
+    </>
   );
 }
