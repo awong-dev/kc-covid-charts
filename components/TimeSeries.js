@@ -136,8 +136,8 @@ const HRALine = memo(
         x={(d) => timeScale(d.date)}
         y={(d) => valueScale(valueAccessor(d))}
         stroke={color}
-        strokeWidth={1}
-        strokeOpacity={0.8}
+        strokeWidth={2}
+        strokeOpacity={1}
         defined={(d) => Number.isFinite(valueAccessor(d))}
       />
       {/* timeSeries.map((d) => {

@@ -9,8 +9,8 @@ export default function CombinedChart({ covidData }) {
   } = useCombinedState(covidData);
 
   return (
-    <main className="p-4 h-full w-full min-h-screen flex flex-row items-stretch justify-items-stretch bg-purple-100 space-x-4">
-      <div className="w-1/4 flex flex-col items-stretch justify-start space-y-4">
+    <main className="p-2 h-full w-full min-h-screen flex flex-row items-stretch justify-items-stretch bg-gray-300 space-x-1">
+      <div className="w-1/4 flex flex-col items-stretch justify-start space-y-1">
         <div className="h-60 overflow-hidden shadow-lg flex items-stretch justify-items-stretch overflow-hidden">
           <Map
             state={state}
@@ -18,7 +18,7 @@ export default function CombinedChart({ covidData }) {
             setHoveredHraId={setHoveredHraId}
           />
         </div>
-        <div className="flex-stretch shadow-lg">
+        <div className="flex-stretch">
           <HRAList
             state={state}
             toggleActive={toggleActive}
@@ -27,7 +27,7 @@ export default function CombinedChart({ covidData }) {
           />
         </div>
       </div>
-      <div className="flex-grow flex flex-col items-stretch justify-start space-y-4">
+      <div className="flex-grow flex flex-col items-stretch justify-start space-y-1">
         <div className="h-80 flex overflow-hidden shadow-lg">
           <TimeSeries
             state={state}

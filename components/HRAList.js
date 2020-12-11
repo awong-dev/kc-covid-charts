@@ -28,9 +28,9 @@ export default function HRAList({ state: { hras }, toggleActive, setAllInactive}
   const handleSetAllInactive = useCallback(() => setAllInactive());
 
   return (
-    <>
-      <button onClick={handleSetAllInactive} className="border-2 border-gray-600 rounded px-2 mb-2 bg-gray-200">Deselect all</button>
-      <ul className="divide-y divide-white bg-gray-100">
+    <div className="space-y-1">
+      <button onClick={handleSetAllInactive} className="border-2 border-gray-600 rounded px-2 bg-gray-200">Deselect all</button>
+      <ul className="divide-y divide-white bg-gray-100 shadow-lg">
         {Object.values(hras).map(({ hraId, name, active, color }, i) => (
           <HRAListItem
             hraId={hraId}
@@ -41,6 +41,6 @@ export default function HRAList({ state: { hras }, toggleActive, setAllInactive}
           />
         ))}
       </ul>
-    </>
+    </div>
   );
 }
