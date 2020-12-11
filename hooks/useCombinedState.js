@@ -137,10 +137,6 @@ const buildDefaultState = (covidData) => {
           μdeaths: mean(smoothingData, d => d.deaths),
         } : {}
 
-        if (hraId === 1000) {
-          console.warn('========', smoothingData.length, smoothedFields)
-        }
-
         return {...datum, ...smoothedFields}
       })
 

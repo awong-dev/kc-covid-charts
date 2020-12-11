@@ -33,6 +33,7 @@ export default function HRAList({ state: { hras }, toggleActive, setAllInactive}
       <ul className="divide-y divide-white bg-gray-100 shadow-lg">
         {Object.values(hras).map(({ hraId, name, active, color }, i) => (
           <HRAListItem
+            key={hraId}
             hraId={hraId}
             name={name}
             active={active}
