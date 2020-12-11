@@ -2,6 +2,7 @@ import { chain, zip, mapValues, includes, remove } from 'lodash';
 import { useCallback, useReducer, useMemo } from 'react';
 import { addDays, differenceInMilliseconds, differenceInHours } from 'date-fns'
 import { schemeTableau10 } from 'd3-scale-chromatic'
+import { mean } from 'd3-array'
 
 /*
 interface State {
@@ -59,6 +60,8 @@ const interpolatedFields = [
   'hospitalizations',
   'deaths',
 ]
+
+const smoothingWindowInDays = 14
 
 const buildDefaultState = (covidData) => {
   const covidDataByHraId = chain(Object.entries(covidData.HRA))
@@ -118,15 +121,33 @@ const buildDefaultState = (covidData) => {
         [{...uninterpolatedData[0], interpolated: false}] // TODO make sure data isn't empty
       );
 
+      // smooth with a trailing average (prefixed by μ):
+      const smoothedInterpolatedData = interpolatedData.map((datum, i) => {
+        const smoothingData = interpolatedData.slice(i + 1 - smoothingWindowInDays, i + 1)
+        const smoothedFields = smoothingData.length === smoothingWindowInDays ? {
+          μpeopleTested: mean(smoothingData, d => d.peopleTested),
+          μtotalTests: mean(smoothingData, d => d.totalTests),
+          μpositives: mean(smoothingData, d => d.positives),
+          μhospitalizations: mean(smoothingData, d => d.hospitalizations),
+          μdeaths: mean(smoothingData, d => d.deaths),
+        } : {}
+
+        if (hraId === 1000) {
+          console.warn('========', smoothingData.length, smoothedFields)
+        }
+
+        return {...datum, ...smoothedFields}
+      })
+
       // add derivatives for cumulative fields:
-      const interpolatedDataWithDerivatives = interpolatedData.map((datum, i) => {
-        const previousDatum = interpolatedData[i - 1]
+      const smoothedInterpolatedDataWithDerivatives = smoothedInterpolatedData.map((datum, i) => {
+        const previousDatum = smoothedInterpolatedData[i - 1]
         const derivativeFields = previousDatum ? {
-          ΔpeopleTested: datum.peopleTested - previousDatum.peopleTested,
-          ΔtotalTests: datum.totalTests - previousDatum.totalTests,
-          Δpositives: datum.positives - previousDatum.positives,
-          Δhospitalizations: datum.hospitalizations - previousDatum.hospitalizations,
-          Δdeaths: datum.deaths - previousDatum.deaths,
+          ΔpeopleTested: datum.μpeopleTested - previousDatum.μpeopleTested,
+          ΔtotalTests: datum.μtotalTests - previousDatum.μtotalTests,
+          Δpositives: datum.μpositives - previousDatum.μpositives,
+          Δhospitalizations: datum.μhospitalizations - previousDatum.μhospitalizations,
+          Δdeaths: datum.μdeaths - previousDatum.μdeaths,
         } : {}
 
         return {
@@ -139,7 +160,7 @@ const buildDefaultState = (covidData) => {
         hraId: hraId,
         name: hraName,
         active: false,
-        timeSeries: interpolatedDataWithDerivatives
+        timeSeries: smoothedInterpolatedDataWithDerivatives
       });
     })
     .value();

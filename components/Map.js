@@ -37,7 +37,7 @@ const HRAMultiPolygon = ({
       key={i}
       paths={polygonCoordinates.map((path) => path.map(([lng, lat]) => ({ lng, lat })))}
       options={{
-        fillColor: color,
+        fillColor: active ? color : 'white',
         fillOpacity: active ? 0.8 : 0.2,
         strokeWeight: 0.5,
         strokeColor: 'black',
