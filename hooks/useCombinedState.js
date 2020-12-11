@@ -23,13 +23,14 @@ const reducer = (state, action) => {
   switch(action.type) {
     case 'TOGGLE_ACTIVE':
       const hra = state.hras[action.hraId]
-      const newActiveValue = !state.hras[action.hraId].active
+      const active = !state.hras[action.hraId].active
       let color = hra.color
       const unusedColors = [...state.unusedColors]
-      if (newActiveValue) {
+      if (active) {
+        if (unusedColors.length === 0) { return state } // HACK
         // see if the hra has a preferred color that is not used:
         if (color && includes(unusedColors, color)) {
-          remove(unusedColors, color)
+          remove(unusedColors, c => c === color)
         }
         // or just take the least recently used one:
         else {
@@ -40,12 +41,16 @@ const reducer = (state, action) => {
       }
       const result = {
         ...state,
-        hras: {...state.hras, [action.hraId]: {...hra, active: newActiveValue, color}},
+        hras: {...state.hras, [action.hraId]: {...hra, active, color}},
         unusedColors,
       }
       return result;
     case 'SET_ALL_INACTIVE':
-      return {...state, hras: mapValues(state.hras, (hra) => ({...hra, active: false}))}
+      return {
+        ...state,
+        hras: mapValues(state.hras, (hra) => ({...hra, active: false})),
+        unusedColors: [...schemeTableau10],
+      }
     case 'SET_HOVER':
       return {...state, hoveredHraId: action.hraId}
     break;
