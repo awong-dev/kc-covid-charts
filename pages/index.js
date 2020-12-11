@@ -27,16 +27,16 @@ export default function CombinedChart({ covidData }) {
           />
         </div>
       </div>
-      <div className="flex-grow flex flex-col items-stretch justify-start space-y-1">
-        <div className="h-80 flex overflow-hidden shadow-lg">
+      <div className="flex-grow flex flex-col items-stretch justify-start shadow-lg">
+        <div className="h-80 flex overflow-hidden">
           <TimeSeries
             state={state}
-            heading="Cumulative Positives"
-            valueAccessor={(d) => (d.μpositives)}
+            heading="Cumulative positives per 100k"
+            valueAccessor={(d) => (100000 * d.μpositives / d.population)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
-        <div className="h-80 flex overflow-hidden shadow-lg">
+        <div className="h-80 flex overflow-hidden">
           <TimeSeries
             state={state}
             heading="New positives per 100k"
@@ -44,7 +44,7 @@ export default function CombinedChart({ covidData }) {
             setHoveredHraId={setHoveredHraId}
           />
         </div>
-        <div className="h-80 flex overflow-hidden shadow-lg">
+        <div className="h-80 flex overflow-hidden">
           <TimeSeries
             state={state}
             heading="Positives per people tested"
@@ -52,7 +52,7 @@ export default function CombinedChart({ covidData }) {
             setHoveredHraId={setHoveredHraId}
           />
         </div>
-        <div className="h-80 flex overflow-hidden shadow-lg">
+        <div className="h-80 flex overflow-hidden">
           <TimeSeries
             state={state}
             heading="Tests"
@@ -60,7 +60,7 @@ export default function CombinedChart({ covidData }) {
             setHoveredHraId={setHoveredHraId}
           />
         </div>
-        <div className="h-80 flex overflow-hidden shadow-lg">
+        <div className="h-80 flex overflow-hidden">
           <TimeSeries
             state={state}
             heading="Deaths"

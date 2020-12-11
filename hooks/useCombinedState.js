@@ -66,7 +66,7 @@ const interpolatedFields = [
   'deaths',
 ]
 
-const smoothingWindowInDays = 14
+const smoothingWindowInDays = 7
 
 const buildDefaultState = (covidData) => {
   const covidDataByHraId = chain(Object.entries(covidData.HRA))

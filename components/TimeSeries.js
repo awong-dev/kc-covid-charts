@@ -1,3 +1,4 @@
+import { addDays } from 'date-fns'
 import { useCallback } from 'react';
 import { LinePath, Circle } from '@visx/shape';
 import { scaleTime, scaleLinear } from '@visx/scale';
@@ -21,13 +22,13 @@ import {
 } from '@visx/tooltip';
 
 const margins = {
-  top: 70,
+  top: 20,
   right: 50,
-  bottom: 50,
+  bottom: 30,
   left: 80,
 };
 
-const tooltipNumberFormatter = new Intl.NumberFormat('en-US', {maximumFractionDigits: 1})
+const tooltipNumberFormatter = new Intl.NumberFormat('en-US', {maximumFractionDigits: 0})
 const tooltipDateFormatter = new Intl.DateTimeFormat('en-US', {dateStyle: 'medium'})
 
 export default function TimeSeries({
@@ -114,73 +115,98 @@ export default function TimeSeries({
     tooltipData: null,
   });
 
-  // const { containerRef, TooltipInPortal } = useTooltipInPortal({
-  //   // use TooltipWithBounds
-  //   detectBounds: true,
-  //   // when tooltip containers are scrolled, this will correctly update the Tooltip position
-  //   scroll: true,
-  // })
+  const { containerRef, TooltipInPortal } = useTooltipInPortal({
+    // use TooltipWithBounds
+    detectBounds: true,
+    // when tooltip containers are scrolled, this will correctly update the Tooltip position
+    scroll: true,
+    debounce: 100
+  })
 
   return (
-    <div className="flex-1 flex relative">
-      <svg ref={target} className="bg-gray-100 flex-1">
-        <Group left={margins.left} top={margins.top}>
-          <Framing
-            valueScale={valueScale}
-            timeScale={timeScale}
-            diagramWidth={diagramWidth}
-            diagramHeight={diagramHeight}
-            heading={heading}
-          />
-          {activeHRAs.map(({ hraId, timeSeries, color }) => {
-            return (
-              <HRALine
-                timeSeries={timeSeries}
-                timeScale={timeScale}
-                valueScale={valueScale}
-                valueAccessor={valueAccessor}
-                color={color}
-              />
-            );
-          })}
-          <g>
-            {voronoiPolygons.map((polygon, i) => (
-              <HoverableVoronoiPolygon
-                key={polygon.data.hraId}
-                polygon={polygon}
-                showTooltip={showTooltip}
-                hideTooltip={hideTooltip}
-              />
-            ))}
-          </g>
-          {tooltipOpen &&
-            <Circle
-              cx={tooltipData.x}
-              cy={tooltipData.y}
-              r={4}
-              fill={tooltipData.hra.color}
-              className="pointer-events-none"
+    <figure className="flex-1 flex flex-col bg-gray-100">
+      <figcaption className="ml-8 mt-4 text-3xl font-bold">{heading}</figcaption>
+      <div className="flex-1 flex relative" ref={containerRef}>
+        <svg ref={target} className="flex-1">
+          <Group left={margins.left} top={margins.top}>
+            <Framing
+              valueScale={valueScale}
+              timeScale={timeScale}
+              diagramWidth={diagramWidth}
+              diagramHeight={diagramHeight}
+              heading={heading}
             />
-          }
-        </Group>
-      </svg>
-      {tooltipOpen &&
-        <TooltipWithBounds left={tooltipLeft} top={tooltipTop} className="pointer-events-none" offsetTop={-10} offsetLeft={70}>
-          <div>
-            <div>
-              <div className="inline-block h-3 w-3 mr-1" style={{background: tooltipData.hra.color}} />{tooltipData.hra.name}
+            {tooltipOpen &&
+              <rect
+                x={timeScale(addDays(tooltipData.date, -1))}
+                y={0}
+                height={diagramHeight}
+                width={timeScale(addDays(tooltipData.date, 1)) - timeScale(addDays(tooltipData.date, -1))}
+                r={5}
+                fill="black"
+                fillOpacity={0.2}
+                className="pointer-events-none"
+              />
+            }
+
+            {activeHRAs.map(({ hraId, timeSeries, color }) => {
+              return (
+                <HRALine
+                  timeSeries={timeSeries}
+                  timeScale={timeScale}
+                  valueScale={valueScale}
+                  valueAccessor={valueAccessor}
+                  color={color}
+                />
+              );
+            })}
+            <g>
+              {voronoiPolygons.map((polygon, i) => (
+                <HoverableVoronoiPolygon
+                  key={polygon.data.hraId}
+                  polygon={polygon}
+                  showTooltip={showTooltip}
+                  hideTooltip={hideTooltip}
+                />
+              ))}
+            </g>
+            {tooltipOpen &&
+              <Circle
+                cx={tooltipData.x}
+                cy={tooltipData.y}
+                r={5}
+                fill="none"
+                stroke={tooltipData.hra.color}
+                strokeWidth="2"
+                className="pointer-events-none"
+              />
+            }
+          </Group>
+        </svg>
+        {tooltipOpen &&
+          <TooltipInPortal
+            left={tooltipLeft}
+            top={tooltipTop}
+            className="pointer-events-none"
+            unstyled
+            applyPositionStyle
+          >
+            <div className="bg-white shadow shadow-xl px-2 rounded border-l-4" style={{borderColor: tooltipData.hra.color}}>
+              <div>
+                {tooltipData.hra.name}
+              </div>
+              <div className="text-2xl font-bold -my-2">
+                {tooltipNumberFormatter.format(tooltipData.value)}
+              </div>
+              <div>
+                {tooltipDateFormatter.format(tooltipData.date)}
+              </div>
             </div>
-            <div className="text-2xl font-bold">
-              {tooltipNumberFormatter.format(tooltipData.value)}
-            </div>
-            <div>
-              {tooltipDateFormatter.format(tooltipData.date)}
-            </div>
-          </div>
-        </TooltipWithBounds>
-      }
-    </div>
-);
+          </TooltipInPortal>
+        }
+      </div>
+    </figure>
+  );
 }
 
 const Framing = memo(
@@ -188,9 +214,6 @@ const Framing = memo(
     valueScale, timeScale, diagramWidth, diagramHeight, heading,
   }) => (
     <>
-      <text x={0} y={-25} fontSize={30}>
-        {heading}
-      </text>
       <GridRows scale={valueScale} width={diagramWidth} height={diagramHeight} stroke="#d0d0d0" numTicks={5} />
       <GridColumns scale={timeScale} width={diagramWidth} height={diagramHeight} stroke="#d0d0d0" />
       <line x1={diagramWidth} x2={diagramWidth} y1={0} y2={diagramHeight} stroke="#d0d0d0" />
@@ -212,6 +235,8 @@ const HRALine = memo(
         stroke={color}
         strokeWidth={2}
         strokeOpacity={1}
+        strokeLinejoin="round"
+        strokeLinecap="round"
         defined={(d) => Number.isFinite(valueAccessor(d))}
       />
     </g>
@@ -221,9 +246,9 @@ const HRALine = memo(
 const HoverableVoronoiPolygon = ({polygon, showTooltip, hideTooltip}) => {
   const handleMouseEnter = useCallback(() => (showTooltip({
     tooltipData: polygon.data,
-    tooltipLeft: polygon.data.x,
-    tooltipTop: polygon.data.y,
-  })), [polygon, showTooltip]); // TK
+    tooltipLeft: polygon.data.x + margins.left,
+    tooltipTop: polygon.data.y + margins.top,
+  })), [polygon, showTooltip]);
   const handleMouseLeave = hideTooltip; // TODO verify that this method is memoized i guess
 
   return <VoronoiPolygon
