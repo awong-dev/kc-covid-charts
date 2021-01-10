@@ -33,7 +33,7 @@ export default function TimeSeries({
       <div className="flex-1 flex relative">
         {activeHRAs[0] && (
           <XYChart
-            xScale={{ type: "linear", nice: true }}
+            xScale={{ type: "time", nice: false }}
             yScale={{ type: "linear", nice: true }}
             margin={{ top: 20, right: 50, bottom: 30, left: 80 }}
             theme={buildChartTheme({
@@ -46,7 +46,6 @@ export default function TimeSeries({
           >
             <AnimatedAxis
               orientation="bottom"
-              tickFormat={tooltipDateFormatter.format}
             />
             <AnimatedAxis orientation="left" />
             <AnimatedGrid columns={false} />
@@ -66,7 +65,7 @@ export default function TimeSeries({
               showVerticalCrosshair
               showSeriesGlyphs
               renderTooltip={({ tooltipData, colorScale }) => (
-                <div className="">
+                <div>
                   <div className="text-lg">
                     {tooltipDateFormatter.format(
                       tooltipData.nearestDatum.datum.date
@@ -80,7 +79,7 @@ export default function TimeSeries({
                             valueAccessor(b.datum) - valueAccessor(a.datum)
                         )
                         .map(([hraId, { datum }]) => (
-                          <tr className="">
+                          <tr>
                             <th className="border-l-8 pl-1 pr-2 text-left font-normal tracking-tight"
                               style={{ borderColor: colorScale(hraId) }}
                             >{hras[hraId].name}</th>
