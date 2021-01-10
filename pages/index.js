@@ -47,8 +47,8 @@ export default function CombinedChart({ covidData }) {
         <div className="h-80 flex overflow-hidden">
           <TimeSeries
             state={state}
-            heading="Positives per people tested"
-            valueAccessor={(d) => (d.Δpositives / d.ΔpeopleTested)}
+            heading="Positives per people tested (%)"
+            valueAccessor={(d) => (100 * d.Δpositives / d.ΔpeopleTested)}
             setHoveredHraId={setHoveredHraId}
           />
         </div>

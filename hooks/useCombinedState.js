@@ -160,7 +160,7 @@ const buildDefaultState = (covidData) => {
       return ({
         hraId: hraId,
         name: hraName,
-        active: false,
+        active: hraId === '1000',
         timeSeries: smoothedInterpolatedDataWithDerivatives
       });
     })
