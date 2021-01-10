@@ -9,7 +9,8 @@ import {
 } from "@visx/xychart";
 
 const tooltipNumberFormatter = new Intl.NumberFormat("en-US", {
-  maximumSignificantDigits: 3,
+  minimumFractionDigits: 1,
+  maximumFractionDigits: 1,
 });
 const tooltipDateFormatter = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
@@ -65,28 +66,35 @@ export default function TimeSeries({
               showVerticalCrosshair
               showSeriesGlyphs
               renderTooltip={({ tooltipData, colorScale }) => (
-                <div>
-                  <div className="text-lg font-bold">
+                <div className="">
+                  <div className="text-lg">
                     {tooltipDateFormatter.format(
                       tooltipData.nearestDatum.datum.date
                     )}
                   </div>
-                  {Object.entries(tooltipData.datumByKey)
-                      .sort(([_, a], [__, b]) => valueAccessor(b.datum) - valueAccessor(a.datum))
-                      .map(
-                    ([hraId, { datum }]) => (
-                      <p
-                        className="border-l-8 pl-1 font-normal tracking-tight mb-0.5"
-                        style={{ borderColor: colorScale(hraId) }}
-                      >
-                        {hras[hraId].name}:
-                        {' '}
-                        <span className="font-bold">
-                          {tooltipNumberFormatter.format(valueAccessor(datum))}
-                        </span>
-                      </p>
-                    )
-                  )}
+                  <table>
+                    <tbody>
+                      {Object.entries(tooltipData.datumByKey)
+                        .sort(
+                          ([_, a], [__, b]) =>
+                            valueAccessor(b.datum) - valueAccessor(a.datum)
+                        )
+                        .map(([hraId, { datum }]) => (
+                          <tr className="">
+                            <th className="border-l-8 pl-1 pr-2 text-left font-normal tracking-tight"
+                              style={{ borderColor: colorScale(hraId) }}
+                            >{hras[hraId].name}</th>
+                            <td
+                              className="tracking-tighter tabular-nums text-right"
+                            >
+                              {tooltipNumberFormatter.format(
+                                valueAccessor(datum)
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
             />
