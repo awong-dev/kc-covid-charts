@@ -44,9 +44,7 @@ export default function TimeSeries({
               gridColorDark: "#333",
             })}
           >
-            <AnimatedAxis
-              orientation="bottom"
-            />
+            <AnimatedAxis orientation="bottom" />
             <AnimatedAxis orientation="left" />
             <AnimatedGrid columns={false} />
             {activeHRAs.map(({ hraId, timeSeries, color }) => {
@@ -80,12 +78,13 @@ export default function TimeSeries({
                         )
                         .map(([hraId, { datum }]) => (
                           <tr>
-                            <th className="border-l-8 pl-1 pr-2 text-left font-normal tracking-tight"
+                            <th
+                              className="border-l-8 pl-1 pr-2 text-left font-normal tracking-tight"
                               style={{ borderColor: colorScale(hraId) }}
-                            >{hras[hraId].name}</th>
-                            <td
-                              className="tracking-tighter tabular-nums text-right"
                             >
+                              {hras[hraId].name}
+                            </th>
+                            <td className="tracking-tighter tabular-nums text-right">
                               {tooltipNumberFormatter.format(
                                 valueAccessor(datum)
                               )}
