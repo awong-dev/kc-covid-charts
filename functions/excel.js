@@ -6,14 +6,13 @@ async function parseExcel(excelBlob) {
   await workbook.xlsx.load(excelBlob);
   const data = {};
   workbook.eachSheet((worksheet, sheetId) => {
-    const sheetData =  [];
+    const sheetData = [];
     worksheet.eachRow((row, rowNumber) => {
-      const cleanvalues = row.values.map(v => {
+      const cleanvalues = row.values.map((v) => {
         if (isNaN(v)) {
-          return v.trim()
-        } else {
-          return Number(v);
+          return v.trim();
         }
+        return Number(v);
       });
 
       // Excel is 1 indexed, so the cleanvalues element 0 is empty and

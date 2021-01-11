@@ -15,13 +15,13 @@ const L_CITY = 'city';
 const L_HRA = 'hra';
 const L_ZIP = 'zip';
 const L_CENSUS = 'census';
-const LOCATION_TYPES = [ L_CENSUS, L_CITY, L_HRA, L_ZIP ];
+const LOCATION_TYPES = [L_CENSUS, L_CITY, L_HRA, L_ZIP];
 const NAME_FUNC = {
- [L_CITY]: x => x,
- [L_HRA]: x => x,
-// [L_CENSUS]: x => (x.split(':').slice(-1)[0])/100,  // For Census Tract with 530xxx prefix.
- [L_CENSUS]: x => x.split(':').slice(-1)[0].trim(),
- [L_ZIP]: x => x.split(':').slice(-1)[0].trim(),
+  [L_CITY]: (x) => x,
+  [L_HRA]: (x) => x,
+  // [L_CENSUS]: x => (x.split(':').slice(-1)[0])/100,  // For Census Tract with 530xxx prefix.
+  [L_CENSUS]: (x) => x.split(':').slice(-1)[0].trim(),
+  [L_ZIP]: (x) => x.split(':').slice(-1)[0].trim(),
 };
 
 const LONG_ACTION_MS = 10000;
@@ -34,16 +34,20 @@ const MEASUREMENT_CONFIG = [
   {
     measurement: M_POSITIVES,
     extractFunc: extractPositives,
-  }, {
+  },
+  {
     measurement: M_ALL_TEST_RESULTS,
     extractFunc: extractAllTestResults,
-  }, {
+  },
+  {
     measurement: M_DEATHS,
     extractFunc: extractDeaths,
-  }, {
+  },
+  {
     measurement: M_HOSP,
     extractFunc: extractHospitalizations,
-  }, {
+  },
+  {
     measurement: M_PEOPLE_TESTED,
     extractFunc: extractPeopleTested,
   },
@@ -52,10 +56,10 @@ const MEASUREMENT_CONFIG = [
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 // Used in place of sleep to try actions like scrollIntoView and retrieving text content
-async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
+async function retry(func, expectTruthy = true, timeoutMs = LONG_ACTION_MS) {
   const waitMs = 10;
-  let retryCount = ~~(timeoutMs/waitMs);
-  while(retryCount--) {
+  let retryCount = ~~(timeoutMs / waitMs);
+  while (retryCount--) {
     try {
       const result = await func();
       if (!expectTruthy || (result && result !== 'null')) {
@@ -65,26 +69,26 @@ async function retry(func, expectTruthy=true, timeoutMs=LONG_ACTION_MS) {
       if (retryCount <= 0) {
         throw err;
       }
-    } 
+    }
     await sleep(waitMs);
   }
 
   if (expectTruthy) {
-    throw "Failed after many retries";
+    throw 'Failed after many retries';
   }
 }
 
 async function launchBrowser() {
   return await puppeteer.launch({
-//    headless: false,
-//    userDataDir: '/tmp/puppeteer-userdata',
+    //    headless: false,
+    //    userDataDir: '/tmp/puppeteer-userdata',
     args: [
       '--disable-features=site-per-process',
       '--font-render-hinting=none',
       '--disable-background-timer-throttling',
       '--disable-backgrounding-occluded-windows',
       '--disable-renderer-backgrounding',
-      '--no-sandbox'
+      '--no-sandbox',
     ],
   });
 }
@@ -92,7 +96,11 @@ async function launchBrowser() {
 async function setupPage(browser) {
   const page = (await browser.pages())[0];
   // Make everything consistent and ignore youtube.
-  await page.setViewport({width: VP_WIDTH, height: VP_HEIGHT, deviceScaleFactor: 2});
+  await page.setViewport({
+    width: VP_WIDTH,
+    height: VP_HEIGHT,
+    deviceScaleFactor: 2,
+  });
   await page.setRequestInterception(true);
   page.on('request', (request) => {
     if (request.url().includes('youtube')) {
@@ -103,28 +111,48 @@ async function setupPage(browser) {
   });
 
   // Get the content scrolled in.
-  await page.goto('https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx');
-  await retry(() => page.evaluate(() => document.querySelector('iframe[title="Data Visualization"]').scrollIntoView()), false);
+  await page.goto(
+    'https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx',
+  );
+  await retry(
+    () =>
+      page.evaluate(() =>
+        document
+          .querySelector('iframe[title="Data Visualization"]')
+          .scrollIntoView(),
+      ),
+    false,
+  );
 
   return page;
 }
 
 async function setupTableauFrame(page) {
-  const iframeHandle = await retry(() => page.$('iframe[title="Data Visualization"]'));
+  const iframeHandle = await retry(() =>
+    page.$('iframe[title="Data Visualization"]'),
+  );
   const tableauFrame = await iframeHandle.contentFrame();
 
   // Got to wait until the covering spinner goes away otherwise the click is eaten.
   await sleep(LONG_ACTION_MS);
 
   // Click geography. This causes lots of calulations.
-  await (await retry(()=>tableauFrame.$('span[value="Geography"]'))).click();
+  await (await retry(() => tableauFrame.$('span[value="Geography"]'))).click();
   await sleep(LONG_ACTION_MS);
 
   return tableauFrame;
 }
 
 async function selectLocationType(page, tableauFrame, locationType) {
-  await retry(() => tableauFrame.evaluate(() => document.querySelector('div[tb-test-id="Map chooser"]').scrollIntoView()), false);
+  await retry(
+    () =>
+      tableauFrame.evaluate(() =>
+        document
+          .querySelector('div[tb-test-id="Map chooser"]')
+          .scrollIntoView(),
+      ),
+    false,
+  );
 
   if (locationType === L_CITY) {
     await page.mouse.click(200, 50);
@@ -140,14 +168,31 @@ async function selectLocationType(page, tableauFrame, locationType) {
 
 async function selectMeasurement(tableauFrame, measurement) {
   // Click the measurement type.
-  await retry(() => tableauFrame.evaluate((m) => document.querySelector(`a.FIText[title="${m}"]`).parentElement.querySelector('input').click(), measurement), false);
+  await retry(
+    () =>
+      tableauFrame.evaluate(
+        (m) =>
+          document
+            .querySelector(`a.FIText[title="${m}"]`)
+            .parentElement.querySelector('input')
+            .click(),
+        measurement,
+      ),
+    false,
+  );
 
   await sleep(LONG_ACTION_MS);
 }
 
 async function scrollToMap(tableauFrame) {
   // Move the map in to view.
-  await retry(() => tableauFrame.evaluate(() => document.querySelector('canvas.tabCanvas').scrollIntoView()), false);
+  await retry(
+    () =>
+      tableauFrame.evaluate(() =>
+        document.querySelector('canvas.tabCanvas').scrollIntoView(),
+      ),
+    false,
+  );
 }
 
 function toNumber(s) {
@@ -155,7 +200,11 @@ function toNumber(s) {
 }
 
 async function getMeasurement(tooltip, index) {
-  return await retry(() => tooltip.$eval(`span div:nth-child(${index})`, el => el.textContent), true, 10);
+  return await retry(
+    () => tooltip.$eval(`span div:nth-child(${index})`, (el) => el.textContent),
+    true,
+    10,
+  );
 }
 
 async function extractLocationName(tooltip, extractNameFunc) {
@@ -167,8 +216,12 @@ async function extractTestPositivity(tooltip) {
   // 1 = location name
   // 5 = positives "xxxx test results: nnn"
   // 6 = total tests "xxxx test results: nnn"
-  const positives = toNumber((await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1]);
-  const totalTests = toNumber((await getMeasurement(tooltip, 6)).match(/All test results: (.*)/)[1]);
+  const positives = toNumber(
+    (await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1],
+  );
+  const totalTests = toNumber(
+    (await getMeasurement(tooltip, 6)).match(/All test results: (.*)/)[1],
+  );
   return { positives, totalTests };
 }
 
@@ -176,7 +229,9 @@ async function extractPositives(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = positives "Positive test results: nnn"
-  const positives = toNumber((await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1]);
+  const positives = toNumber(
+    (await getMeasurement(tooltip, 5)).match(/Positive test results: (.*)/)[1],
+  );
   return { positives };
 }
 
@@ -184,7 +239,9 @@ async function extractAllTestResults(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = positives "Positive test results: nnn"
-  const totalTests = toNumber((await getMeasurement(tooltip, 5)).match(/All test results: (.*)/)[1]);
+  const totalTests = toNumber(
+    (await getMeasurement(tooltip, 5)).match(/All test results: (.*)/)[1],
+  );
   return { totalTests };
 }
 
@@ -192,7 +249,9 @@ async function extractDeaths(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = deaths "Deaths: nnn"
-  const deaths = toNumber((await getMeasurement(tooltip, 5)).match(/Deaths: (.*)/)[1]);
+  const deaths = toNumber(
+    (await getMeasurement(tooltip, 5)).match(/Deaths: (.*)/)[1],
+  );
   return { deaths };
 }
 
@@ -200,14 +259,18 @@ async function extractHospitalizations(tooltip) {
   // For Test Positivity...
   // 1 = location name
   // 5 = "Hospitalizations: nnn"
-  const hospitalizations = toNumber((await getMeasurement(tooltip, 5)).match(/Hospitalizations: (.*)/)[1]);
+  const hospitalizations = toNumber(
+    (await getMeasurement(tooltip, 5)).match(/Hospitalizations: (.*)/)[1],
+  );
   return { hospitalizations };
 }
 
 async function extractPeopleTested(tooltip) {
   // For Test Positivity...
   // 5 = "People tested: nnn"
-  const peopleTested = toNumber((await getMeasurement(tooltip, 5)).match(/People tested: (.*)/)[1]);
+  const peopleTested = toNumber(
+    (await getMeasurement(tooltip, 5)).match(/People tested: (.*)/)[1],
+  );
   return { peopleTested };
 }
 
@@ -215,17 +278,31 @@ let pixelCount = 0;
 // Bounds and resolution discovered empirically to scrape all 48 HRAs. This is incorrect for
 // city, zips, and census.
 const DEFAULT_SCRAPE_OPTIONS = {
-  startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2,
-//  startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10,
+  startx: 340,
+  starty: 0,
+  endx: 950,
+  endy: 480,
+  xinc: 2,
+  yinc: 2,
+  //  startx: 400, starty: 50, endx: 500, endy: 100, xinc: 10, yinc: 10,
 };
 
 // Original scraping code that attempts to sample the whole map rectangle for data.
-async function scrapeRegion(page, tableauFrame, extractFunc, options = DEFAULT_SCRAPE_OPTIONS) {
+async function scrapeRegion(
+  page,
+  tableauFrame,
+  extractFunc,
+  options = DEFAULT_SCRAPE_OPTIONS,
+) {
   const data = {};
   let onePixelIsInBounds = true;
   console.log('Starting region scrape');
-  for (let x = options.startx; onePixelIsInBounds && x < options.endx; x += options.xinc) {
-    if ((pixelCount++ % 1000) === 0) {
+  for (
+    let x = options.startx;
+    onePixelIsInBounds && x < options.endx;
+    x += options.xinc
+  ) {
+    if (pixelCount++ % 1000 === 0) {
       console.error(`Made it to (${x},${y}):`);
     }
     onePixelIsInBounds = false;
@@ -285,21 +362,40 @@ async function scrapeLocation(page, frame, x, y, extractFunc, extractNameFunc) {
 // Makes maxRetry attempts.
 //
 // Returns the scraped measurement data.
-async function scrapePoints(page, frame, locationName, points, extractFunc, extractNameFunc, maxRetry = 10) {
+async function scrapePoints(
+  page,
+  frame,
+  locationName,
+  points,
+  extractFunc,
+  extractNameFunc,
+  maxRetry = 10,
+) {
   try {
     for (let i = 0; i < maxRetry; i++) {
       const [x, y] = points[i];
       let result = null;
       for (let retry = 0; retry < 10; retry++) {
-        result = await scrapeLocation(page, frame, x, y, extractFunc, extractNameFunc);
+        result = await scrapeLocation(
+          page,
+          frame,
+          x,
+          y,
+          extractFunc,
+          extractNameFunc,
+        );
         if (result[0] === locationName) {
           return result[1];
         }
         await sleep(10);
       }
-      console.error(`Mismatch ${locationName} and ${result[0]} value ${JSON.stringify(result[1])}: ${i}@${points[i]}`);
+      console.error(
+        `Mismatch ${locationName} and ${result[0]} value ${JSON.stringify(
+          result[1],
+        )}: ${i}@${points[i]}`,
+      );
       if (!is_gcp_environment) {
-        await page.screenshot({path: 'mismatch.png'});
+        await page.screenshot({ path: 'mismatch.png' });
       }
     }
   } catch (err) {
@@ -311,14 +407,23 @@ async function scrapePoints(page, frame, locationName, points, extractFunc, extr
 
 // This generates a list of coordinates for each location. Used to create a
 // map-sampling-points.json to speed up actual scraping.
-async function scrapeMapPoints(page, tableauFrame, extractNameFunc, options = DEFAULT_SCRAPE_OPTIONS) {
+async function scrapeMapPoints(
+  page,
+  tableauFrame,
+  extractNameFunc,
+  options = DEFAULT_SCRAPE_OPTIONS,
+) {
   const data = {};
   let onePixelIsInBounds = true;
   console.error(`Starting Map Points scrape ${JSON.stringify(options)}`);
-  for (let x = options.startx; onePixelIsInBounds && x < options.endx; x += options.xinc) {
+  for (
+    let x = options.startx;
+    onePixelIsInBounds && x < options.endx;
+    x += options.xinc
+  ) {
     onePixelIsInBounds = false;
     for (let y = options.starty; y < options.endy; y += options.yinc) {
-      if ((pixelCount++ % 1000) === 0) {
+      if (pixelCount++ % 1000 === 0) {
         console.error(`Made it to (${x},${y}):`);
       }
       await page.mouse.move(x, y);
@@ -355,10 +460,10 @@ function mergeMapPoints(points1, points2) {
   const merged = _.mergeWith({}, points1, points2, unionArray);
 
   // Return values shuffled. Makes sampling later a bit succeptible to systemic failure.
-  return _.mapValues(
-    merged,
-    (location) => _.mapValues(location,
-      (points) => _.mapValues(points, (ar) => _.shuffle(ar))),
+  return _.mapValues(merged, (location) =>
+    _.mapValues(location, (points) =>
+      _.mapValues(points, (ar) => _.shuffle(ar)),
+    ),
   );
 }
 
@@ -378,13 +483,26 @@ async function scrape(locationType) {
       console.log(`scraping ${config.measurement}`);
       await selectMeasurement(tableauFrame, config.measurement);
       if (locationType in MapSamplePoints) {
-        for (const [locationName, locationInfo] of Object.entries(MapSamplePoints[locationType])) {
-          const locationData = data[locationName] = data[locationName] || {};
+        for (const [locationName, locationInfo] of Object.entries(
+          MapSamplePoints[locationType],
+        )) {
+          const locationData = (data[locationName] = data[locationName] || {});
           if (!locationInfo.points) {
-            console.error(`${locationType}, ${locationName}: ${JSON.stringify(locationInfo)}`);
+            console.error(
+              `${locationType}, ${locationName}: ${JSON.stringify(
+                locationInfo,
+              )}`,
+            );
             continue;
           }
-          const result = await scrapePoints(page, tableauFrame, locationName, locationInfo.points, config.extractFunc, NAME_FUNC[locationType]);
+          const result = await scrapePoints(
+            page,
+            tableauFrame,
+            locationName,
+            locationInfo.points,
+            config.extractFunc,
+            NAME_FUNC[locationType],
+          );
           if (result) {
             _.merge(locationData, result);
           }
@@ -393,15 +511,15 @@ async function scrape(locationType) {
     }
   } catch (err) {
     if (!is_gcp_environment && page) {
-      await page.screenshot({path: 'failure.png'});
+      await page.screenshot({ path: 'failure.png' });
     }
     throw err;
   } finally {
-    console.log("Closing browser");
+    console.log('Closing browser');
     await browser.close();
   }
 
-  console.log("Returning data");
+  console.log('Returning data');
   return data;
 }
 
@@ -411,10 +529,31 @@ async function scrapeAllMapPoints(locationType) {
   const tableauFrame = await setupTableauFrame(page);
 
   const SCRAPE_OPTIONS = {
-    [L_CITY]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 10, yinc: 10},
-    [L_CENSUS]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2},
-    [L_HRA]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 10, yinc: 10},
-    [L_ZIP]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2},
+    [L_CITY]: {
+      startx: 340,
+      starty: 0,
+      endx: 950,
+      endy: 480,
+      xinc: 10,
+      yinc: 10,
+    },
+    [L_CENSUS]: {
+      startx: 340,
+      starty: 0,
+      endx: 950,
+      endy: 480,
+      xinc: 2,
+      yinc: 2,
+    },
+    [L_HRA]: {
+      startx: 340,
+      starty: 0,
+      endx: 950,
+      endy: 480,
+      xinc: 10,
+      yinc: 10,
+    },
+    [L_ZIP]: { startx: 340, starty: 0, endx: 950, endy: 480, xinc: 2, yinc: 2 },
   };
   /*
   const SCRAPE_OPTIONS = {
@@ -431,13 +570,17 @@ async function scrapeAllMapPoints(locationType) {
     await selectMeasurement(tableauFrame, M_POSITIVES);
     await selectLocationType(page, tableauFrame, locationType);
     await scrollToMap(tableauFrame);
-    data[locationType] = await scrapeMapPoints(page, tableauFrame, NAME_FUNC[locationType],
-                                               SCRAPE_OPTIONS[locationType]);
+    data[locationType] = await scrapeMapPoints(
+      page,
+      tableauFrame,
+      NAME_FUNC[locationType],
+      SCRAPE_OPTIONS[locationType],
+    );
   } catch (err) {
     if (!is_gcp_environment) {
-      await page.screenshot({path: 'crashed.png'});
+      await page.screenshot({ path: 'crashed.png' });
     }
-    console.error("Crashed " + err);
+    console.error('Crashed ' + err);
   } finally {
     await browser.close();
   }
@@ -454,7 +597,7 @@ async function test() {
   await selectMeasurement(tableauFrame, M_TEST_POS);
   await scrollToMap(tableauFrame);
  */
-  return [ browser, page, tableauFrame ];
+  return [browser, page, tableauFrame];
 }
 
 async function doSampleMap() {
@@ -467,11 +610,13 @@ async function doSampleMap() {
 }
 
 if (require.main === module) {
-  if (process.argv[2] == "samplemap") {
+  if (process.argv[2] == 'samplemap') {
     return doSampleMap();
   }
 
-  scrape(process.argv[2]).then(data => console.log(JSON.stringify(data, null, 2)));
+  scrape(process.argv[2]).then((data) =>
+    console.log(JSON.stringify(data, null, 2)),
+  );
 }
 
 module.exports = {

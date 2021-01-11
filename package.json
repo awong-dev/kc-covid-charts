@@ -7,7 +7,7 @@
     "build": "next build && next export",
     "deploy": "next build && next export && firebase deploy --only hosting",
     "dev": "next dev",
-    "format": "prettier ."
+    "format": "prettier --write ."
   },
   "keywords": [
     "covid",
@@ -57,6 +57,7 @@
     "glob": "^7.1.6",
     "next": "10.0.1",
     "phantomjs-prebuilt": "^2.1.16",
+    "prettier": "^2.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "selenium-webdriver": "^4.0.0-alpha.8"

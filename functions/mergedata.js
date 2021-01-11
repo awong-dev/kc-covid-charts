@@ -28,7 +28,7 @@ function mergeXlsData(combinedData, inputData, dailyDate) {
 
     const populationIndex = header.indexOf('Population');
 
-    const data = combinedData[datasetName] = combinedData[datasetName] || {};
+    const data = (combinedData[datasetName] = combinedData[datasetName] || {});
     for (row of rows) {
       let locationName = null;
       if (locationNameIndex !== -1) {
@@ -42,14 +42,14 @@ function mergeXlsData(combinedData, inputData, dailyDate) {
         }
       }
 
-      const entry = data[locationName] = data[locationName] || {
+      const entry = (data[locationName] = data[locationName] || {
         date: [],
         peopleTested: [],
         allTestResults: [],
         positives: [],
         hospitalizations: [],
         deaths: [],
-      };
+      });
 
       if (datasetName === 'HRA') {
         entry.hraId = hraToId[locationName];
@@ -62,9 +62,17 @@ function mergeXlsData(combinedData, inputData, dailyDate) {
       }
 
       accumulateCount(entry.peopleTested, row[peopleTestedIndex], !dailyDate);
-      accumulateCount(entry.allTestResults, row[allTestResultsIndex], !dailyDate);
+      accumulateCount(
+        entry.allTestResults,
+        row[allTestResultsIndex],
+        !dailyDate,
+      );
       accumulateCount(entry.positives, row[positivesIndex], !dailyDate);
-      accumulateCount(entry.hospitalizations, row[hospitalizationsIndex], !dailyDate);
+      accumulateCount(
+        entry.hospitalizations,
+        row[hospitalizationsIndex],
+        !dailyDate,
+      );
       accumulateCount(entry.deaths, row[deathsIndex], !dailyDate);
 
       if (populationIndex !== -1) {
@@ -102,4 +110,4 @@ module.exports = {
   mergeXlsData,
   mergeOne,
   mergeData,
-}
+};

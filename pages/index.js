@@ -5,7 +5,10 @@ import useCombinedState from '../hooks/useCombinedState';
 
 export default function CombinedChart({ covidData }) {
   const {
-    state, toggleActive, setHoveredHraId, setAllInactive
+    state,
+    toggleActive,
+    setHoveredHraId,
+    setAllInactive,
   } = useCombinedState(covidData);
 
   return (
@@ -32,7 +35,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="Cumulative positives per 100k"
-            valueAccessor={(d) => (100000 * d.μpositives / d.population)}
+            valueAccessor={(d) => (100000 * d.μpositives) / d.population}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
@@ -40,7 +43,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="New positives per 100k"
-            valueAccessor={(d) => (100000 * d.Δpositives / d.population)}
+            valueAccessor={(d) => (100000 * d.Δpositives) / d.population}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
@@ -48,7 +51,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="Positives per people tested (%)"
-            valueAccessor={(d) => (100 * d.Δpositives / d.ΔpeopleTested)}
+            valueAccessor={(d) => (100 * d.Δpositives) / d.ΔpeopleTested}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
@@ -56,7 +59,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="Tests"
-            valueAccessor={(d) => (d.ΔtotalTests)}
+            valueAccessor={(d) => d.ΔtotalTests}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
@@ -64,7 +67,7 @@ export default function CombinedChart({ covidData }) {
           <TimeSeries
             state={state}
             heading="Deaths"
-            valueAccessor={(d) => (d.Δdeaths)}
+            valueAccessor={(d) => d.Δdeaths}
             setHoveredHraId={setHoveredHraId}
           />
         </div>
@@ -74,7 +77,9 @@ export default function CombinedChart({ covidData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://storage.googleapis.com/kc-covid-chart.appspot.com/processed/data-hra.json');
+  const res = await fetch(
+    'https://storage.googleapis.com/kc-covid-chart.appspot.com/processed/data-hra.json',
+  );
   const hraData = await res.json();
 
   return {
